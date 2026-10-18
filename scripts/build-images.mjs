@@ -38,7 +38,8 @@ const PHOTOS = {
   "showroom-exterior": { file: "showroom-3.webp" },
   "showroom-gallery": { file: "showroom-4.webp" },
   "showroom-lounge": { file: "showroom-5.webp" },
-  "jetour-journey": { file: "jetour-journey.webp" },
+  // 1.6 crop below the campaign's "JETOUR Drive Your Future" overlay (top right of the 1920×1080 source).
+  "jetour-t2-idm": { file: "brands/jetour-t2-idm.jpg", crop: { left: 200, top: 150, width: 1488, height: 930 } },
   "brand-212": { file: "brands/212-mountains.webp" },
   "brand-aito-m5": { file: "brands/aito-m5.webp" },
   "brand-aito-m7": { file: "brands/aito-m7.webp" },

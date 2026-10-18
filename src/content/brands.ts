@@ -56,12 +56,12 @@ export const brands: Brand[] = [
     location: "jetour-c1",
     phone: phone("70108855"),
     photo: {
-      key: "jetour-journey",
-      alt: { mn: "Шороон замаар явж буй JETOUR T2", en: "JETOUR T2 on a dirt road" },
+      key: "jetour-t2-idm",
+      alt: { mn: "Ойн шороон замаар явж буй JETOUR T2 i-DM", en: "JETOUR T2 i-DM on a forest track" },
       status: "sourced",
-      caption: "JETOUR T2",
-      focus: "55% 60%",
-      note: "Image from jetour.mn",
+      caption: "JETOUR T2 i-DM",
+      focus: "62% 60%",
+      note: "JETOUR campaign image supplied by the user on 2026-10-18 (Desktop 484076260_1048089224014777_7683491303160709584_n.jpg, a Facebook export); replaces the jetour.mn T2 image.",
     },
   },
   {

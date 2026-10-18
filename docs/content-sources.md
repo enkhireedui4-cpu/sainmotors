@@ -70,7 +70,8 @@ logo and distributor statement. HONGQI is the "eleventh brand" in the brief.
 | repo `showroom-2.webp` | JETOUR line-up | About header | `showroom-entrance` | — | sourced |
 | repo `showroom-4.webp` | display corridor | About | `showroom-gallery` | — | sourced |
 | repo `showroom-3.webp` | building exterior | JETOUR showroom card | `showroom-exterior` | — | sourced (see conflict 5) |
-| repo `jetour-journey.webp` (jetour.mn) | JETOUR T2 | Home vehicle collection; JETOUR page | `jetour-journey` | — | sourced |
+| Desktop `484076260_1048089224014777_7683491303160709584_n.jpg` (supplied by the user 2026-10-18; Facebook export, 1920×1080, SHA-256 `99ec66f6c29d…`) | JETOUR T2 i-DM campaign image | Home vehicle collection; JETOUR page | `jetour-t2-idm` | 1.6 crop below the "JETOUR Drive Your Future" overlay | sourced |
+| repo `jetour-journey.webp` (jetour.mn) | JETOUR T2 | Replaced 2026-10-18; kept in `assets/_superseded/` | — | — | — |
 | AITO 9 Midnight Black `1P5r0Xw6…` | AITO M9 | Home vehicle collection; AITO page | `brand-aito-m9` | focus 58 % 65 % | sourced |
 | AITO 5 Red.webp `1txZ9eRc…` | AITO M5 | AITO page | `brand-aito-m5` | — | sourced |
 | BYD_atto3_kv4 `1MFYo8LQ…` (Canon, Capture One) | BYD Atto 3 | Home vehicle collection; BYD page | `brand-byd-atto3` | focus 60 % 60 % | sourced |

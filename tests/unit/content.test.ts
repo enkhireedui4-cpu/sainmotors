@@ -108,6 +108,13 @@ describe("brands", () => {
     expect(brands.find((b) => b.slug === "aito")!.gallery).toHaveLength(2);
   });
 
+  it("shows JETOUR with the T2 i-DM photograph the user supplied", () => {
+    const jetour = brands.find((b) => b.slug === "jetour")!;
+    expect(jetour.photo?.key).toBe("jetour-t2-idm");
+    expect(jetour.photo?.caption).toBe("JETOUR T2 i-DM");
+    expect(jetour.photo?.note).toMatch(/484076260_/);
+  });
+
   it("extracts white wordmarks from supplied sheets without black presentation panels", () => {
     for (const slug of ["byd", "riddara", "aito"]) {
       const mark = getLogo(slug, true)!;

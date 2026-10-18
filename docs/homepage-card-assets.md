@@ -24,8 +24,9 @@ are now exposed in the brand facts. No prices, availability or technical specifi
 
 ## Previously sourced manufacturer alternatives (archive)
 
-Only SOUEAST below remains active, since it is in neither supplied folder. JETOUR retains its
-existing jetour.mn T2 image. CHERY now uses the TIGGO 8 image from Sain Motors' own CHERY site
+Only SOUEAST below remains active, since it is in neither supplied folder. JETOUR uses the T2 i-DM
+campaign image the user supplied on 2026-10-18 (Desktop `484076260_…_n.jpg` →
+`assets/photos/brands/jetour-t2-idm.jpg`, cropped below its logo overlay). CHERY now uses the TIGGO 8 image from Sain Motors' own CHERY site
 (Desktop `chery/public/assets/img/hero-t8.webp` → `assets/photos/brands/chery-tiggo8.webp`, SHA-256
 `7a8c99b8…f4e726d`), because TIGGO 9 is not in the local line-up (TIGGO 2, 4, 7, 8). The other five
 alternatives below have been replaced by the local team material at the user's request.

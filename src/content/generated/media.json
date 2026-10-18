@@ -155,30 +155,30 @@
         ]
       ]
     },
-    "jetour-journey": {
-      "width": 1920,
-      "height": 1037,
-      "color": "#888868",
+    "jetour-t2-idm": {
+      "width": 1488,
+      "height": 930,
+      "color": "#181818",
       "srcset": [
         [
           480,
-          "/media/jetour-journey-480.webp"
+          "/media/jetour-t2-idm-480.webp"
         ],
         [
           768,
-          "/media/jetour-journey-768.webp"
+          "/media/jetour-t2-idm-768.webp"
         ],
         [
           1080,
-          "/media/jetour-journey-1080.webp"
+          "/media/jetour-t2-idm-1080.webp"
         ],
         [
           1440,
-          "/media/jetour-journey-1440.webp"
+          "/media/jetour-t2-idm-1440.webp"
         ],
         [
-          1920,
-          "/media/jetour-journey-1920.webp"
+          1488,
+          "/media/jetour-t2-idm-1488.webp"
         ]
       ]
     },
