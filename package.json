@@ -1,0 +1,36 @@
+{
+  "name": "sainmotors-mn",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/build-images.mjs --if-missing && next dev -p 3200",
+    "images": "node scripts/build-images.mjs",
+    "build": "node scripts/build-images.mjs && next build && node scripts/fix-export-segments.mjs",
+    "preview": "node scripts/serve-out.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "node --test --test-concurrency=1 tests/e2e/",
+    "build:release": "node scripts/release-build.mjs",
+    "content:checklist": "node scripts/content-checklist.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.1",
+    "playwright-core": "^1.64.1",
+    "sharp": "^0.35.5",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

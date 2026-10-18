@@ -1,0 +1,28 @@
+# dependencies
+node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# generated from /assets by scripts/build-images.mjs
+/public/media/
+/src/app/icon.png
+/src/app/apple-icon.png
+
+# env
+.env*
+!.env.example
+
+# misc
+.DS_Store
+Thumbs.db
+npm-debug.log*
+
+# local server logs and scratch exports (review screenshots, one-off import scripts)
+/.dev-server*.log
+/.preview-server*.log
+/.tmp-assets/
+/.playwright-mcp/

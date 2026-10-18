@@ -1,0 +1,128 @@
+# Content sources and asset provenance
+
+Reviewed 2026-10-17 by the web team (Enkh-Ireedui). Read-only access; no Drive file, folder or
+sharing setting was changed. Drive links are kept here, never in page markup.
+
+**Status rule.** Everything taken from the Drive sheets is *received from the brand teams*, not
+*approved for publication*: it is `sourced` in `src/content/`. Web-team wording and translations are
+`draft`. Only the content lead (Dashnyam) moves anything to `approved`.
+
+## 1. Folders reviewed
+
+| Folder (owner) | Drive ID | Contents |
+|---|---|---|
+| 212 team (m.monkhitgel) | `1Za5YjBNyjGyOcXiD2pwGmcjqjltFAtdC` | 212, CHERY RELY, FAW BESTUNE, FAW HONGQI, SAIC MAXUS; **Chery team folder is empty** |
+| BYD team (tuguldur.esain) | `1salTROyzZM60McS5STiJCQAH0tn5LMOc` | Aito, BYD, Riddara |
+
+Each brand folder holds one fact sheet (MN/EN columns: official name, short introduction,
+distributor statement, official web link, sales phone, hero headline), a Logo folder and photos.
+
+## 2. Brand facts
+
+| Brand (public name) | Sheet (Drive ID) | Sain Motors relationship, per sheet | Showroom, per sheet | Sales line | Links verified 2026-10-17 |
+|---|---|---|---|---|---|
+| JETOUR | — (no Drive folder) | Official distributor (jetour.mn page title) | C1 TV building, Chingeltei (jetour.mn) | 7010-8855 (jetour.mn) | jetour.mn ✓ |
+| SOUEAST | — (no Drive folder) | On the company brand banner only | — | — | — |
+| CHERY | — (Chery team folder empty). Read 2026-10-18 from Sain Motors' own CHERY site project, Desktop `chery` (`lib/content.ts` `site`, `PRODUCT.md`, `messages/mn.json`) | Official distributor (`site.role`); TIGGO 2, 4, 7, 8; factory warranty 3 years or 100,000 km; leasing from 10% down, up to 96 months | Narny Khoroolol, Parko Riveria, 26th khoroo, Bayangol (map pin 47.904448, 106.902714); Mon–Fri 09:00–21:00, Sat 09:00–19:00 | 7255-8855 | chery.mn ✗ (no DNS on 10-17 and 10-18) |
+| BYD | Мэдээлэл BYD `1ROO7xP1…` | Official distributor **since 2025**; TI 7, Shark 6, Sealion 6, Atto 3 with factory warranty, after-sales service, professional repair and parts | BYD 4S showroom, Moscow Street, Bayangol (SW of Tsambagarav centre) | 7250 8855 | byd.com/en ✓ |
+| RIDDARA | Мэдээлэл Riddara `1OFghaed…` | Official distributor **since 2025**; warranty, after-sales service, advice | Dolgoon Nuur, opposite Computer Mall, Chingeltei | 7270 8855 | riddara.com ✓ |
+| AITO | Мэдээлэл AITO `1ZE7T1Bz…` | Official distributor **since 2025**; warranty, after-sales service, advice | Sansar, west of the Petrovis station, 12th microdistrict, Bayanzürkh | 7211 8855 | aitoauto.com/en ✓ |
+| 212 | 212 Мэдээлэл `1aFdIXlF…` (sheet "212") | Official distributor **since 2025**; warranty, after-sales service, advice | Dolgoon Nuur, opposite Computer Mall | 7222 8855 | Facebook "BAW 212 Mongolia – Sain Motors" ✓ |
+| BESTUNE | FAW BESTUNE мэдээлэл `1baHpfb6…` | Official sales **since 2025**: B70, T77, T90, T99, NAT PRO | Sansar, west of the Petrovis station (Bestune showroom) | 7299 8855 | Facebook FAWBestuneMongolia ✓, BestuneSainmotors ✓ |
+| RELY | CHERY RELY Мэдээлэл `11FhDgHS…` | Official distributor **since 2026**; pickup, warranty, after-sales service, advice | Dolgoon Nuur, opposite Computer Mall | 7222 8855 | Facebook chery.rely.mongolia.sainmotors ✓; cherycvglobal.com ✓ |
+| MAXUS | SAIC MAXUS мэдээлэл `1-dNY02G…` | Official distributor **since 2025** | Darkhan: on the road from Darkhan Plaza to New Darkhan (212 team sheet "MAXUS" only) | 7299 8855 | en.saicmaxus.com ✓ |
+| HONGQI | FAW HONGQI Мэдээлэл `1lsnBH29…` | Official distributor **since 2024**; luxury sedans and SUVs with warranty, after-sales service, advice | Sansar, west of the Petrovis station | 7200 8855 | Facebook HongqiMongolia1 ✓ |
+
+**Brand count.** Eleven: the ten on the company banner plus HONGQI, which has a complete sheet,
+logo and distributor statement. HONGQI is the "eleventh brand" in the brief.
+
+### Conflicts kept for the content lead (not silently resolved)
+
+1. **RELY**: the brand file calls it "CHERY RELY", relaunched 2025 under Chery Group; an older sheet
+   says "Rely" under Chery Commercial Vehicle with phone 7299 8855. The site follows the dedicated
+   brand file (CHERY RELY, 7222 8855) and shows the brand as **RELY** in listings (its logo).
+2. **BESTUNE**: two introductions (with/without "70-year FAW history"); site uses the dedicated file.
+   Web link: faw.com (older sheet, certificate expired 2026-10-17) vs two Facebook pages (dedicated
+   file). Site links FAWBestuneMongolia.
+3. **MAXUS**: showroom (Darkhan) appears only in the 212 team's shared sheet, not in the MAXUS file.
+4. **JETOUR phone**: 7010-8855 (jetour.mn contact data) vs 7277-8855 (jetour.mn news posts).
+5. **Showroom-3 exterior** (garage doors, gravel yard) is labelled the JETOUR showroom since the
+   jetour.mn build; confirm it is not the service centre.
+6. **Dolgoon Nuur vs C1 TV building**: both are in Chingeltei; confirm they are separate showrooms.
+7. **RIDDARA intro** says it is "the export name of Riddara" (probably Geely Radar): reworded to "a Geely
+   Holding brand"; please confirm the intended wording.
+8. **RIDDARA statement** calls it a "luxury electric" brand (same words as the AITO statement); left out as a
+   likely copy-over. The site keeps the distributor fact and year only.
+9. **CHERY Saturday hours**: the CHERY site's contact page and footer say 09:00–19:00, its dealer page
+   09:00–21:00. The site follows the two that agree.
+10. **Shared sales lines**: 7299 8855 is given for both BESTUNE (Sansar) and MAXUS (Darkhan), and 7222 8855
+   for both 212 and RELY (Dolgoon Nuur). Both match their sheets; confirm they are intended.
+
+## 3. Images
+
+| Source file (Drive ID) | Brand / subject | Used for | Derivative key | Crop / focus | Status |
+|---|---|---|---|---|---|
+| repo `showroom-6.webp` (jetour.mn) | Sain Motors showroom, SAIN sign | Home locations band | `showroom-hall` | 2:1, y 300 | sourced |
+| AITO 7 Blue.jpg `1QjnIVvv…` (6531×4596, camera, Photoshop) | AITO M7 | AITO page gallery | `brand-aito-m7` | source image | sourced |
+| БРЭНДИЙН ҮНДСЭН АВТОМАШИНЫ ЗУРАГ `1kn4i_tq…` (5504×3072) | 212 | Home vehicle collection; 212 page | `brand-212` | source image | sourced |
+| repo `showroom-1.webp` (jetour.mn) | showroom floor and lounge | Retained source; previous photographic hero removed | — | — | sourced |
+| repo `showroom-5.webp` | advice desks, two-storey office | Home company intro | `showroom-lounge` | — | sourced |
+| repo `showroom-2.webp` | JETOUR line-up | About header | `showroom-entrance` | — | sourced |
+| repo `showroom-4.webp` | display corridor | About | `showroom-gallery` | — | sourced |
+| repo `showroom-3.webp` | building exterior | JETOUR showroom card | `showroom-exterior` | — | sourced (see conflict 5) |
+| repo `jetour-journey.webp` (jetour.mn) | JETOUR T2 | Home vehicle collection; JETOUR page | `jetour-journey` | — | sourced |
+| AITO 9 Midnight Black `1P5r0Xw6…` | AITO M9 | Home vehicle collection; AITO page | `brand-aito-m9` | focus 58 % 65 % | sourced |
+| AITO 5 Red.webp `1txZ9eRc…` | AITO M5 | AITO page | `brand-aito-m5` | — | sourced |
+| BYD_atto3_kv4 `1MFYo8LQ…` (Canon, Capture One) | BYD Atto 3 | Home vehicle collection; BYD page | `brand-byd-atto3` | focus 60 % 60 % | sourced |
+| 20230522宋PLUSDMI基础图右车侧 `1A2AwGQD…` | BYD Sealion 6 (press image) | BYD page | `brand-byd-sealion6` | — | sourced |
+| Exterior-Front 45° `1NKZsQid…` (Sony ILCE-7RM5) | BYD Shark 6 | BYD page gallery | `brand-byd-shark6` | source image | sourced |
+
+Masters in `assets/photos/brands/` are WebP q90 at ≤4096 px from these originals; derivatives are
+built by `npm run images`. Local team copies are now the active sources; BYD's coast,
+top/left and TI 7 images are also included in its model gallery.
+
+### Earlier image review (superseded by the user's source confirmation on 2026-10-18)
+
+The following were previously held back while sourcing manufacturer alternatives. The user has
+now explicitly identified Desktop `brands6` and `3brand` as the official supplied material and
+instructed us to use their images. They are used as supplied brand artwork, without claims about
+photographic capture, added specifications, or inferred model names. The source files are untouched.
+See [brand-material-inventory.json](brand-material-inventory.json).
+
+| File (Drive ID) | Evidence |
+|---|---|
+| Riddara RD6 `1kvKp9xm…` | PNG text chunk `hf-job-id` (Higgsfield); reflection does not match the car |
+| BYD TI 7 `hf_20261016_…png` `1oIp2NXv…` | Higgsfield file name; garbled text beside the headlamp |
+| hongqi.png `105AtbwdbbcL…` | plate reads "HONGOI HS5" |
+| rely.png, Bestune.png, Maxus.png | same 2752×1536 generator size as hongqi.png, no camera metadata, placard-style model plates |
+
+The eight supplied brands now use the local team images on the homepage and their brand pages.
+SOUEAST retains its manufacturer illustration (S09), since it is in neither supplied folder; CHERY uses
+the TIGGO 8 image from Sain Motors' CHERY site. Details are in [homepage-card-assets.md](homepage-card-assets.md).
+
+## 4. Logos
+
+| Brand | File used | Source |
+|---|---|---|
+| 212, RELY, BESTUNE, HONGQI, MAXUS | `* black.png` (as supplied) | Drive Logo folders |
+| BYD, RIDDARA | variant 2 (black) / variant 1 wordmark of the supplied SVG sheet | Drive Logo folders |
+| JETOUR, CHERY | banner-derived files | company brand banner, 2026-10-15 |
+| AITO | black/white wordmark band from its SVG sheet | Desktop `3brand/Aito/Logo/AITO_logo 1.svg` |
+| SOUEAST | Official white wordmark for homepage cards; light-background version still pending | SOUEAST global S09 header |
+
+Dark-context marks use the supplied white variants. Five PNG pairs were copied from Desktop
+`brands6`; BYD, RIDDARA and AITO are extracted from Desktop `3brand` presentation sheets with
+their background panels excluded. Original geometry and colours are preserved.
+
+## 5. Still needed
+
+- Written publication approval for everything above (status → `approved`).
+- SOUEAST: light-background logo, local introduction, showroom, contact.
+- CHERY: approval of the introduction and showroom details. The card and brand page now use the TIGGO 8 image
+  from Sain Motors' CHERY site (the earlier CHERY International TIGGO 9 image is not in the local line-up);
+  confirm it may be reused here.
+- A valid TLS certificate for sainmotors.mn (it serves an expired `*.webhost.mn` certificate; checked 2026-10-18).
+- Whether marketing2@esain.mn is the intended public address, or a general one such as info@.
+- Service-centre photographs (workshop, reception). No service image exists; none is implied.
+- Opening hours and map pins for the Dolgoon Nuur, Sansar, BYD 4S and Darkhan showrooms.
+- English review of web-team translations of the distributor statements (`draft`).

@@ -1,0 +1,938 @@
+{
+  "photos": {
+    "showroom-hall": {
+      "width": 2560,
+      "height": 1280,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-hall-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-hall-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-hall-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-hall-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-hall-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-hall-2560.webp"
+        ]
+      ]
+    },
+    "showroom-entrance": {
+      "width": 2560,
+      "height": 1920,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-entrance-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-entrance-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-entrance-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-entrance-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-entrance-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-entrance-2560.webp"
+        ]
+      ]
+    },
+    "showroom-exterior": {
+      "width": 2560,
+      "height": 1920,
+      "color": "#c8c8c8",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-exterior-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-exterior-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-exterior-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-exterior-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-exterior-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-exterior-2560.webp"
+        ]
+      ]
+    },
+    "showroom-gallery": {
+      "width": 2560,
+      "height": 1920,
+      "color": "#080818",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-gallery-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-gallery-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-gallery-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-gallery-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-gallery-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-gallery-2560.webp"
+        ]
+      ]
+    },
+    "showroom-lounge": {
+      "width": 2560,
+      "height": 1920,
+      "color": "#181818",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-lounge-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-lounge-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-lounge-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-lounge-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-lounge-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-lounge-2560.webp"
+        ]
+      ]
+    },
+    "jetour-journey": {
+      "width": 1920,
+      "height": 1037,
+      "color": "#888868",
+      "srcset": [
+        [
+          480,
+          "/media/jetour-journey-480.webp"
+        ],
+        [
+          768,
+          "/media/jetour-journey-768.webp"
+        ],
+        [
+          1080,
+          "/media/jetour-journey-1080.webp"
+        ],
+        [
+          1440,
+          "/media/jetour-journey-1440.webp"
+        ],
+        [
+          1920,
+          "/media/jetour-journey-1920.webp"
+        ]
+      ]
+    },
+    "brand-212": {
+      "width": 4096,
+      "height": 2286,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/brand-212-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-212-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-212-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-212-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-212-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-212-2560.webp"
+        ]
+      ]
+    },
+    "brand-aito-m5": {
+      "width": 3841,
+      "height": 2561,
+      "color": "#081818",
+      "srcset": [
+        [
+          480,
+          "/media/brand-aito-m5-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-aito-m5-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-aito-m5-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-aito-m5-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-aito-m5-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-aito-m5-2560.webp"
+        ]
+      ]
+    },
+    "brand-aito-m7": {
+      "width": 4096,
+      "height": 2882,
+      "color": "#587898",
+      "srcset": [
+        [
+          480,
+          "/media/brand-aito-m7-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-aito-m7-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-aito-m7-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-aito-m7-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-aito-m7-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-aito-m7-2560.webp"
+        ]
+      ]
+    },
+    "brand-aito-m9": {
+      "width": 3290,
+      "height": 2370,
+      "color": "#080818",
+      "srcset": [
+        [
+          480,
+          "/media/brand-aito-m9-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-aito-m9-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-aito-m9-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-aito-m9-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-aito-m9-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-aito-m9-2560.webp"
+        ]
+      ]
+    },
+    "brand-byd-atto3": {
+      "width": 4096,
+      "height": 2305,
+      "color": "#081818",
+      "srcset": [
+        [
+          480,
+          "/media/brand-byd-atto3-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-byd-atto3-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-byd-atto3-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-byd-atto3-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-byd-atto3-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-byd-atto3-2560.webp"
+        ]
+      ]
+    },
+    "brand-byd-sealion6": {
+      "width": 4096,
+      "height": 2196,
+      "color": "#b8b8c8",
+      "srcset": [
+        [
+          480,
+          "/media/brand-byd-sealion6-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-byd-sealion6-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-byd-sealion6-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-byd-sealion6-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-byd-sealion6-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-byd-sealion6-2560.webp"
+        ]
+      ]
+    },
+    "brand-byd-shark6": {
+      "width": 4096,
+      "height": 2291,
+      "color": "#283848",
+      "srcset": [
+        [
+          480,
+          "/media/brand-byd-shark6-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-byd-shark6-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-byd-shark6-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-byd-shark6-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-byd-shark6-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-byd-shark6-2560.webp"
+        ]
+      ]
+    },
+    "brand-byd-atto3-coast": {
+      "width": 4096,
+      "height": 2290,
+      "color": "#181818",
+      "srcset": [
+        [
+          480,
+          "/media/brand-byd-atto3-coast-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-byd-atto3-coast-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-byd-atto3-coast-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-byd-atto3-coast-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-byd-atto3-coast-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-byd-atto3-coast-2560.webp"
+        ]
+      ]
+    },
+    "brand-byd-shark6-top": {
+      "width": 4096,
+      "height": 2291,
+      "color": "#182838",
+      "srcset": [
+        [
+          480,
+          "/media/brand-byd-shark6-top-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-byd-shark6-top-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-byd-shark6-top-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-byd-shark6-top-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-byd-shark6-top-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-byd-shark6-top-2560.webp"
+        ]
+      ]
+    },
+    "brand-byd-shark6-side": {
+      "width": 4096,
+      "height": 2291,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/brand-byd-shark6-side-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-byd-shark6-side-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-byd-shark6-side-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-byd-shark6-side-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-byd-shark6-side-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-byd-shark6-side-2560.webp"
+        ]
+      ]
+    },
+    "brand-byd-ti7": {
+      "width": 2400,
+      "height": 1792,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/brand-byd-ti7-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-byd-ti7-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-byd-ti7-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-byd-ti7-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-byd-ti7-1920.webp"
+        ],
+        [
+          2400,
+          "/media/brand-byd-ti7-2400.webp"
+        ]
+      ]
+    },
+    "brand-soueast-s09": {
+      "width": 1138,
+      "height": 612,
+      "color": "#d8c8a8",
+      "srcset": [
+        [
+          480,
+          "/media/brand-soueast-s09-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-soueast-s09-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-soueast-s09-1080.webp"
+        ],
+        [
+          1138,
+          "/media/brand-soueast-s09-1138.webp"
+        ]
+      ]
+    },
+    "brand-chery-tiggo8": {
+      "width": 1843,
+      "height": 852,
+      "color": "#888888",
+      "srcset": [
+        [
+          480,
+          "/media/brand-chery-tiggo8-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-chery-tiggo8-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-chery-tiggo8-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-chery-tiggo8-1440.webp"
+        ],
+        [
+          1843,
+          "/media/brand-chery-tiggo8-1843.webp"
+        ]
+      ]
+    },
+    "brand-riddara-rd6": {
+      "width": 2400,
+      "height": 1792,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/brand-riddara-rd6-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-riddara-rd6-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-riddara-rd6-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-riddara-rd6-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-riddara-rd6-1920.webp"
+        ],
+        [
+          2400,
+          "/media/brand-riddara-rd6-2400.webp"
+        ]
+      ]
+    },
+    "brand-bestune": {
+      "width": 2752,
+      "height": 1536,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/brand-bestune-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-bestune-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-bestune-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-bestune-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-bestune-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-bestune-2560.webp"
+        ]
+      ]
+    },
+    "brand-rely": {
+      "width": 2752,
+      "height": 1536,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/brand-rely-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-rely-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-rely-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-rely-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-rely-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-rely-2560.webp"
+        ]
+      ]
+    },
+    "brand-maxus": {
+      "width": 2752,
+      "height": 1536,
+      "color": "#0898e8",
+      "srcset": [
+        [
+          480,
+          "/media/brand-maxus-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-maxus-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-maxus-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-maxus-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-maxus-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-maxus-2560.webp"
+        ]
+      ]
+    },
+    "brand-hongqi": {
+      "width": 2752,
+      "height": 1536,
+      "color": "#182838",
+      "srcset": [
+        [
+          480,
+          "/media/brand-hongqi-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-hongqi-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-hongqi-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-hongqi-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-hongqi-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-hongqi-2560.webp"
+        ]
+      ]
+    }
+  },
+  "logos": {
+    "212": {
+      "src": "/media/brand-212.png",
+      "width": 369,
+      "height": 160,
+      "density": 0.726,
+      "optical": 0.85,
+      "color": "#000000",
+      "ink": "original"
+    },
+    "jetour": {
+      "src": "/media/brand-jetour.png",
+      "width": 644,
+      "height": 61,
+      "density": 0.472,
+      "optical": 1,
+      "color": "#090505",
+      "ink": "original"
+    },
+    "chery": {
+      "src": "/media/brand-chery.png",
+      "width": 642,
+      "height": 85,
+      "density": 0.473,
+      "optical": 0.92,
+      "color": "#e9011a",
+      "ink": "original"
+    },
+    "byd": {
+      "src": "/media/brand-byd.png",
+      "width": 639,
+      "height": 123,
+      "density": 0.414,
+      "optical": 1,
+      "color": "#000000",
+      "ink": "original"
+    },
+    "riddara": {
+      "src": "/media/brand-riddara.png",
+      "width": 640,
+      "height": 60,
+      "density": 0.483,
+      "optical": 1,
+      "color": "#231815",
+      "ink": "original"
+    },
+    "aito": {
+      "src": "/media/brand-aito.png",
+      "width": 637,
+      "height": 87,
+      "density": 0.289,
+      "optical": 1,
+      "color": "#000000",
+      "ink": "original"
+    },
+    "bestune": {
+      "src": "/media/brand-bestune.png",
+      "width": 638,
+      "height": 149,
+      "density": 0.257,
+      "optical": 1.55,
+      "color": "#2f2f31",
+      "ink": "original"
+    },
+    "rely": {
+      "src": "/media/brand-rely.png",
+      "width": 639,
+      "height": 127,
+      "density": 0.396,
+      "optical": 0.9,
+      "color": "#000000",
+      "ink": "original"
+    },
+    "maxus": {
+      "src": "/media/brand-maxus.png",
+      "width": 642,
+      "height": 105,
+      "density": 0.303,
+      "optical": 1.4,
+      "color": "#000000",
+      "ink": "original"
+    },
+    "hongqi": {
+      "src": "/media/brand-hongqi.png",
+      "width": 627,
+      "height": 160,
+      "density": 0.231,
+      "optical": 1.32,
+      "color": "#3b1918",
+      "ink": "original"
+    }
+  },
+  "logosOnDark": {
+    "212": {
+      "src": "/media/brand-212-on-dark.png",
+      "width": 369,
+      "height": 160,
+      "density": 0.726,
+      "optical": 0.85,
+      "color": "#ffffff",
+      "ink": "original"
+    },
+    "jetour": {
+      "src": "/media/brand-jetour-on-dark.png",
+      "width": 644,
+      "height": 61,
+      "density": 0.465,
+      "optical": 1,
+      "color": "#ffffff",
+      "ink": "original"
+    },
+    "soueast": {
+      "src": "/media/brand-soueast-on-dark.png",
+      "width": 536,
+      "height": 36,
+      "density": 0.445,
+      "optical": 1,
+      "color": "#ffffff",
+      "ink": "original"
+    },
+    "byd": {
+      "src": "/media/brand-byd-on-dark.png",
+      "width": 639,
+      "height": 123,
+      "density": 0.414,
+      "optical": 1,
+      "color": "#fefefe",
+      "ink": "original"
+    },
+    "riddara": {
+      "src": "/media/brand-riddara-on-dark.png",
+      "width": 640,
+      "height": 60,
+      "density": 0.483,
+      "optical": 1,
+      "color": "#fdfdfd",
+      "ink": "original"
+    },
+    "aito": {
+      "src": "/media/brand-aito-on-dark.png",
+      "width": 643,
+      "height": 87,
+      "density": 0.292,
+      "optical": 1,
+      "color": "#fcfcfc",
+      "ink": "original"
+    },
+    "bestune": {
+      "src": "/media/brand-bestune-on-dark.png",
+      "width": 642,
+      "height": 150,
+      "density": 0.248,
+      "optical": 1.55,
+      "color": "#bdbdc0",
+      "ink": "original"
+    },
+    "rely": {
+      "src": "/media/brand-rely-on-dark.png",
+      "width": 639,
+      "height": 127,
+      "density": 0.396,
+      "optical": 0.9,
+      "color": "#ffffff",
+      "ink": "original"
+    },
+    "maxus": {
+      "src": "/media/brand-maxus-on-dark.png",
+      "width": 642,
+      "height": 105,
+      "density": 0.303,
+      "optical": 1.4,
+      "color": "#ffffff",
+      "ink": "original"
+    },
+    "hongqi": {
+      "src": "/media/brand-hongqi-on-dark.png",
+      "width": 627,
+      "height": 160,
+      "density": 0.231,
+      "optical": 1.32,
+      "color": "#b89695",
+      "ink": "original"
+    }
+  },
+  "sain": {
+    "sain-color": {
+      "src": "/media/sain-color.png",
+      "width": 412,
+      "height": 120
+    },
+    "sain-white": {
+      "src": "/media/sain-white.png",
+      "width": 412,
+      "height": 120
+    },
+    "sain-on-dark": {
+      "src": "/media/sain-on-dark.png",
+      "width": 458,
+      "height": 120
+    }
+  },
+  "social": {
+    "src": "/media/social-default.jpg",
+    "width": 1200,
+    "height": 630
+  }
+}

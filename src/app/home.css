@@ -1,0 +1,113 @@
+﻿/* Corporate homepage: warm charcoal, quiet satin red, and sourced brand photography. */
+body:has(.home-premium) {
+  --bg: #1b1a18;
+  --color-ink-alt: #1b1a18;
+  --color-charcoal: #22211e;
+  --text: #f3f0e9;
+  --text-2: #c2beb5;
+  --text-3: #a7a298;
+  --max: 96rem;
+  --gutter: clamp(1.25rem, 6vw, 6rem);
+  --header-h: 5.1875rem;
+}
+body:has(.home-premium) .site-header { background: var(--bg); border-bottom-color: var(--line); }
+body:has(.home-premium) .site-header__inner { gap: clamp(1.5rem, 3vw, 3.5rem); }
+body:has(.home-premium) .site-logo img { height: 2.5rem; }
+body:has(.home-premium) .site-nav { gap: 0.75rem; }
+body:has(.home-premium) .site-nav__link { color: var(--text); font-weight: 400; }
+body:has(.home-premium) .lang-switch__item[aria-current="true"] { box-shadow: inset 0 -2px var(--color-signal); border-radius: 0; }
+body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-h) + 1.5rem) 1.5rem; }
+.home-premium [id] { scroll-margin-top: 1.25rem; }
+
+/* Two deliberate lines on desktop; natural wrapping on smaller screens. */
+.corporate-hero { position: relative; isolation: isolate; display: grid; align-items: center; min-height: clamp(32rem, 35vw, 40rem); overflow: hidden; background: #11100f; }
+.corporate-hero__art { position: absolute; inset: 0; z-index: -2; opacity: 0.82; pointer-events: none; }
+.corporate-hero__art img { width: 100%; height: 100%; object-fit: cover; }
+.corporate-hero__art .ribbon { display: block; }
+.corporate-hero__art .ribbon__fallback { position: absolute; inset: 0; transition: opacity 500ms var(--ease); }
+.corporate-hero__art .ribbon[data-renderer="webgl"] .ribbon__fallback { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .corporate-hero__art .ribbon__fallback, .corporate-hero__art .ribbon__canvas { transition: none; }
+}
+.corporate-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(17 16 15 / 0.87), rgb(17 16 15 / 0.5) 53%, rgb(17 16 15 / 0.12)), linear-gradient(0deg, #11100f, transparent 35%); }
+.corporate-hero__inner { padding-block: clamp(4rem, 5.5vw, 6.5rem); }
+.corporate-hero h1 { font-size: clamp(3.25rem, 5.1vw, 6rem); font-weight: 450; line-height: 1.1; letter-spacing: -0.028em; }
+.corporate-hero h1 span { display: block; white-space: nowrap; }
+.corporate-hero__description { max-width: 38rem; margin-top: 1.75rem; color: #d6d1c8; font-size: clamp(1rem, 1.08vw, 1.125rem); line-height: 1.8; }
+.corporate-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
+.corporate-hero .corporate-hero__cta { min-height: 3.125rem; padding-inline: 1.25rem; border-color: #9c817f; border-radius: 3px; background: rgb(17 16 15 / 0.3); font-weight: 500; }
+.corporate-hero .corporate-hero__cta:hover { background: #ab0712; border-color: #ab0712; color: #fff; }
+.corporate-hero__cta svg { color: #ff7b83; }
+.corporate-hero__cta:hover svg { color: #fff; }
+.corporate-hero__secondary { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; color: #d6d1c8; font-size: 0.875rem; }
+.corporate-hero__secondary:hover { color: #fff; text-decoration: underline; text-underline-offset: 0.35em; }
+
+/* One consistent photo, logo, introduction and link hierarchy for every brand. */
+.home-premium .home-portfolio { padding-block: clamp(3.5rem, 5vw, 5rem) clamp(4.5rem, 6vw, 6.5rem); }
+.home-portfolio .section-head { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+.home-portfolio .display-2 { font-size: clamp(2.25rem, 3vw, 3.25rem); font-weight: 450; }
+.home-portfolio .section-head__side { display: grid; justify-items: end; gap: 0.25rem; }
+.home-portfolio .section-head__side p { max-width: 29rem; font-size: 0.9375rem; }
+.home-portfolio .section-head__side .text-link { font-size: 0.875rem; }
+.vehicle-portfolio .bc { --per-view: 3; --gap: clamp(1.25rem, 2vw, 2rem); }
+.vehicle-portfolio .bc__controls { margin-top: 1.5rem; justify-content: flex-end; }
+.vehicle-portfolio .bc__dots { display: none; }
+.vehicle-portfolio .bc__count { color: var(--text); }
+.vehicle-portfolio .bc__buttons { gap: 0.625rem; }
+.vehicle-card { width: 100%; min-width: 0; display: flex; flex-direction: column; background: var(--color-charcoal); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; transition: border-color 180ms var(--ease); }
+.vehicle-card:hover, .vehicle-card:focus-visible { border-color: #a29a8e; }
+.vehicle-card:focus-visible { outline-offset: 4px; }
+.vehicle-card__media { position: relative; aspect-ratio: 1.6; overflow: hidden; background: #292824; }
+.vehicle-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 450ms var(--ease); }
+.vehicle-card__body { display: flex; flex-direction: column; align-items: start; gap: 1rem; flex: 1; padding: 1.375rem 1.5rem 0.75rem; }
+.vehicle-card__heading { display: flex; align-items: center; justify-content: start; width: 100%; height: 2.75rem; margin: 0; }
+.vehicle-card__heading .brand-mark { --mark-base: 1.25rem; width: auto; max-width: 10.5rem; max-height: 2.5rem; object-fit: contain; object-position: left center; }
+.vehicle-card__body p { min-height: 3.4em; white-space: pre-line; color: var(--text-2); font-size: 0.9375rem; line-height: 1.7; }
+.vehicle-card__cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 0.75rem; width: 100%; margin-top: auto; min-height: 3rem; border-top: 1px solid var(--line); padding-top: 0.5rem; color: var(--text); font-size: 0.875rem; }
+.vehicle-card:hover .vehicle-card__cta, .vehicle-card:focus-visible .vehicle-card__cta { text-decoration: underline; text-underline-offset: 0.35em; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .vehicle-card:hover .vehicle-card__media img { transform: scale(1.025); } }
+
+/* A real showroom, followed by the existing service and contact sections. */
+.home-premium .home-experience { padding-block: 0 clamp(4.5rem, 6vw, 6.5rem); }
+.showroom-experience { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(2.5rem, 5vw, 5rem); }
+.showroom-experience__media { position: relative; min-width: 0; height: 100%; min-height: 29rem; overflow: hidden; border-radius: 4px; }
+.showroom-experience__media img { width: 100%; height: 100%; object-fit: cover; }
+.showroom-experience__media figcaption { position: absolute; left: 1.25rem; bottom: 1rem; background: rgb(0 0 0 / 0.75); color: #fff; padding: 0.3rem 0.6rem; font-size: 0.75rem; border-radius: 2px; }
+.showroom-experience__copy h2 { max-width: 12em; font-weight: 450; }
+.showroom-experience__copy > p { color: var(--text-2); margin-top: 1.5rem; font-size: 0.9375rem; line-height: 1.85; }
+.showroom-experience__copy ul { display: grid; gap: 0.875rem; margin-block: 1.75rem; }
+.showroom-experience__copy li { display: flex; align-items: start; gap: 0.75rem; font-size: 0.875rem; }
+.showroom-experience__copy li svg { flex-shrink: 0; margin-top: 0.2rem; color: #f37a80; }
+.showroom-experience .button { border-radius: 3px; }
+.home-premium .section--charcoal { border-block: 1px solid var(--line); }
+.home-premium .band-figure { border-radius: 4px; overflow: hidden; }
+
+@media (max-width: 63.99rem) {
+  body:has(.home-premium) { --header-h: 4.4375rem; }
+  body:has(.home-premium) .site-logo img { height: 2rem; }
+  .corporate-hero { min-height: 29rem; }
+  .corporate-hero__inner { padding-block: 4rem; }
+  .corporate-hero h1 { font-size: clamp(2.5rem, 5.6vw, 3.75rem); }
+  .corporate-hero h1 span { white-space: normal; }
+  .corporate-hero__description { max-width: 34rem; }
+  .corporate-hero__art { opacity: 0.5; }
+  .vehicle-portfolio .bc { --per-view: 2; }
+  .showroom-experience { grid-template-columns: 1fr; gap: 2.5rem; }
+  .showroom-experience__media { min-height: 0; height: auto; aspect-ratio: 1.6; }
+  .showroom-experience__copy { max-width: 40rem; }
+}
+@media (max-width: 39.99rem) {
+  .corporate-hero { min-height: 0; }
+  .corporate-hero__inner { padding-block: 3.5rem; }
+  .corporate-hero h1 { font-size: clamp(2rem, 8.6vw, 3rem); line-height: 1.15; letter-spacing: -0.025em; }
+  .corporate-hero__description { font-size: 0.9375rem; margin-top: 1.5rem; }
+  .corporate-hero__actions { gap: 0.5rem 1.5rem; margin-top: 1.5rem; }
+  .corporate-hero .corporate-hero__cta { min-height: 3rem; font-size: 0.875rem; }
+  .corporate-hero__art { inset: 0 -55% 0 -20%; opacity: 0.4; }
+  .corporate-hero::after { background: linear-gradient(90deg, rgb(17 16 15 / 0.85), rgb(17 16 15 / 0.5)), linear-gradient(0deg, #11100f, transparent 35%); }
+  .home-portfolio .section-head { display: grid; gap: 1rem; }
+  .home-portfolio .section-head__side { justify-items: start; }
+  .vehicle-portfolio .bc { --per-view: 1.08; --gap: 1rem; }
+  .vehicle-card__body { padding: 1.125rem 1.25rem 0.625rem; }
+  .showroom-experience__media { aspect-ratio: 1.3; }
+}

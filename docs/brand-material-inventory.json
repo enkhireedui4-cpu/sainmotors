@@ -1,0 +1,213 @@
+{
+  "confirmedByUser": "2026-10-18",
+  "photographs": [
+    {
+      "brand": "212",
+      "source": "brands6/212/Photo/БРЭНДИЙН ҮНДСЭН АВТОМАШИНЫ ЗУРАГ.jpg",
+      "output": "assets/photos/brands/212-mountains.webp",
+      "width": 5504,
+      "height": 3072,
+      "sourceSha256": "4cbaab24721e82e9a6e4b7c1e98d8f119c496c6699849d20d2d86075fc0f85b8"
+    },
+    {
+      "brand": "rely",
+      "source": "brands6/CHERY RELY/Photos/rely.png",
+      "output": "assets/photos/brands/rely-showcase.webp",
+      "width": 2752,
+      "height": 1536,
+      "sourceSha256": "cff46b9f6ddb30c6d8579ba308a9bd967a02a34bb61eb7e1d433d4bc03693a4f"
+    },
+    {
+      "brand": "bestune",
+      "source": "brands6/FAW BESTUNE/Photo/Bestune.png",
+      "output": "assets/photos/brands/bestune-showcase.webp",
+      "width": 2752,
+      "height": 1536,
+      "sourceSha256": "76b8d9bb5c57358d41bc4daa6488f52119566ad365317a12eba628b8c798f097"
+    },
+    {
+      "brand": "hongqi",
+      "source": "brands6/FAW HONGQI/Photos/hongqi.png",
+      "output": "assets/photos/brands/hongqi-showcase.webp",
+      "width": 2752,
+      "height": 1536,
+      "sourceSha256": "15743057e59156d66bfc98ae860af45c5275df760098c25dae19c57ddacdfc8b"
+    },
+    {
+      "brand": "maxus",
+      "source": "brands6/SAIC MAXUS/Photo/Maxus.png",
+      "output": "assets/photos/brands/maxus-showcase.webp",
+      "width": 2752,
+      "height": 1536,
+      "sourceSha256": "4b6d952512f12e6ff76a880f9fe346beb8bab65ef4a91ad8812bcc44e5ff47e5"
+    },
+    {
+      "brand": "aito",
+      "source": "3brand/Aito/M5/AITO 5 Red.webp",
+      "output": "assets/photos/brands/aito-m5.webp",
+      "width": 3841,
+      "height": 2561,
+      "sourceSha256": "e67eebf27417ab252ad985c364b20a377dac43382fe3cffb48b0d95c6e200174"
+    },
+    {
+      "brand": "aito",
+      "source": "3brand/Aito/M7/AITO 7 Blue.jpg",
+      "output": "assets/photos/brands/aito-m7.webp",
+      "width": 6531,
+      "height": 4596,
+      "sourceSha256": "c69fedee3be219bb1182622adc3d24cc500b5c24acfe71b10750bacdb9804fea"
+    },
+    {
+      "brand": "aito",
+      "source": "3brand/Aito/M9/AITO 9 Midnight Black (Dual-Tone)(1).jpg",
+      "output": "assets/photos/brands/aito-m9.webp",
+      "width": 3290,
+      "height": 2370,
+      "sourceSha256": "2c93f146598c8b026fbe1772ea41a8ad9f2138a8836dffbc5b0dc72cf32e14f8"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/Atto 3/BYD_atto3_kv3_海边路跑 拷贝.jpg",
+      "output": "assets/photos/brands/byd-atto3-coast.webp",
+      "width": 6000,
+      "height": 3354,
+      "sourceSha256": "4e769316a2d5ef04c732c9c0bd30fbb2801a5b1ef3767f69c90fd48d7102e472"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/Atto 3/BYD_atto3_kv4_城市路跑 拷贝.jpg",
+      "output": "assets/photos/brands/byd-atto3-city.webp",
+      "width": 6000,
+      "height": 3377,
+      "sourceSha256": "5d1b57b70dc0873c2a513ba5a4b90d1b3110d79da02ceea5051c18b265baf443"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/Sealion 6/20230522宋PLUSDMI基础图右车侧.jpg",
+      "output": "assets/photos/brands/byd-sealion6.webp",
+      "width": 11162,
+      "height": 5985,
+      "sourceSha256": "41c64611bb05cc9e185d67269c0ddd1e217bc58ae02f710127093431c211f9ab"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/Shark 6/Exterior-Front 45°.jpg",
+      "output": "assets/photos/brands/byd-shark6.webp",
+      "width": 5000,
+      "height": 2797,
+      "sourceSha256": "9a76a26c6d165b018599fecb2103dab26952d3e8b58bc9601e3f25cbf344036b"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/Shark 6/Exterior-Top View 45° Front.jpg",
+      "output": "assets/photos/brands/byd-shark6-top.webp",
+      "width": 5000,
+      "height": 2797,
+      "sourceSha256": "d0d30e72834b29dae836b362d75a97cd06fc453bd25f6499ba7a4c694d194c62"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/Shark 6/Left 45° blue.png",
+      "output": "assets/photos/brands/byd-shark6-side.webp",
+      "width": 6697,
+      "height": 3746,
+      "sourceSha256": "17a592b3fc46c0bebb2803a8c10d7472b08a01fd7bb0c41d2d1a17098fbb8fef"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/TI 7/hf_20261016_083153_80d5454c-749e-45b5-985b-dc7ce4e1cb3c.png",
+      "output": "assets/photos/brands/byd-ti7.webp",
+      "width": 2400,
+      "height": 1792,
+      "sourceSha256": "9e45eedae4f61d19ffb1703776d541a2ad42195b08b889336109c4fffdc59c9e"
+    },
+    {
+      "brand": "riddara",
+      "source": "3brand/Riddara/RD6/Riddara RD6.png",
+      "output": "assets/photos/brands/riddara-rd6.webp",
+      "width": 2400,
+      "height": 1792,
+      "sourceSha256": "a373a6101f2ebb26ae8bddd82ca14eeb416abc4516270edf34ba68d541c3929f"
+    }
+  ],
+  "logos": [
+    {
+      "brand": "212",
+      "source": "brands6/212/Logo/212 -black.png",
+      "output": "assets/logos/brand-212.png",
+      "sourceSha256": "844374897a1556b8a4e8b2d2e60859dac5f24bce5b00d6b48528ce2626ae5429"
+    },
+    {
+      "brand": "212",
+      "source": "brands6/212/Logo/212.png",
+      "output": "assets/logos/brand-212-on-dark.png",
+      "sourceSha256": "5bb86d5367d431cba8a5ab3202536d32f415d7ed5efc3c274cbc013bdfcca7fa"
+    },
+    {
+      "brand": "rely",
+      "source": "brands6/CHERY RELY/Logo/Rely black.png",
+      "output": "assets/logos/brand-rely.png",
+      "sourceSha256": "d17dab9b91caaecec1fe534a4b7ca4d6787fa1cd27edb95394b8b7aabf1526ef"
+    },
+    {
+      "brand": "rely",
+      "source": "brands6/CHERY RELY/Logo/Rely white.png",
+      "output": "assets/logos/brand-rely-on-dark.png",
+      "sourceSha256": "efeac8fbbbfaeaf410772c288b82123109fca3c8b6a5d083a266626567574877"
+    },
+    {
+      "brand": "bestune",
+      "source": "brands6/FAW BESTUNE/Logo/Bestune Black logo.png",
+      "output": "assets/logos/brand-bestune.png",
+      "sourceSha256": "190abf4fd52f7db9c6c55e57dded6cd773e434f1480971589df4b168573356ca"
+    },
+    {
+      "brand": "bestune",
+      "source": "brands6/FAW BESTUNE/Logo/Bestune white logo.png",
+      "output": "assets/logos/brand-bestune-on-dark.png",
+      "sourceSha256": "da43daf71f3603f360571b1f71c49d934349d4e45e87dee54cb4c79aade2e86a"
+    },
+    {
+      "brand": "hongqi",
+      "source": "brands6/FAW HONGQI/LOGO/Hongqi black.png",
+      "output": "assets/logos/brand-hongqi.png",
+      "sourceSha256": "93d13761fcb3fd21c6471b979cdadd555cc72a92033d2fa08a8e64ec3881b49b"
+    },
+    {
+      "brand": "hongqi",
+      "source": "brands6/FAW HONGQI/LOGO/Hongqi white.png",
+      "output": "assets/logos/brand-hongqi-on-dark.png",
+      "sourceSha256": "d82a83526053d8093631977e4d98cd689a9c8fb39cd2b6c6d9ffe6092f85a690"
+    },
+    {
+      "brand": "maxus",
+      "source": "brands6/SAIC MAXUS/Logo/Maxus black.png",
+      "output": "assets/logos/brand-maxus.png",
+      "sourceSha256": "39fcccefd2e4cb5b3ababbb0e60cdc18d48a2018dec0d730f0855f2c3268784f"
+    },
+    {
+      "brand": "maxus",
+      "source": "brands6/SAIC MAXUS/Logo/Maxus white.png",
+      "output": "assets/logos/brand-maxus-on-dark.png",
+      "sourceSha256": "7b0a36de41ab6bf5f902f932632c8604d2eb3ea5115dcb92806980faf96ff9c3"
+    },
+    {
+      "brand": "aito",
+      "source": "3brand/Aito/Logo/AITO_logo 1.svg",
+      "output": "assets/logos/brand-aito-sheet.svg",
+      "sourceSha256": "629b888919229e6467eb38827316b1fa1162e64c8515896706d2a01bb6de3991"
+    },
+    {
+      "brand": "byd",
+      "source": "3brand/BYD/Logo/BYD_logo 1.svg",
+      "output": "assets/logos/brand-byd.svg",
+      "sourceSha256": "774e16fad6f971bbbc38ff47bce1403f993cb5c25d2fdf110c133ec9c0671380"
+    },
+    {
+      "brand": "riddara",
+      "source": "3brand/Riddara/Logo/RIDDARA_logo 1.svg",
+      "output": "assets/logos/brand-riddara.svg",
+      "sourceSha256": "28ed37685a29671fbc4854c0cd5efc9f585be864901fae5c7536cf1c25a6ea42"
+    }
+  ]
+}
