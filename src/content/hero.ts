@@ -4,7 +4,7 @@ import type { Hero } from "./types";
 export const hero: Hero = {
   title: {
     status: "draft",
-    value: { mn: "Олон улсын брэндүүд,\nМонголд албан ёсоор", en: "International brands,\nofficially in Mongolia" },
+    value: { mn: "Олон улсын брэндүүд,\nМонголд албан ёсоор", en: "International automotive brands.\nOfficially represented in Mongolia." },
   },
   text: {
     status: "draft",

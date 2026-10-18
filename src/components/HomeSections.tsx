@@ -16,7 +16,6 @@ import type { Block, Service } from "@/content/types";
 import type { Locale } from "@/lib/i18n";
 import { pageHref } from "@/lib/routes";
 import { Icon } from "./Icon";
-import { LocationCard } from "./LocationCard";
 import { Picture } from "./Picture";
 
 export const draftAttr = (block: Pick<Block, "status">) => (block.status === "draft" ? "draft" : undefined);
@@ -33,13 +32,13 @@ function where(service: Service, locale: Locale): string {
   return service.locations.map((id) => getLocation(id).name[locale]).join(", ");
 }
 
-/** What each service covers, by brand and place. Used on the home page and the services page. */
+/** Service-page coverage by brand and location. */
 export function ServiceList({ locale, headingLevel = "h3" }: { locale: Locale; headingLevel?: "h2" | "h3" }) {
   const Heading = headingLevel;
   return (
     <ul className="service-list">
       {services.map((service) => (
-        <li key={service.id} className="service" data-status={draftAttr(service)}>
+        <li key={service.id} id={`service-${service.id}`} className="service" data-status={draftAttr(service)}>
           <Heading className="service__title">{service.title[locale]}</Heading>
           <p>{service.body[locale]}</p>
           <dl className="service__facts">
@@ -141,59 +140,26 @@ export function Story({ locale }: { locale: Locale }) {
   );
 }
 
-/** Text-led: no service-centre photography exists, and a showroom photo would misrepresent it. */
-export function ServiceSection({ locale }: { locale: Locale }) {
-  const section = pages.home.services;
+/** Counts derive from the existing brand, location and service records. */
+export function CompanyFacts({ locale }: { locale: Locale }) {
+  const locations = getLocations();
+  const facts = [
+    { key: "brands", value: getBrands().length, label: ui.company.factBrands[locale] },
+    { key: "showrooms", value: locations.filter((location) => location.kind === "showroom").length, label: ui.company.factShowrooms[locale] },
+    { key: "cities", value: new Set(locations.map((location) => location.city.en)).size, label: ui.company.factCities[locale] },
+    { key: "services", value: services.length, label: ui.company.factServices[locale] },
+  ];
   return (
     <div className="container">
-      <div className="section-head section-head--split">
-        <h2 id="services-heading" className="display-2" data-status={draftAttr(section)}>
-          {section.value[locale].heading}
-        </h2>
-        <div className="section-head__side">
-          <p data-status={draftAttr(section)}>{section.value[locale].body}</p>
-          <Link className="text-link" href={pageHref(locale, "services")}>
-            {ui.services.all[locale]}
-            <Icon name="chevronRight" size={18} />
-          </Link>
-        </div>
-      </div>
-      <div className="services-row">
-        <ServiceList locale={locale} />
-      </div>
-    </div>
-  );
-}
-
-/** Every showroom and the service centre, with each brand's own line, under a photo of one real showroom. */
-export function Locations({ locale }: { locale: Locale }) {
-  const section = pages.home.locations;
-  const pictured = getLocation("jetour-c1");
-  return (
-    <div className="container">
-      <div className="section-head section-head--split">
-        <h2 id="locations-heading" className="display-2" data-status={draftAttr(section)}>
-          {section.value[locale].heading}
-        </h2>
-        <div className="section-head__side">
-          <p data-status={draftAttr(section)}>{section.value[locale].body}</p>
-          <Link className="text-link" href={pageHref(locale, "contact")}>
-            {ui.nav.contact[locale]}
-            <Icon name="chevronRight" size={18} />
-          </Link>
-        </div>
-      </div>
-      <figure className="band-figure">
-        <Picture photo={sitePhotos.showroomBand} locale={locale} sizes="(min-width: 84rem) 84rem, 100vw" />
-        <figcaption>
-          {pictured.name[locale]}, {pictured.landmark?.[locale] ?? pictured.address[locale]}
-        </figcaption>
-      </figure>
-      <div className="location-list">
-        {getLocations().map((location) => (
-          <LocationCard key={location.id} location={location} locale={locale} />
+      <h2 id="services-heading" className="sr-only">{ui.company.factsHeading[locale]}</h2>
+      <dl className="company-facts">
+        {facts.map((fact) => (
+          <div className="company-facts__item" data-fact={fact.key} key={fact.key}>
+            <dt className="company-facts__label">{fact.label}</dt>
+            <dd className="company-facts__value">{fact.value}</dd>
+          </div>
         ))}
-      </div>
+      </dl>
     </div>
   );
 }

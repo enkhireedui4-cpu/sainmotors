@@ -98,8 +98,9 @@ See [brand-material-inventory.json](brand-material-inventory.json).
 | rely.png, Bestune.png, Maxus.png | same 2752×1536 generator size as hongqi.png, no camera metadata, placard-style model plates |
 
 The eight supplied brands now use the local team images on the homepage and their brand pages.
-SOUEAST retains its manufacturer illustration (S09), since it is in neither supplied folder; CHERY uses
-the TIGGO 8 image from Sain Motors' CHERY site. Details are in [homepage-card-assets.md](homepage-card-assets.md).
+SOUEAST retains its manufacturer illustration (S09), since it is in neither supplied folder; CHERY's homepage card uses
+the blue TIGGO 7 PRO MAX image supplied by the user as Desktop `37620.png` on 2026-10-18.
+Its full vehicle is preserved in a 1.6-ratio crop. Details are in [homepage-card-assets.md](homepage-card-assets.md).
 
 ## 4. Logos
 
@@ -119,9 +120,9 @@ their background panels excluded. Original geometry and colours are preserved.
 
 - Written publication approval for everything above (status → `approved`).
 - SOUEAST: light-background logo, local introduction, showroom, contact.
-- CHERY: approval of the introduction and showroom details. The card and brand page now use the TIGGO 8 image
-  from Sain Motors' CHERY site (the earlier CHERY International TIGGO 9 image is not in the local line-up);
-  confirm it may be reused here.
+- CHERY: approval of the introduction and showroom details. The homepage card uses the user-supplied
+  TIGGO 7 PRO MAX image (`37620.png`); the dedicated brand page uses the separately supplied
+  TIGGO 7 PRO MAX road photograph (`37628.png`). Both originals are preserved; the prior TIGGO 8 source is archived.
 - A valid TLS certificate for sainmotors.mn (it serves an expired `*.webhost.mn` certificate; checked 2026-10-18).
 - Whether marketing2@esain.mn is the intended public address, or a general one such as info@.
 - Service-centre photographs (workshop, reception). No service image exists; none is implied.

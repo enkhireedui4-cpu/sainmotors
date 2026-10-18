@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { VehiclePortfolio } from "@/components/BrandGrid";
+import { BrandShowroom } from "@/components/BrandGrid";
 import { Hero } from "@/components/Hero";
-import { Locations, ServiceSection, ShowroomExperience, draftAttr } from "@/components/HomeSections";
+import { HomeDiscover } from "@/components/HomeDiscover";
+import { CompanyFacts, ShowroomExperience, draftAttr } from "@/components/HomeSections";
 import { getBrands, pages } from "@/content";
 import type { Locale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({ locale, path: "", title: meta.title, description: meta.description, absoluteTitle: true });
 }
 
-// Corporate statement, the complete brand portfolio, then showrooms and after-sales support.
+// Corporate statement, portfolio, showroom introduction, company facts and editorial invitations.
 export default async function HomePage({ params }: Props) {
   const locale = (await params).lang as Locale;
   const brandsSection = pages.home.brands;
@@ -31,7 +32,7 @@ export default async function HomePage({ params }: Props) {
               {brandsSection.value[locale].heading}
             </h2>
           </div>
-          <VehiclePortfolio brands={brands} locale={locale} />
+          <BrandShowroom brands={brands} locale={locale} />
         </div>
       </section>
 
@@ -39,13 +40,11 @@ export default async function HomePage({ params }: Props) {
         <ShowroomExperience locale={locale} />
       </section>
 
-      <section className="section section--charcoal" aria-labelledby="services-heading">
-        <ServiceSection locale={locale} />
+      <section className="section company-facts-section" aria-labelledby="services-heading">
+        <CompanyFacts locale={locale} />
       </section>
 
-      <section className="section" aria-labelledby="locations-heading">
-        <Locations locale={locale} />
-      </section>
+      <HomeDiscover locale={locale} />
     </div>
   );
 }

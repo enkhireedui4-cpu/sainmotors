@@ -3,13 +3,13 @@
 import { brands } from "./brands";
 import { company, contact, locations, services, socials } from "./company";
 import { hero } from "./hero";
-import { homeExperience } from "./home";
+import { homeDiscover, homeExperience } from "./home";
 import { pages } from "./pages";
 import { sitePhotos } from "./photos";
 import media from "./generated/media.json";
 import type { Brand, BrandLink, ContentStatus, Location, Phone, PhotoKey } from "./types";
 
-export { company, contact, socials, services, hero, homeExperience, pages, sitePhotos };
+export { company, contact, socials, services, hero, homeDiscover, homeExperience, pages, sitePhotos };
 export { ui } from "./ui";
 
 export function getBrands(): Brand[] {
@@ -87,6 +87,6 @@ export function collectStatuses(): { path: string; status: ContentStatus }[] {
     if (typeof record.status === "string") out.push({ path, status: record.status as ContentStatus });
     for (const [key, child] of Object.entries(record)) walk(child, path ? `${path}.${key}` : key);
   };
-  walk({ company, contact, locations, services, hero, homeExperience, pages, sitePhotos, brands: getBrands() }, "");
+  walk({ company, contact, locations, services, hero, homeDiscover, homeExperience, pages, sitePhotos, brands: getBrands() }, "");
   return out;
 }

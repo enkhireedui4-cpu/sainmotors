@@ -51,19 +51,6 @@ export const pages = {
         },
       },
     } satisfies Section,
-    services: {
-      status: "draft",
-      value: {
-        mn: {
-          heading: "Худалдан авалтаас засвар үйлчилгээ хүртэл",
-          body: "Үйлчилгээний хамрах хүрээ брэнд бүрт өөр тул өөрийн брэндээ доороос хараарай.",
-        },
-        en: {
-          heading: "From purchase to after-sales",
-          body: "What’s included differs by brand, so check yours below.",
-        },
-      },
-    } satisfies Section,
     locations: {
       status: "draft",
       value: {

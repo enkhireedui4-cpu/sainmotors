@@ -1,12 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from "react";
+import { useCallback, useEffect, useId, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from "react";
 import { Icon } from "./Icon";
 
 interface BrandCarouselProps {
   /** One rendered card per brand (with ids for aria-describedby). */
   slides: ReactNode[];
-  /** The same cards without ids, used as inert loop copies. */
+  /** The same cards without ids; offscreen loop copies are inert. */
   copies: ReactNode[];
   names: string[];
   labels: { region: string; slide: string; previous: string; next: string; pause: string; play: string };
@@ -47,13 +47,14 @@ const wrap = (i: number, n: number) => ((i % n) + n) % n;
  * the carousel, keyboard focus is inside it, it is off screen or the tab is
  * hidden. Any deliberate step (buttons, keys, swipe) stops it until the
  * visitor presses play. With reduced motion it never starts.
- * `resumeAfterInteraction` keeps autoplay active over hover and focused controls,
- * restarting the interval after input. Focus on a card always holds that card still.
+ * `resumeAfterInteraction` restarts the interval after manual input once hover
+ * and keyboard focus leave. Every focused control holds the carousel still.
  *
  * Cards per view come from the CSS custom property --per-view (container
  * breakpoints in globals.css).
  */
 export function BrandCarousel({ slides, copies, names, labels, interval = 5000, autoPlay = true, resumeAfterInteraction = false, showPosition = true, showPlaybackControl = true }: BrandCarouselProps) {
+  const viewportId = useId();
   const n = slides.length;
   const hydrated = useHydrated();
   const reduced = useReducedMotion();
@@ -63,7 +64,7 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
   const nextAdvanceAt = useRef(0);
 
   const [pos, setPos] = useState(0);
-  const [instant, setInstant] = useState(false);
+  const [instant, setInstant] = useState(true);
   const [stopped, setStopped] = useState(!autoPlay);
   const [hover, setHover] = useState(false);
   const [focusInside, setFocusInside] = useState(false);
@@ -74,7 +75,7 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
 
   const current = wrap(pos, n);
   const autoplay = hydrated && !stopped && !reduced && n > 1;
-  const running = autoplay && !focusOnSlide && (resumeAfterInteraction || (!hover && !focusInside)) && onScreen && !tabHidden;
+  const running = autoplay && !focusOnSlide && !hover && !focusInside && onScreen && !tabHidden;
 
   // Back into the real range after moving onto a copy.
   const settle = useCallback(() => {
@@ -139,7 +140,10 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
   useEffect(() => {
     const viewport = viewportRef.current;
     if (!viewport) return;
-    const read = () => setPerView(parseFloat(getComputedStyle(viewport).getPropertyValue("--per-view")) || 1);
+    const read = () => {
+      setInstant(true);
+      setPerView(parseFloat(getComputedStyle(viewport).getPropertyValue("--per-view")) || 1);
+    };
     read();
     const ro = new ResizeObserver(read);
     ro.observe(viewport);
@@ -163,9 +167,9 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
   // A focused card that is out of view slides into view.
   const onFocus = (event: React.FocusEvent) => {
     setFocusInside(true);
-    const slide = (event.target as HTMLElement).closest<HTMLElement>("[data-index]");
+    const slide = (event.target as HTMLElement).closest<HTMLElement>("[data-index], [data-loop-index]");
     setFocusOnSlide(Boolean(slide));
-    if (!slide) return;
+    if (!slide || slide.dataset.index === undefined) return;
     const index = Number(slide.dataset.index);
     const visible = Math.max(1, Math.floor(perView));
     if (index < current || index >= current + visible) setPos(index);
@@ -182,6 +186,21 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
     const dir = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
     if (!dir) return;
     event.preventDefault();
+    const slide = (event.target as HTMLElement).closest<HTMLElement>("[data-index], [data-loop-index]");
+    if (slide) {
+      const index = Number(slide.dataset.index ?? slide.dataset.loopIndex);
+      const next = wrap(index + dir, n);
+      nextAdvanceAt.current = 0;
+      if (!resumeAfterInteraction) setStopped(true);
+      // Arrow keys move between links. Keep keyboard focus visible rather than
+      // sliding its current link behind the viewport. Wrap without a long rewind.
+      if (slide.dataset.loopIndex !== undefined || next !== index + dir) {
+        setInstant(true);
+        setPos(next);
+      }
+      rootRef.current?.querySelector<HTMLAnchorElement>(`[data-index="${next}"] a`)?.focus({ preventScroll: true });
+      return;
+    }
     step(dir, true);
   };
 
@@ -203,6 +222,7 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
   const after = hydrated ? Array.from({ length: BUFFER }, (_, k) => wrap(k, n)) : [];
   const trackStyle = { "--i": hydrated ? pos + BUFFER : 0 } as CSSProperties;
   const counter = (i: number) => String(i + 1).padStart(2, "0");
+  const visibleCopy = (slot: number) => slot >= pos && slot < pos + Math.ceil(perView);
 
   return (
     <div
@@ -221,7 +241,13 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
       onBlur={onBlur}
       onKeyDown={onKeyDown}
     >
-      <div ref={viewportRef} className="bc__viewport" onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
+      <div id={viewportId} ref={viewportRef} className="bc__viewport" onPointerDown={onPointerDown} onPointerUp={onPointerUp}
+        onScroll={event => {
+          // Focus can natively scroll an overflow:hidden element. In track
+          // mode its transform owns horizontal positioning, so do not add a
+          // second scroll offset. The no-JS horizontal scroller is unchanged.
+          if (hydrated && event.currentTarget.scrollLeft) event.currentTarget.scrollLeft = 0;
+        }}>
         <ul
           className="bc__track"
           style={trackStyle}
@@ -230,7 +256,7 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
           }}
         >
           {before.map((i, k) => (
-            <li key={`b${k}`} className="bc__slide" aria-hidden="true" inert>
+            <li key={`b${k}`} className="bc__slide" data-loop-index={i} aria-hidden={!visibleCopy(k - BUFFER) || undefined} inert={!visibleCopy(k - BUFFER)}>
               {copies[i]}
             </li>
           ))}
@@ -247,7 +273,7 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
             </li>
           ))}
           {after.map((i, k) => (
-            <li key={`a${k}`} className="bc__slide" aria-hidden="true" inert>
+            <li key={`a${k}`} className="bc__slide" data-loop-index={i} aria-hidden={!visibleCopy(n + k) || undefined} inert={!visibleCopy(n + k)}>
               {copies[i]}
             </li>
           ))}
@@ -276,15 +302,18 @@ export function BrandCarousel({ slides, copies, names, labels, interval = 5000, 
               type="button"
               className="icon-button"
               onClick={() => setStopped((s) => !s)}
+              data-paused={stopped}
               aria-label={autoplay ? labels.pause : labels.play}
+              aria-controls={viewportId}
+              title={autoplay ? labels.pause : labels.play}
             >
               <Icon name={autoplay ? "pause" : "play"} size={18} />
             </button>
           )}
-          <button type="button" className="icon-button" onClick={() => step(-1, true)} aria-label={labels.previous}>
+          <button type="button" className="icon-button" onClick={() => step(-1, true)} aria-label={labels.previous} aria-controls={viewportId} title={labels.previous}>
             <Icon name="chevronLeft" size={20} />
           </button>
-          <button type="button" className="icon-button" onClick={() => step(1, true)} aria-label={labels.next}>
+          <button type="button" className="icon-button" onClick={() => step(1, true)} aria-label={labels.next} aria-controls={viewportId} title={labels.next}>
             <Icon name="chevronRight" size={20} />
           </button>
         </div>

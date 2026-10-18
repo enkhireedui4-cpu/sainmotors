@@ -98,10 +98,15 @@ export const brands: Brand[] = [
   },
   {
     slug: "chery",
+    photo: {
+      key: "brand-chery-tiggo7-promax-road", status: "sourced", caption: "CHERY TIGGO 7 PRO MAX", focus: "38% 58%",
+      alt: { mn: "Гүүрэн дээгүүр явж буй цэнхэр CHERY TIGGO 7 PRO MAX", en: "Blue CHERY TIGGO 7 PRO MAX driving across a bridge" },
+      note: "Supplied by the user on 2026-10-18 (Desktop 37628.png) for the dedicated brand page; model name is visible on the vehicle plate. Full source preserved, with responsive object positioning keeping the entire vehicle in frame.",
+    },
     cardPhoto: {
-      key: "brand-chery-tiggo8", status: "sourced", caption: "CHERY TIGGO 8", focus: "38% 62%",
-      alt: { mn: "Орчин үеийн байшингийн өмнө зогсох хар CHERY TIGGO 8", en: "Black CHERY TIGGO 8 outside a modern house" },
-      note: "Manufacturer image as used on Sain Motors' CHERY site (Desktop chery/public/assets/img/hero-t8.webp); TIGGO 8 is in the local line-up.",
+      key: "brand-chery-tiggo7-promax", status: "sourced", caption: "CHERY TIGGO 7 PRO MAX", focus: "50% 50%",
+      alt: { mn: "Орчин үеийн барилгын өмнө зогсох цэнхэр CHERY TIGGO 7 PRO MAX", en: "Blue CHERY TIGGO 7 PRO MAX outside a modern building" },
+      note: "Supplied by the user on 2026-10-18 (Desktop 37620.png); model name is visible on the vehicle plate. Homepage card replacement, with a 1680 by 1050 crop preserving the whole vehicle.",
     },
     cardCopy: {
       status: "draft", source: "SUV category from CHERY International TIGGO range; web-team translation",

@@ -37,6 +37,7 @@ export const ui = {
     allBrandsNote: { mn: "Танилцуулга, шоурум, утас", en: "Introductions, showrooms and phones" },
     viewAll: { mn: "Бүх брэндийг харах", en: "View all brands" },
     overview: { mn: "Брэндийн танилцуулга", en: "Brand overview" },
+    explore: { mn: "Брэнд үзэх", en: "Explore brand" },
     portfolio: { mn: "Брэндийн багц", en: "Brand portfolio" },
     website: { mn: "Вэбсайт", en: "Website" },
     facebook: { mn: "Facebook хуудас", en: "Facebook page" },
@@ -73,6 +74,11 @@ export const ui = {
   },
 
   company: {
+    factsHeading: { mn: "Сайн Моторс тоогоор", en: "Sain Motors at a glance" },
+    factBrands: { mn: "Брэнд", en: "Brands" },
+    factShowrooms: { mn: "Үзэсгэлэнгийн танхим", en: "Showrooms" },
+    factCities: { mn: "Хот", en: "Cities" },
+    factServices: { mn: "Үйлчилгээний чиглэл", en: "Service categories" },
     more: { mn: "Бидний тухай дэлгэрэнгүй", en: "More about us" },
   },
 

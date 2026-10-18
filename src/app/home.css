@@ -49,23 +49,122 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
 .home-portfolio .section-head__side { display: grid; justify-items: end; gap: 0.25rem; }
 .home-portfolio .section-head__side p { max-width: 29rem; font-size: 0.9375rem; }
 .home-portfolio .section-head__side .text-link { font-size: 0.875rem; }
-.vehicle-portfolio .bc { --per-view: 3; --gap: clamp(1.25rem, 2vw, 2rem); }
-.vehicle-portfolio .bc__controls { margin-top: 1.5rem; justify-content: flex-end; }
-.vehicle-portfolio .bc__dots { display: none; }
-.vehicle-portfolio .bc__count { color: var(--text); }
-.vehicle-portfolio .bc__buttons { gap: 0.625rem; }
-.vehicle-card { width: 100%; min-width: 0; display: flex; flex-direction: column; background: var(--color-charcoal); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; transition: border-color 180ms var(--ease); }
-.vehicle-card:hover, .vehicle-card:focus-visible { border-color: #a29a8e; }
-.vehicle-card:focus-visible { outline-offset: 4px; }
-.vehicle-card__media { position: relative; aspect-ratio: 1.6; overflow: hidden; background: #292824; }
-.vehicle-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 450ms var(--ease); }
-.vehicle-card__body { display: flex; flex-direction: column; align-items: start; gap: 1rem; flex: 1; padding: 1.375rem 1.5rem 0.75rem; }
-.vehicle-card__heading { display: flex; align-items: center; justify-content: start; width: 100%; height: 2.75rem; margin: 0; }
-.vehicle-card__heading .brand-mark { --mark-base: 1.25rem; width: auto; max-width: 10.5rem; max-height: 2.5rem; object-fit: contain; object-position: left center; }
-.vehicle-card__body p { min-height: 3.4em; white-space: pre-line; color: var(--text-2); font-size: 0.9375rem; line-height: 1.7; }
-.vehicle-card__cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 0.75rem; width: 100%; margin-top: auto; min-height: 3rem; border-top: 1px solid var(--line); padding-top: 0.5rem; color: var(--text); font-size: 0.875rem; }
-.vehicle-card:hover .vehicle-card__cta, .vehicle-card:focus-visible .vehicle-card__cta { text-decoration: underline; text-underline-offset: 0.35em; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) { .vehicle-card:hover .vehicle-card__media img { transform: scale(1.025); } }
+/* Corporate portfolio: three equal photographs and a consistent editorial card. */
+.home-portfolio .bc { --per-view: 3; --gap: clamp(1.25rem, 1.8vw, 2rem); }
+.portfolio-card { display: flex; flex-direction: column; width: 100%; height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; background: var(--color-charcoal); text-decoration: none; transition: border-color 220ms var(--ease); }
+.portfolio-card__media { aspect-ratio: 1.6; overflow: hidden; background: var(--bg); }
+.portfolio-card__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Frame these supplied photographs for the cards without changing shared brand imagery. */
+.portfolio-card__media[data-photo="brand-aito-m9"] { --portfolio-image-position: 58% 80%; }
+.portfolio-card__media[data-photo="brand-riddara-rd6"] { --portfolio-image-position: 53% 40%; }
+.portfolio-card__body { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: clamp(1.25rem, 1.5vw, 1.5rem); padding-bottom: 1rem; }
+.portfolio-card__mark { display: flex; align-items: center; height: 2.75rem; margin: 0; }
+.portfolio-card__mark .brand-mark { --mark-base: 1.3rem; width: auto; max-width: 12rem; max-height: 2.75rem; object-fit: contain; object-position: left center; }
+.portfolio-card__copy { margin: 1rem 0 1.125rem; min-height: 3.5em; white-space: pre-line; text-wrap: pretty; color: var(--text-2); font-size: 0.9375rem; line-height: 1.75; }
+.portfolio-card__cta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2.75rem; margin-top: auto; padding-block: 0.875rem 0.125rem; border-top: 1px solid var(--line); color: var(--text); font-size: 0.875rem; font-weight: 500; }
+.portfolio-card__cta svg { transition: transform 220ms var(--ease); }
+.portfolio-card:focus-visible { outline: 2px solid var(--focus, #f3f0e9); outline-offset: -3px; }
+.portfolio-card:focus-visible .portfolio-card__cta svg { transform: translateX(2px); }
+.home-portfolio .bc__controls { justify-content: flex-end; margin-top: 1.5rem; }
+.home-portfolio .bc__buttons { gap: 0.5rem; }
+.home-portfolio .bc__buttons .icon-button { width: 2.75rem; height: 2.75rem; border: 1px solid var(--line-2); border-radius: 2px; background: transparent; touch-action: manipulation; transition: border-color 180ms var(--ease), background-color 180ms var(--ease), transform 120ms var(--ease); }
+.home-portfolio .bc__buttons .icon-button[data-paused="true"] { border-color: #827b71; background: rgb(255 255 255 / 0.065); }
+.home-portfolio .bc__buttons .icon-button:active { transform: translateY(1px); background: rgb(255 255 255 / 0.09); }
+.home-portfolio .bc__buttons .icon-button:focus-visible { outline: 2px solid var(--focus, #f3f0e9); outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-card:hover { border-color: #625d56; text-decoration: none; }
+  .portfolio-card:hover .portfolio-card__cta svg { transform: translateX(2px); }
+  .home-portfolio .bc__buttons .icon-button:hover { border-color: #827b71; background: rgb(255 255 255 / 0.035); }
+  .home-portfolio .bc__buttons .icon-button[data-paused="true"]:hover { background: rgb(255 255 255 / 0.09); }
+}
+@media (min-width: 64rem) and (max-width: 74.99rem) {
+  .portfolio-card__copy { font-size: 0.875rem; }
+}
+@media (max-width: 63.99rem) {
+  .home-portfolio .bc { --per-view: 2; --gap: 1.25rem; }
+}
+@media (max-width: 39.99rem) {
+  .home-portfolio .bc { --per-view: 1.06; --gap: 1rem; }
+  .portfolio-card__media { aspect-ratio: 1.55; }
+  .portfolio-card__media[data-photo="brand-soueast-s09"] { --portfolio-image-position: 32% 55%; }
+  .portfolio-card__media[data-photo="brand-byd-atto3"] { --portfolio-image-position: 72% 62%; }
+  .portfolio-card__copy { font-size: 0.875rem; }
+  .portfolio-card__mark .brand-mark { max-width: 10.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-card, .portfolio-card__cta svg, .home-portfolio .bc__buttons .icon-button { transition: none; }
+}
+
+/* A compact corporate facts band, using the same warm charcoal and restrained red as the hero. */
+.home-premium .company-facts-section { padding-block: clamp(1.5rem, 2vw, 2.5rem); }
+.company-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; background: var(--line); }
+.company-facts__item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; min-width: 0; min-height: 8rem; padding: 1.25rem 0.875rem; background: var(--color-charcoal); text-align: center; }
+.company-facts__item:first-child { background: #6c222c; }
+.company-facts__value { order: -1; color: var(--text); font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 450; font-variant-numeric: lining-nums tabular-nums; line-height: 1; letter-spacing: -0.025em; }
+.company-facts__label { color: var(--text-2); font-size: clamp(0.8125rem, 0.9vw, 0.9375rem); font-weight: 400; line-height: 1.5; }
+.company-facts__item:first-child .company-facts__label { color: #ead7da; }
+@media (max-width: 30rem) {
+  .company-facts__label { min-height: 3em; }
+}
+.home-premium #services-heading { scroll-margin-top: calc(var(--header-h) + 1.5rem); }
+.services-page .service[id] { scroll-margin-top: calc(var(--header-h) + 1.5rem); }
+
+/* Editorial invitations: one photograph, three deliberate choices, no automatic rotation. */
+.home-premium .home-discover { padding-block: clamp(3.5rem, 5vw, 5rem) clamp(4rem, 6vw, 6rem); }
+.home-discover .display-2 { max-width: 22em; margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem); font-size: clamp(2.125rem, 3.2vw, 3.5rem); font-weight: 450; line-height: 1.15; }
+.home-premium #discover-heading { scroll-margin-top: calc(var(--header-h) + 1.5rem); }
+.feature-tabs { min-width: 0; }
+.feature-tabs__nav { position: relative; display: flex; gap: clamp(1.25rem, 3vw, 3rem); overflow-x: auto; overscroll-behavior-x: contain; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+.feature-tabs__tab { position: relative; flex-shrink: 0; min-height: 3.25rem; padding: 0.75rem 0.125rem 1rem; border: 0; background: transparent; color: var(--text-2); font: inherit; font-size: 0.9375rem; font-weight: 500; line-height: 1.5; cursor: pointer; touch-action: manipulation; transition: color 180ms var(--ease); }
+.feature-tabs__tab::after { content: ""; position: absolute; inset: auto 0 0; height: 2px; background: var(--color-signal); transform: scaleX(0); transform-origin: left; transition: transform 220ms var(--ease); }
+.feature-tabs__tab[aria-selected="true"] { color: var(--text); }
+.feature-tabs__tab[aria-selected="true"]::after { transform: scaleX(1); }
+.feature-tabs__tab:focus-visible { outline: 2px solid var(--focus, #f3f0e9); outline-offset: -4px; }
+/* Inactive panels share the grid cell, reserving the tallest copy without exposing it to focus or AT. */
+.feature-tabs__panels { display: grid; }
+.feature-tabs__panel { grid-area: 1 / 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(22rem, 30%); grid-template-rows: minmax(0, 1fr) auto; min-width: 0; visibility: hidden; pointer-events: none; }
+.feature-tabs__panel[aria-hidden="false"] { visibility: visible; pointer-events: auto; }
+.feature-tabs__panel[data-align="start"] { grid-template-columns: minmax(22rem, 30%) minmax(0, 1fr); }
+.feature-tabs__panel[data-align="start"] .feature-tabs__copy { grid-column: 1; }
+.feature-tabs__photo { grid-area: 1 / 1 / 3 / 3; align-self: start; aspect-ratio: 2; overflow: hidden; background: var(--color-charcoal); }
+.feature-tabs__photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.feature-tabs__photo[data-photo="jetour-t2-idm"] { --feature-image-position: 62% 65%; }
+.feature-tabs__copy { position: relative; grid-area: 2 / 2; align-self: end; display: flex; flex-direction: column; min-width: 0; margin-top: 12rem; padding: clamp(1.5rem, 2.2vw, 2.25rem); background: #121110; }
+.feature-tabs__copy h3 { color: var(--text); font-family: var(--font-sans); font-size: clamp(1.25rem, 1.55vw, 1.625rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.3; text-wrap: balance; }
+.feature-tabs__copy p { margin-block: 1rem 1.25rem; color: var(--text-2); font-size: 0.9375rem; line-height: 1.8; text-wrap: pretty; }
+.feature-tabs__link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2.75rem; margin-top: auto; padding-block: 0.625rem; border-top: 1px solid var(--line); color: var(--text); font-size: 0.875rem; font-weight: 500; text-decoration: none; }
+.feature-tabs__link svg { color: #f37a80; flex-shrink: 0; transition: transform 200ms var(--ease); }
+.feature-tabs__link:focus-visible { outline: 2px solid var(--focus, #f3f0e9); outline-offset: 4px; }
+.feature-tabs__panel[aria-hidden="false"] .feature-tabs__photo img,
+.feature-tabs__panel[aria-hidden="false"] .feature-tabs__copy { animation: feature-reveal 300ms var(--ease) both; }
+@keyframes feature-reveal { from { opacity: 0; } to { opacity: 1; } }
+@media (hover: hover) and (pointer: fine) {
+  .feature-tabs__tab:hover { color: var(--text); }
+  .feature-tabs__link:hover { text-decoration: none; }
+  .feature-tabs__link:hover svg { transform: translate(2px, -2px); }
+}
+@media (max-width: 74.99rem) {
+  .feature-tabs__panel, .feature-tabs__panel[data-align="start"] { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; }
+  .feature-tabs__photo { grid-area: 1 / 1; aspect-ratio: 1.8; }
+  .feature-tabs__copy { grid-area: 2 / 1; align-self: stretch; margin-top: 0; padding: 1.75rem; }
+  .feature-tabs__copy p { max-width: 45em; }
+  .feature-tabs__link { align-self: flex-start; min-width: 12rem; }
+}
+@media (max-width: 39.99rem) {
+  .feature-tabs__nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; overflow: visible; margin-bottom: 1rem; }
+  .feature-tabs__tab { min-width: 0; min-height: 3.75rem; padding-inline: 0.125rem; font-size: 0.8125rem; text-wrap: balance; }
+  .feature-tabs__photo { aspect-ratio: 1.5; }
+  .feature-tabs__photo[data-photo="brand-byd-atto3-coast"] { --feature-image-position: 40% 60%; }
+  .feature-tabs__copy { padding: 1.5rem 1.25rem 1.125rem; }
+  .feature-tabs__copy h3 { font-size: 1.375rem; }
+  .feature-tabs__copy p { font-size: 0.875rem; }
+  .feature-tabs__link { align-self: stretch; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .feature-tabs__tab, .feature-tabs__tab::after, .feature-tabs__link svg { transition: none; }
+  .feature-tabs__panel[aria-hidden="false"] .feature-tabs__photo img,
+  .feature-tabs__panel[aria-hidden="false"] .feature-tabs__copy { animation: none; }
+}
 
 /* A real showroom, followed by the existing service and contact sections. */
 .home-premium .home-experience { padding-block: 0 clamp(4.5rem, 6vw, 6.5rem); }
@@ -80,7 +179,6 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
 .showroom-experience__copy li svg { flex-shrink: 0; margin-top: 0.2rem; color: #f37a80; }
 .showroom-experience .button { border-radius: 3px; }
 .home-premium .section--charcoal { border-block: 1px solid var(--line); }
-.home-premium .band-figure { border-radius: 4px; overflow: hidden; }
 
 @media (max-width: 63.99rem) {
   body:has(.home-premium) { --header-h: 4.4375rem; }
@@ -91,7 +189,6 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
   .corporate-hero h1 span { white-space: normal; }
   .corporate-hero__description { max-width: 34rem; }
   .corporate-hero__art { opacity: 0.5; }
-  .vehicle-portfolio .bc { --per-view: 2; }
   .showroom-experience { grid-template-columns: 1fr; gap: 2.5rem; }
   .showroom-experience__media { min-height: 0; height: auto; aspect-ratio: 1.6; }
   .showroom-experience__copy { max-width: 40rem; }
@@ -107,7 +204,5 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
   .corporate-hero::after { background: linear-gradient(90deg, rgb(17 16 15 / 0.85), rgb(17 16 15 / 0.5)), linear-gradient(0deg, #11100f, transparent 35%); }
   .home-portfolio .section-head { display: grid; gap: 1rem; }
   .home-portfolio .section-head__side { justify-items: start; }
-  .vehicle-portfolio .bc { --per-view: 1.08; --gap: 1rem; }
-  .vehicle-card__body { padding: 1.125rem 1.25rem 0.625rem; }
   .showroom-experience__media { aspect-ratio: 1.3; }
 }

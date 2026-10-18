@@ -53,6 +53,9 @@ const PHOTOS = {
   "brand-byd-ti7": { file: "brands/byd-ti7.webp" },
   "brand-soueast-s09": { file: "brands/soueast-s09.webp" },
   "brand-chery-tiggo8": { file: "brands/chery-tiggo8.webp" },
+  // User-supplied 37620.png: frame the complete vehicle, excluding excess architecture above it.
+  "brand-chery-tiggo7-promax": { file: "brands/chery-tiggo7-promax.png", crop: { left: 700, top: 450, width: 1680, height: 1050 } },
+  "brand-chery-tiggo7-promax-road": { file: "brands/chery-tiggo7-promax-road.png" },
   "brand-riddara-rd6": { file: "brands/riddara-rd6.webp" },
   "brand-bestune": { file: "brands/bestune-showcase.webp" },
   "brand-rely": { file: "brands/rely-showcase.webp" },

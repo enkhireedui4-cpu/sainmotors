@@ -5,9 +5,9 @@ import type { Locale } from "@/lib/i18n";
 import { brandHref } from "@/lib/routes";
 import { BrandCarousel } from "./BrandCarousel";
 import { BrandMark } from "./BrandMark";
+import { Picture } from "./Picture";
 import { draftAttr } from "./HomeSections";
 import { Icon } from "./Icon";
-import { Picture } from "./Picture";
 
 /**
  * One brand card: a single link (no nested controls). On pointer devices the
@@ -86,43 +86,47 @@ export function BrandChooser({ brands, locale }: { brands: Brand[]; locale: Loca
   );
 }
 
-function VehicleBrandCard({ brand, locale, copy = false }: { brand: Brand; locale: Locale; copy?: boolean }) {
-  const description = brand.cardCopy ?? brand.teaser;
-  const photo = brand.cardPhoto ?? brand.photo;
-  const descId = copy ? undefined : `vehicle-brand-${brand.slug}`;
+/** Equal treatment: original photography, original mark, approved copy and one link. */
+function PortfolioCard({ brand, locale, copy: loopCopy = false }: { brand: Brand; locale: Locale; copy?: boolean }) {
+  const photo = (brand.cardPhoto ?? brand.photo)!;
+  const copy = brand.cardCopy ?? brand.teaser;
   return (
-    <Link href={brandHref(locale, brand.slug)} className="vehicle-card" aria-label={`${brand.name}: ${ui.brand.overview[locale]}`} aria-describedby={descId}>
-      <div className="vehicle-card__media">
-        {photo && <Picture photo={photo} locale={locale} sizes="(min-width: 96rem) 30rem, (min-width: 64rem) 30vw, (min-width: 40rem) 45vw, 90vw" />}
+    <Link className="portfolio-card" href={brandHref(locale, brand.slug)} tabIndex={loopCopy ? -1 : undefined} aria-label={`${brand.name}: ${ui.brand.explore[locale]}`}>
+      <div className="portfolio-card__media" data-photo={photo.key}>
+        <Picture photo={{ ...photo, focus: `var(--portfolio-image-position, ${photo.focus ?? "50% 50%"})` }} locale={locale} sizes="(min-width: 1745px) 490px, (min-width: 1024px) 28vw, (min-width: 640px) 43vw, 85vw" />
       </div>
-      <div className="vehicle-card__body">
-        <h3 className="vehicle-card__heading" translate="no">
+      <div className="portfolio-card__body">
+        <h3 className="portfolio-card__mark" translate="no">
           <BrandMark brand={brand} locale={locale} decorative onDark />
           <span className="sr-only">{brand.name}</span>
         </h3>
-        <p id={descId} data-status={draftAttr(description)}>{description.value[locale]}</p>
-        <span className="vehicle-card__cta">{locale === "mn" ? "Брэнд үзэх" : "Explore brand"}<Icon name="chevronRight" size={17} /></span>
+        <p className="portfolio-card__copy" data-status={draftAttr(copy)}>{copy.value[locale]}</p>
+        <span className="portfolio-card__cta">{ui.brand.explore[locale]}<Icon name="chevronRight" size={18} /></span>
       </div>
     </Link>
   );
 }
 
-/** All published brands share the same photo-led card and advance every 4.5 seconds. */
-export function VehiclePortfolio({ brands, locale }: { brands: Brand[]; locale: Locale }) {
+/** Every brand uses its existing photo, approved copy, original mark and route. */
+export function BrandShowroom({ brands, locale }: { brands: Brand[]; locale: Locale }) {
   return (
-    <div className="vehicle-portfolio">
-      <BrandCarousel
-        slides={brands.map((brand) => <VehicleBrandCard key={brand.slug} brand={brand} locale={locale} />)}
-        copies={brands.map((brand) => <VehicleBrandCard key={brand.slug} brand={brand} locale={locale} copy />)}
-        names={brands.map((brand) => brand.name)}
-        autoPlay
-        interval={4500}
-        resumeAfterInteraction
-        showPosition={false}
-        showPlaybackControl={false}
-        labels={{ region: ui.brand.portfolio[locale], slide: ui.carousel.slide[locale], previous: ui.carousel.previous[locale], next: ui.carousel.next[locale], pause: ui.carousel.pause[locale], play: ui.carousel.play[locale] }}
-      />
-    </div>
+    <BrandCarousel
+      slides={brands.map(b => <PortfolioCard key={b.slug} brand={b} locale={locale} />)}
+      copies={brands.map(b => <PortfolioCard key={b.slug} brand={b} locale={locale} copy />)}
+      names={brands.map(b => b.name)}
+      interval={5500}
+      resumeAfterInteraction
+      showPosition={false}
+      showPlaybackControl={false}
+      labels={{
+        region: ui.brand.portfolio[locale],
+        slide: ui.carousel.slide[locale],
+        previous: ui.carousel.previous[locale],
+        next: ui.carousel.next[locale],
+        pause: ui.carousel.pause[locale],
+        play: ui.carousel.play[locale],
+      }}
+    />
   );
 }
 

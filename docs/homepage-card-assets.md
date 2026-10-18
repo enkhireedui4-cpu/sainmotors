@@ -26,9 +26,19 @@ are now exposed in the brand facts. No prices, availability or technical specifi
 
 Only SOUEAST below remains active, since it is in neither supplied folder. JETOUR uses the T2 i-DM
 campaign image the user supplied on 2026-10-18 (Desktop `484076260_…_n.jpg` →
-`assets/photos/brands/jetour-t2-idm.jpg`, cropped below its logo overlay). CHERY now uses the TIGGO 8 image from Sain Motors' own CHERY site
-(Desktop `chery/public/assets/img/hero-t8.webp` → `assets/photos/brands/chery-tiggo8.webp`, SHA-256
-`7a8c99b8…f4e726d`), because TIGGO 9 is not in the local line-up (TIGGO 2, 4, 7, 8). The other five
+`assets/photos/brands/jetour-t2-idm.jpg`, cropped below its logo overlay). CHERY uses the blue TIGGO 7 PRO MAX
+photograph supplied by the user as Desktop `37620.png` on 2026-10-18. Its original 2643×1501 source is
+preserved at `assets/photos/brands/chery-tiggo7-promax.png` (SHA-256
+`e463ce5aaf5b7f29726482b41093e9941a4fa6994bcd150e674897ee8e6b3dd0`). The image pipeline extracts
+`left: 700, top: 450, width: 1680, height: 1050` to keep the whole vehicle in the 1.6-ratio card,
+then produces responsive WebP variants. The model name is visible on the vehicle plate;
+no stock or specification claims are inferred. The dedicated CHERY page uses the separate road photograph
+supplied as Desktop `37628.png` (3238×1821, SHA-256
+`324369bac9c445f2669a234546f687b96652e9fdb237f5dd7747bb7009f03604`), preserved in
+`assets/photos/brands/chery-tiggo7-promax-road.png`. Responsive object positioning at `38% 58%`
+keeps the full vehicle visible in the existing desktop/mobile 4:3 and tablet 1.6 frames.
+The previous TIGGO 8 source remains in the asset archive.
+The earlier TIGGO 9 hero was not in the local line-up (TIGGO 2, 4, 7, 8). The other five
 alternatives below have been replaced by the local team material at the user's request.
 
 Sources were checked and downloaded on 2026-10-18. Masters are under `assets/photos/brands/`;

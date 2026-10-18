@@ -573,6 +573,64 @@
         ]
       ]
     },
+    "brand-chery-tiggo7-promax": {
+      "width": 1680,
+      "height": 1050,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/brand-chery-tiggo7-promax-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-chery-tiggo7-promax-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-chery-tiggo7-promax-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-chery-tiggo7-promax-1440.webp"
+        ],
+        [
+          1680,
+          "/media/brand-chery-tiggo7-promax-1680.webp"
+        ]
+      ]
+    },
+    "brand-chery-tiggo7-promax-road": {
+      "width": 3238,
+      "height": 1821,
+      "color": "#f8f8f8",
+      "srcset": [
+        [
+          480,
+          "/media/brand-chery-tiggo7-promax-road-480.webp"
+        ],
+        [
+          768,
+          "/media/brand-chery-tiggo7-promax-road-768.webp"
+        ],
+        [
+          1080,
+          "/media/brand-chery-tiggo7-promax-road-1080.webp"
+        ],
+        [
+          1440,
+          "/media/brand-chery-tiggo7-promax-road-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-chery-tiggo7-promax-road-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-chery-tiggo7-promax-road-2560.webp"
+        ]
+      ]
+    },
     "brand-riddara-rd6": {
       "width": 2400,
       "height": 1792,

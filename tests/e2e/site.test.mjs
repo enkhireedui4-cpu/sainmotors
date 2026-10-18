@@ -75,36 +75,23 @@ async function open(path, options = DESKTOP) {
     await context.close();
   });
 
-  test("photo collection advances after manual selection and links to the complete directory", async () => {
-    const { page, context } = await open("/en/");
-    assert.equal(await page.locator(".vehicle-portfolio .bc__slide[data-index]").count(), BRANDS.length);
-    const destinations = await page.locator(".vehicle-portfolio .bc__slide[data-index] > a").evaluateAll((links) => links.map((a) => a.getAttribute("href")));
-    assert.deepEqual(destinations, BRANDS.map((slug) => `/en/brands/${slug}/`));
-    assert.equal(await page.locator(".brand-directory").count(), 0);
-    await page.locator(".bc").scrollIntoViewIfNeeded();
-    assert.equal(await page.locator(".bc__position, .bc__count").count(), 0);
-    assert.equal(await page.locator(".bc__buttons button").count(), 2);
-    assert.equal(await page.locator(".vehicle-card a, .vehicle-card button").count(), 0);
-    for (const card of await page.locator(".bc__slide[data-index] .vehicle-card").all()) {
-      const text = await card.locator("p").innerText();
-      assert.ok(text.length > 40 && text.length <= 200);
-      assert.equal(await card.locator(".vehicle-card__media img:not(.brand-mark)").count(), 1);
-      assert.equal(await card.locator(".vehicle-card__heading img.brand-mark").count(), 1);
-      assert.equal(await card.locator(".vehicle-card__media--logo, .vehicle-card__name, .vehicle-card__model").count(), 0);
-      assert.equal(await card.locator("h3").count(), 1);
-    }
-    const ids = await page.locator(".vehicle-card p[id]").evaluateAll((es) => es.map((e) => e.id));
-    assert.equal(ids.length, new Set(ids).size);
-    await page.getByRole("button", { name: "Next slide", exact: true }).click();
-    await page.waitForFunction(() => document.querySelector(".bc")?.getAttribute("data-current") === "1");
-    await page.getByRole("button", { name: "Previous slide", exact: true }).click();
-    await page.waitForFunction(() => document.querySelector(".bc")?.getAttribute("data-current") === "0");
-    await page.waitForFunction(() => document.querySelector(".bc")?.getAttribute("data-current") === "1", null, { timeout: 5500 });
-    assert.equal(await page.locator(".home-portfolio .section-head__side").count(), 0);
-    await page.locator(".site-header .site-nav a[href='/en/brands/']").click();
-    await page.waitForURL(`${BASE}/en/brands/`);
-    assert.equal(await page.locator(".directory__row").count(), BRANDS.length);
-    await context.close();
+  test("all eleven photographic cards have their original mark, copy and existing destination", async () => {
+    const {page,context,errors}=await open('/en/');
+    await page.waitForSelector('.home-portfolio .bc[data-ready]');
+    const cards=page.locator('.home-portfolio .bc__slide[data-index] .portfolio-card');
+    assert.equal(await cards.count(),11);
+    assert.deepEqual(await cards.evaluateAll(cards=>cards.map(a=>a.getAttribute('href'))),BRANDS.map(s=>'/en/brands/'+s+'/'));
+    assert.equal(await cards.locator('.portfolio-card__media img').count(),11);
+    assert.equal(await cards.locator('.portfolio-card__mark img').count(),11);
+    assert.equal(await page.locator('.circular-carousel, .brand-showcase__index').count(),0);
+    await page.locator('.bc').scrollIntoViewIfNeeded();
+    await page.getByRole('button',{name:'Next slide',exact:true}).click();
+    await page.waitForFunction(()=>document.querySelector('.bc').dataset.current==='1');
+    await page.getByRole('button',{name:'Previous slide',exact:true}).click();
+    await page.waitForFunction(()=>document.querySelector('.bc').dataset.current==='0');
+    await page.locator('.site-logo').focus({preventScroll:true});await page.mouse.move(0,0);
+    await page.waitForFunction(()=>document.querySelector('.bc').dataset.current==='1',null,{timeout:6500});
+    assert.deepEqual(errors,[]);await context.close();
   });
 
   test("reduced motion keeps the decorative artwork static", async () => {
@@ -112,19 +99,25 @@ async function open(path, options = DESKTOP) {
     assert.equal(await page.locator(".corporate-hero button").count(), 0);
     const moving = await page.locator(".corporate-hero").evaluate((e) => e.getAnimations({ subtree: true }).filter((a) => a.playState === "running").length);
     assert.equal(moving, 0);
+    // Reduced motion prevents automatic card advancement.
+    await page.locator(".home-portfolio .bc").scrollIntoViewIfNeeded();
+    await page.waitForSelector(".bc[data-ready]");
+    assert.equal(await page.getByRole("button", { name: "Pause slideshow", exact: true }).count(), 0);
+    await page.waitForTimeout(6000);
+    assert.equal(await page.locator(".home-portfolio .bc").getAttribute("data-current"), "0");
     await context.close();
   });
 
-  test("a focused brand card stays visible while autoplay resumes after arrow controls", async () => {
-    const { page, context } = await open("/en/");
-    const carousel = page.locator(".vehicle-portfolio .bc");
-    await carousel.scrollIntoViewIfNeeded();
-    await page.locator(".bc__slide[data-index='0'] .vehicle-card").focus();
-    await page.waitForTimeout(4800);
-    assert.equal(await carousel.getAttribute("data-current"), "0");
-    assert.equal(await page.evaluate(() => document.activeElement?.getBoundingClientRect().left >= 0), true);
-    await page.getByRole("button", { name: "Next slide", exact: true }).click();
-    await page.waitForFunction(() => document.querySelector(".bc")?.getAttribute("data-current") === "2", null, { timeout: 5500 });
+  test("focused cards hold autoplay and leaving starts a fresh interval", async () => {
+    const {page,context}=await open('/en/');await page.locator('.bc').scrollIntoViewIfNeeded();await page.waitForSelector('.bc[data-ready]');
+    await page.locator('.bc__slide[data-index="7"] .portfolio-card').focus();
+    await page.waitForFunction(()=>document.querySelector('.bc').dataset.current==='7');
+    await page.waitForTimeout(6000);assert.equal(await page.locator('.bc').getAttribute('data-current'),'7');
+    assert.equal(await page.getByRole('button',{name:/^(Pause|Play) slideshow$/}).count(),0);
+    await page.locator('.site-logo').focus({preventScroll:true});await page.mouse.move(0,0);
+    const resumed=Date.now();
+    await page.waitForFunction(()=>document.querySelector('.bc').dataset.current==='8',null,{timeout:6500});
+    assert.ok(Date.now()-resumed>=5300,'focus exit starts a fresh 5.5-second interval');
     await context.close();
   });
 });
@@ -164,13 +157,10 @@ describe("navigation", () => {
     await context.close();
   });
 
-  test("brand tiles lead to the brand overview", async () => {
-    const { page, context } = await open("/en/");
-    assert.equal(await page.locator(".vehicle-portfolio .bc__slide[data-index]").count(), BRANDS.length);
-    await page.click(".vehicle-portfolio .bc__slide[data-index='0'] a");
-    await page.waitForURL(`${BASE}/en/brands/jetour/`);
-    assert.equal(await page.locator("h1 img[alt='JETOUR']").count(), 1);
-    await context.close();
+  test("brand cards open their existing dedicated brand pages", async () => {
+    const {page,context}=await open('/en/');await page.waitForSelector('.bc[data-ready]');
+    const card=page.locator('.bc__slide[data-index="3"] .portfolio-card');await card.focus();await page.waitForTimeout(760);await card.click();
+    await page.waitForURL(BASE+'/en/brands/byd/');assert.equal(await page.locator("h1 img[alt='BYD']").count(),1);await context.close();
   });
 });
 
@@ -207,28 +197,50 @@ describe("pages", () => {
     await context.close();
   });
 
-  test("home service columns line up their copy and facts in every row", async () => {
+  test("homepage facts stay compact in two balanced rows in both languages", async () => {
     const { page, context } = await open("/mn/");
-    for (const width of [800, 1440, 1920]) {
+    for (const width of [320, 375, 390, 768, 1024, 1440, 1920]) {
       await page.setViewportSize({ width, height: 1000 });
       for (const locale of ["mn", "en"]) {
         await page.goto(`${BASE}/${locale}/`);
         await page.evaluate(() => document.fonts.ready);
-        const rows = await page.$$eval(".services-row .service", (items) => {
+        assert.equal(await page.locator(".company-facts__item").count(), 4);
+        assert.equal(await page.locator(".home-service").count(), 0);
+        const rows = await page.$$eval(".company-facts__item", (items) => {
           const byRow = new Map();
           for (const item of items) {
             const top = Math.round(item.getBoundingClientRect().top);
-            const body = Math.round(item.querySelector("p").getBoundingClientRect().top);
-            const facts = Math.round(item.querySelector(".service__facts").getBoundingClientRect().top);
-            byRow.set(top, [...(byRow.get(top) ?? []), { body, facts }]);
+            const valueTop = Math.round(item.querySelector("dd").getBoundingClientRect().top);
+            byRow.set(top, [...(byRow.get(top) ?? []), valueTop]);
           }
           return [...byRow.values()];
         });
-        for (const row of rows) {
-          assert.equal(new Set(row.map((r) => r.body)).size, 1, `${locale} at ${width}px: copy starts at one line`);
-          assert.equal(new Set(row.map((r) => r.facts)).size, 1, `${locale} at ${width}px: facts start at one line`);
-        }
+        assert.equal(rows.length, 2, `${locale} at ${width}px`);
+        for (const row of rows) assert.ok(Math.max(...row) - Math.min(...row) <= 1, `${locale} at ${width}px: numbers align`);
+        const bounds = await page.locator(".company-facts-section").boundingBox();
+        assert.ok(bounds.height <= 400, `${locale} at ${width}px: compact facts band`);
+        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       }
+    }
+    await context.close();
+  });
+
+  test("homepage facts remain while location details live on the contact page", async () => {
+    const { page, context } = await open("/mn/");
+    for (const locale of ["mn", "en"]) {
+      await page.goto(`${BASE}/${locale}/`);
+      assert.deepEqual(await page.locator(".company-facts__value").allTextContents(), ["11", "6", "2", "4"]);
+      assert.equal(await page.locator(".bc__slide[data-index]").count(), 11);
+      assert.equal(await page.locator(".location-list .location").count(), 0);
+      assert.equal(await page.locator("#locations-heading, .band-figure").count(), 0);
+      assert.equal(await page.locator(".showroom-experience").count(), 1);
+      await page.locator(`.site-nav__link[href='/${locale}/services/']`).click();
+      await page.waitForURL(`${BASE}/${locale}/services/`);
+      assert.equal(await page.locator(".services-page .service").count(), 4);
+      assert.equal((await page.locator("#service-financing .service__facts dd").first().innerText()).trim(), "JETOUR, CHERY");
+      assert.equal((await page.locator("#service-repair .service__facts dd").first().innerText()).trim(), "JETOUR, BYD");
+      await page.goto(`${BASE}/${locale}/contact/`);
+      assert.equal(await page.locator(".location-list .location").count(), 7);
     }
     await context.close();
   });
