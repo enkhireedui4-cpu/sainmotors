@@ -67,7 +67,7 @@ facebook.com refuses anonymous requests.
 
 | Brand | Channel | Page name / evidence |
 |---|---|---|
-| JETOUR | jetour.mn; facebook.com/profile.php?id=100093386917379 | "Jetour Mongolia - Sain Motors", 19K followers (a namesake page, id 100094097087099, has 110 and is not used) |
+| JETOUR | jetour.mn; facebook.com/Sainmotors.mn | "Sain Motors - Сайн Моторс ХХК", where JETOUR news is posted (user's instruction, 2026-10-20); jetour.mn links the same page. The brand pages "Jetour Mongolia - Sain Motors" (id 100093386917379, 19K) and its 110-follower namesake are not used |
 | CHERY | facebook.com/CheryMongolia | "Chery Mongolia - Sain Motors"; chery.mn still hidden (no DNS) |
 | BYD | facebook.com/profile.php?id=61579315933755 | "BYD Mongolia - Sain Motors Authorized Distributor": the hyperlink behind the BYD sheet's web-link cell. facebook.com/bydmongolia belongs to another distributor |
 | MAXUS | facebook.com/profile.php?id=61572688311986 | "SAIC Maxus Mongolia - Sain Motors": the MAXUS sheet's "Facebook" hyperlink |
@@ -75,8 +75,9 @@ facebook.com refuses anonymous requests.
 | RELY | facebook.com/chery.rely.mongolia.sainmotors | "Chery Rely Mongolia - Sain Motors" |
 | BESTUNE | facebook.com/BestuneSainmotors | "Bestune Mongolia - Sain Motors", 18K followers, the dedicated sheet's hyperlink; replaces FAWBestuneMongolia ("FAW Bestune Mongolia - Sain Motors") |
 | HONGQI | facebook.com/HongqiMongolia1 | "Hongqi Mongolia - Sain motors" (the sheet's hyperlink points at the 212 page; its text is right) |
-| RIDDARA | none yet | "Riddara Mongolia - Sain Motors" is named in ikon.mn articles; address not found. The RIDDARA and AITO sheets carry BYD's hyperlink |
-| AITO, SOUEAST | none yet | No Sain Motors page found |
+| RIDDARA | facebook.com/p/Riddara-Mongolia-Sain-Motors-61572981115327 | "Riddara Mongolia - Sain Motors", 4.8K followers; address supplied by the user (the RIDDARA sheet carries BYD's hyperlink) |
+| AITO | facebook.com/p/AITO-Mongolia-Sain-Motors-61575759152945 | "AITO Mongolia - Sain Motors", 3.1K followers; address supplied by the user; the page's phone 7211 8855 matches AITO's sales line |
+| SOUEAST | none yet | "SOUEAST Mongolia - Sain Motors" exists (user's search result, 2.1K followers) but its address is not known yet |
 
 ## 3. Images
 

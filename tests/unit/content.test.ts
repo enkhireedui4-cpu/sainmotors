@@ -64,7 +64,7 @@ describe("brands", () => {
         if (link.kind === "website") expect(link.url, brand.slug).toMatch(/^https:\/\/[a-z0-9-]+\.mn\//);
       }
     }
-    for (const slug of ["chery", "byd", "212", "bestune", "rely", "maxus", "hongqi"]) {
+    for (const slug of ["chery", "byd", "riddara", "aito", "212", "bestune", "rely", "maxus", "hongqi"]) {
       expect(first(slug).kind, slug).toBe("facebook");
       expect(first(slug).url, slug).toMatch(/^https:\/\/www\.facebook\.com\//);
     }

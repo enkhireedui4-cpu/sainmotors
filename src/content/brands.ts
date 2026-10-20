@@ -55,7 +55,8 @@ export const brands: Brand[] = [
         en: "JETOUR builds SUVs for travel and adventure. Sain Motors is its official distributor in Mongolia, with a dedicated showroom and service centre in Ulaanbaatar. Full model details are on jetour.mn.",
       },
     },
-    links: [site("https://jetour.mn/"), facebook("https://www.facebook.com/profile.php?id=100093386917379", PAGES_CHECKED)],
+    // JETOUR news is posted on Sain Motors' main page ("Sain Motors - Сайн Моторс ХХК"), which jetour.mn also links.
+    links: [site("https://jetour.mn/"), facebook("https://www.facebook.com/Sainmotors.mn", PAGES_CHECKED)],
     location: "jetour-c1",
     phone: phone("70108855"),
     photo: {
@@ -279,8 +280,8 @@ export const brands: Brand[] = [
         en: "RIDDARA is a Geely Holding brand dedicated to fully electric pickups, led by the RD6 for work, daily driving and leisure. Sain Motors has been its official distributor in Mongolia since 2025.",
       },
     },
-    // "Riddara Mongolia - Sain Motors" exists (ikon.mn) but its address is not confirmed yet.
-    links: [],
+    // "Riddara Mongolia - Sain Motors", address supplied by the user (2026-10-20).
+    links: [facebook("https://www.facebook.com/p/Riddara-Mongolia-Sain-Motors-61572981115327/", PAGES_CHECKED)],
     location: "dolgoon-nuur",
     phone: phone("72708855"),
   },
@@ -320,8 +321,8 @@ export const brands: Brand[] = [
         en: "AITO, from Seres in partnership with Huawei, pairs HarmonyOS smart cockpits and intelligent driving with electrified powertrains across the M5, M7 and M9. Sain Motors has been its official distributor since 2025.",
       },
     },
-    // No Sain Motors AITO page found yet.
-    links: [],
+    // "AITO Mongolia - Sain Motors", address supplied by the user (2026-10-20); its listed phone matches AITO's sales line.
+    links: [facebook("https://www.facebook.com/p/AITO-Mongolia-Sain-Motors-61575759152945/", PAGES_CHECKED)],
     location: "sansar",
     phone: phone("72118855"),
     photo: {

@@ -480,7 +480,7 @@ describe("pages", () => {
       // The brand's own channel is the page's one primary action: jetour.mn for JETOUR, otherwise its Mongolian Facebook page.
       const primary = await page.locator(".brand-hero__actions .button--primary").evaluateAll((links) => links.map((a) => a.href));
       if (slug === "jetour") assert.deepEqual(primary, ["https://jetour.mn/"]);
-      else if (["chery", "byd", "212", "bestune", "rely", "maxus", "hongqi"].includes(slug)) assert.match(primary[0] ?? "", /^https:\/\/www\.facebook\.com\//, slug);
+      else if (["chery", "byd", "riddara", "aito", "212", "bestune", "rely", "maxus", "hongqi"].includes(slug)) assert.match(primary[0] ?? "", /^https:\/\/www\.facebook\.com\//, slug);
       assert.ok(primary.length <= 1, `${slug}: one primary action`);
     }
     await context.close();
