@@ -49,8 +49,13 @@ async function open(path, options = DESKTOP) {
 ﻿describe("corporate homepage", () => {
   test("hero shows the company's own building rather than a single-brand photograph", async () => {
     const { page, context, errors } = await open("/mn/");
-    assert.equal(await page.locator(".corporate-hero img").count(), 1);
+    assert.equal(await page.locator(".corporate-hero__media img").count(), 1);
     assert.match(await page.locator(".corporate-hero__media img").getAttribute("src"), /\/media\/sain-hq-aerial-\d+\.webp$/);
+    // Every brand the headline counts is along the foot of the hero, each a way into its page.
+    assert.deepEqual(
+      await page.locator(".corporate-hero__brands a").evaluateAll((links) => links.map((a) => a.getAttribute("href"))),
+      BRANDS.map((slug) => `/mn/brands/${slug}/`),
+    );
     assert.equal(await page.locator(".corporate-hero video, .corporate-hero canvas, .home-nav").count(), 0);
     assert.equal(await page.locator(".corporate-hero h1 > span").count(), 2);
     assert.deepEqual(errors, []);
@@ -85,15 +90,17 @@ async function open(path, options = DESKTOP) {
     await context.close();
   });
 
-  test("MN and EN desktop titles occupy two lines and the CTA clears the sticky header", async () => {
+  test("MN and EN desktop titles set each tier on one line and the CTA clears the sticky header", async () => {
     const { page, context } = await open("/mn/");
     for (const width of [1440, 1920]) {
       await page.setViewportSize({ width, height: 1000 });
       for (const locale of ["mn", "en"]) {
         await page.goto(`${BASE}/${locale}/`);
         await page.evaluate(() => document.fonts.ready);
-        const lines = await page.locator("h1").evaluate((e) => e.getBoundingClientRect().height / parseFloat(getComputedStyle(e).lineHeight));
-        assert.ok(Math.abs(lines - 2) < 0.05, `${locale} at ${width}px: ${lines} title lines`);
+        const tiers = await page.locator("h1 > span > span").evaluateAll((spans) => spans.map((e) => e.getBoundingClientRect().height / parseFloat(getComputedStyle(e).lineHeight)));
+        assert.equal(tiers.length, 2);
+        for (const lines of tiers) assert.ok(Math.abs(lines - 1) < 0.05, `${locale} at ${width}px: a tier wraps (${lines} lines)`);
+        assert.match(await page.locator("h1").innerText(), /\b11\b/, "the headline states the brand count");
         await page.click(".corporate-hero__cta");
         await page.waitForURL("**/#brands-heading");
         const visible = await page.evaluate(() => document.querySelector("#brands-heading").getBoundingClientRect().top >= document.querySelector(".site-header").getBoundingClientRect().bottom);

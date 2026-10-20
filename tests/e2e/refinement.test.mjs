@@ -13,11 +13,13 @@ test('English corporate headline uses natural copy and fits the existing hero', 
       await page.setViewportSize({ width, height: 1000 });
       await page.goto(`${BASE}/en/`);
       await page.evaluate(() => document.fonts.ready);
-      assert.equal((await page.locator('h1').innerText()).replace(/\s+/g,' ').trim(), 'International automotive brands. Officially represented in Mongolia.');
-      const bounds = await page.locator('h1').evaluate(e => ({ scroll: e.scrollWidth, width: e.clientWidth, page: document.documentElement.scrollWidth - innerWidth, lines: e.getBoundingClientRect().height / parseFloat(getComputedStyle(e).lineHeight) }));
+      assert.equal((await page.locator('h1').innerText()).replace(/\s+/g,' ').trim(), '11 brands. One official distributor.');
+      const bounds = await page.locator('h1').evaluate(e => ({ scroll: Math.max(...[...e.querySelectorAll(':scope > span')].map(s => s.scrollWidth)), width: e.clientWidth, page: document.documentElement.scrollWidth - innerWidth, tiers: [...e.querySelectorAll(':scope > span > span')].map(s => s.getBoundingClientRect().height / parseFloat(getComputedStyle(s).lineHeight)) }));
       assert.ok(bounds.scroll <= bounds.width + 1, `headline fits at ${width}`);
       assert.equal(bounds.page, 0);
-      if (width >= 1024) assert.ok(Math.abs(bounds.lines - 2) < 0.05);
+      // The count tier never wraps; on wide screens the role tier stays on one line too.
+      assert.ok(Math.abs(bounds.tiers[0] - 1) < 0.05, `count tier on one line at ${width}`);
+      if (width >= 1024) assert.ok(Math.abs(bounds.tiers[1] - 1) < 0.05, `role tier on one line at ${width}`);
     }
   } finally { await browser.close(); }
 });

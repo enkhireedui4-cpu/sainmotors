@@ -45,8 +45,10 @@ Scroll-driven depth with Motion (`motion/react`), on native scrolling: no scroll
 second animation engine. What is "3D" here is CSS perspective applied to real photographs and film; there is
 no vehicle model.
 
-- **Hero:** the photograph lays back (scale + rotateX in a 1400px perspective) as it leaves; the headline
-  rises faster. Headline lines rise in on load with CSS only.
+- **Hero:** "{count} брэндийн / албан ёсны дистрибьютер" in two tiers (the count follows brands.ts), with all
+  brand marks along its foot. One CSS load sequence: the photograph settles, each tier rises out of its mask,
+  the copy follows and the marks arrive 40 ms apart. On scroll the photograph lays back (scale + rotateX in a
+  1400px perspective) and the headline rises faster.
 - **Showroom walk:** six photographs stand one behind another; the scroll moves the camera through them.
 - **MEGA TEST DRIVE:** the homepage's one expanding moment: a framed muted loop opens to full bleed; the
   full film loads only in its dialog.

@@ -1,17 +1,19 @@
 import type { Hero } from "./types";
 
 // Corporate copy based on the brand-team distributor statements and showroom records.
+// "{count}" is the number of published brands (Hero fills it in), so the claim follows brands.ts.
 export const hero: Hero = {
   title: {
     status: "draft",
-    value: { mn: "Олон улсын брэндүүд,\nМонголд албан ёсоор", en: "International automotive brands.\nOfficially represented in Mongolia." },
+    source: "ikon.mn 2026-06-23 (Sain Motors, official distributor of 11 brands); brand list in brands.ts",
+    value: { mn: "{count} брэндийн\nалбан ёсны дистрибьютер", en: "{count} brands.\nOne official distributor." },
   },
   text: {
     status: "draft",
     source: "Distributor statements (Drive brand sheets); jetour.mn",
     value: {
-      mn: "Олон улсын автомашины брэндүүдийг Улаанбаатар, Дархан дахь шоурумуудаараа танд хүргэнэ.",
-      en: "Discover international automotive brands through our showrooms in Ulaanbaatar and Darkhan.",
+      mn: "Сайн Моторс олон улсын {count} автомашины брэндийг Монголд албан ёсоор төлөөлж, Улаанбаатар, Дархан дахь шоурумуудаараа танд хүргэнэ.",
+      en: "Sain Motors officially represents {count} international car brands in Mongolia, with showrooms in Ulaanbaatar and Darkhan.",
     },
   },
   cta: { label: { mn: "Брэндүүдтэй танилцах", en: "Explore our brands" }, href: "brands" },

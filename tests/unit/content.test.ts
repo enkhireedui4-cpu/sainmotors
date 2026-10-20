@@ -154,9 +154,14 @@ describe("hero", () => {
     expect(hero.secondaryCta.href).toBe("#showroom");
   });
 
-  it("leads with a corporate statement in both languages, without a single-brand hero", () => {
-    expect(hero.title.value.mn).toBe("Олон улсын брэндүүд,\nМонголд албан ёсоор");
-    expect(hero.title.value.en.split("\n")).toHaveLength(2);
+  it("leads with the number of brands represented, counted from the brand list, without a single-brand hero", () => {
+    expect(hero.title.value.mn).toBe("{count} брэндийн\nалбан ёсны дистрибьютер");
+    for (const value of Object.values(hero.title.value)) {
+      expect(value.split("\n")).toHaveLength(2);
+      expect(value.startsWith("{count} ")).toBe(true);
+    }
+    for (const value of Object.values(hero.text.value)) expect(value).toContain("{count}");
+    expect(getBrands()).toHaveLength(11);
     expect(hero).not.toHaveProperty("photo");
   });
 

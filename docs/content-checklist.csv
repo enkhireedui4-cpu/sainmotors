@@ -30,10 +30,10 @@ We offer JETOUR, CHERY, HONGQI, BYD, AITO, RIDDARA, 212, BESTUNE, MAXUS and RELY
 "Байршил","JETOUR үйлчилгээний төв — хаяг","Хан-Уул дүүрэг, ТЭЦ-4-ийн баруун хойно (Sandvik Customer Service Center-ийн ард)","North-west of Thermal Power Plant No. 4, Khan-Uul district (Behind the Sandvik Customer Service Center)","Зураг хэрэгтэй","Энх-Ирээдүй (веб)","","Эх сурвалжаас — баталгаажуулах","jetour.mn — src/lib/branches.ts"
 "Байршил","JETOUR үйлчилгээний төв — цаг","Даваа – Баасан 09:00 – 18:00; Бямба 10:00 – 15:00; Ням Амарна","Monday – Friday 09:00 – 18:00; Saturday 10:00 – 15:00; Sunday Closed","","Энх-Ирээдүй (веб)","","Эх сурвалжаас — баталгаажуулах","jetour.mn — src/lib/branches.ts"
 "Байршил","JETOUR үйлчилгээний төв — брэнд, газрын зураг","JETOUR","JETOUR — координат","","Энх-Ирээдүй (веб)","","Эх сурвалжаас — баталгаажуулах","jetour.mn — src/lib/branches.ts"
-"Hero","Гарчиг","Олон улсын брэндүүд,
-Монголд албан ёсоор","International automotive brands.
-Officially represented in Mongolia.","","Энх-Ирээдүй (веб)","","Ноорог — солих/батлах",""
-"Hero","Тайлбар","Олон улсын автомашины брэндүүдийг Улаанбаатар, Дархан дахь шоурумуудаараа танд хүргэнэ.","Discover international automotive brands through our showrooms in Ulaanbaatar and Darkhan.","","Энх-Ирээдүй (веб)","","Ноорог — солих/батлах","Distributor statements (Drive brand sheets); jetour.mn"
+"Hero","Гарчиг","{count} брэндийн
+албан ёсны дистрибьютер","{count} brands.
+One official distributor.","","Энх-Ирээдүй (веб)","","Ноорог — солих/батлах","ikon.mn 2026-06-23 (Sain Motors, official distributor of 11 brands); brand list in brands.ts"
+"Hero","Тайлбар","Сайн Моторс олон улсын {count} автомашины брэндийг Монголд албан ёсоор төлөөлж, Улаанбаатар, Дархан дахь шоурумуудаараа танд хүргэнэ.","Sain Motors officially represents {count} international car brands in Mongolia, with showrooms in Ulaanbaatar and Darkhan.","","Энх-Ирээдүй (веб)","","Ноорог — солих/батлах","Distributor statements (Drive brand sheets); jetour.mn"
 "Hero","Товчлуурууд","Брэндүүдтэй танилцах / Шоурум","Explore our brands / Showrooms","→ brands, #showroom","Энх-Ирээдүй (веб)","","Ноорог — солих/батлах",""
 "Брэнд","JETOUR — товч танилцуулга","JETOUR нь аялал, адал явдалд зориулсан SUV загваруудаараа танигдсан брэнд. Загвар бүрийн дэлгэрэнгүй, тоноглолыг Сайн Моторс-ын хөтөлдөг jetour.mn сайтаас үзнэ үү.","JETOUR is known for SUVs built around travel and adventure. Full model details and specifications are on jetour.mn, which Sain Motors runs.","лого: /media/brand-jetour.png","Энх-Ирээдүй (веб)","","Ноорог — солих/батлах",""
 "Брэнд","JETOUR — эрхийн хэллэг","Сайн Моторс нь JETOUR брэндийн Монгол дахь албан ёсны дистрибьютор.","Sain Motors is the official distributor of JETOUR in Mongolia.","","Энх-Ирээдүй (веб)","","Эх сурвалжаас — баталгаажуулах","jetour.mn page title: «JETOUR — Албан ёсны дистрибьютор SAIN MOTORS»"

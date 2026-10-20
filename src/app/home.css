@@ -24,16 +24,36 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
 .corporate-hero { position: relative; isolation: isolate; display: grid; align-items: start; min-height: clamp(34rem, calc(100svh - var(--header-h)), 58rem); overflow: clip; background: #0e0d0c; perspective: 1400px; perspective-origin: 50% 0%; }
 .corporate-hero__frame { position: absolute; inset: 0; z-index: -1; overflow: hidden; transform-origin: 50% 100%; will-change: transform; }
 .corporate-hero__media { position: absolute; inset: 0; transform-origin: 62% 55%; }
-.corporate-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.corporate-hero__media img { width: 100%; height: 100%; object-fit: cover; animation: hero-settle 1.8s var(--ease) both; }
 .corporate-hero__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgb(14 13 12 / 0.9), rgb(14 13 12 / 0.66) 36%, rgb(14 13 12 / 0.1) 68%), linear-gradient(0deg, rgb(14 13 12 / 0.75), transparent 28%); }
-.corporate-hero__content { position: relative; }
-.corporate-hero__inner { padding-block: clamp(4rem, 10vh, 8rem) 4rem; }
-.corporate-hero h1 { font-size: clamp(3rem, 5.2vw, 5.25rem); font-weight: 700; line-height: 1.04; letter-spacing: -0.03em; }
-.corporate-hero h1 span { display: block; white-space: nowrap; animation: hero-rise 0.6s var(--ease) both; animation-delay: calc(80ms + var(--line, 0) * 90ms); }
-.corporate-hero__description, .corporate-hero__actions { animation: hero-rise 0.6s var(--ease) 260ms both; }
+/* The content fills the hero so the brand marks can sit along its foot. */
+.corporate-hero__content { position: relative; display: flex; flex-direction: column; min-height: inherit; }
+.corporate-hero__inner { display: flex; flex: 1; flex-direction: column; padding-block: clamp(3.5rem, 9vh, 7rem) clamp(1.5rem, 4vh, 2.5rem); }
+/* Two tiers: the number of brands at display scale, the role beneath it. Each line rises out of its own mask;
+   the mask leaves room for Ё's dots and descenders. */
+.corporate-hero h1 { font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+.corporate-hero__line { display: block; overflow: clip; padding-block: 0.1em 0.14em; margin-block: -0.1em -0.14em; }
+.corporate-hero__line > span { display: block; white-space: nowrap; animation: hero-line-in 0.75s var(--ease) both; animation-delay: calc(120ms + var(--line, 0) * 110ms); }
+.corporate-hero__line:first-child { font-size: clamp(3.5rem, 8.4vw, 9.5rem); letter-spacing: -0.035em; }
+.corporate-hero__line:last-child { margin-top: 0.15em; font-size: clamp(2rem, 3.9vw, 4.25rem); letter-spacing: -0.02em; }
+.corporate-hero__description, .corporate-hero__actions { animation: hero-rise 0.6s var(--ease) 380ms both; }
+@keyframes hero-settle { from { transform: scale(1.1); } }
+@keyframes hero-line-in { from { transform: translateY(105%); } }
+/* Every brand Sain Motors represents, as a way in; they arrive one by one after the statement. */
+.corporate-hero__brands { display: grid; grid-template-columns: repeat(auto-fit, minmax(4.75rem, 1fr)); align-items: center; justify-items: center; gap: 0.5rem 0.75rem; margin: auto 0 0; padding: 1.25rem 0 0; border-top: 1px solid rgb(255 255 255 / 0.22); list-style: none; }
+.corporate-hero__brands li { animation: hero-mark-in 0.5s var(--ease) both; animation-delay: calc(620ms + var(--i, 0) * 40ms); }
+.corporate-hero__brands a { display: grid; place-items: center; min-width: 2.75rem; min-height: 2.75rem; padding-inline: 0.25rem; opacity: 0.8; transition: opacity 200ms var(--ease); }
+.corporate-hero__brands a:hover, .corporate-hero__brands a:focus-visible { opacity: 1; }
+.corporate-hero__brands .brand-mark { --mark-base: 1rem; max-width: 100%; }
+/* From 64rem all marks share one row: the first and last align with the text edges. */
+@media (min-width: 64rem) {
+  .corporate-hero__brands li:first-child { justify-self: start; }
+  .corporate-hero__brands li:last-child { justify-self: end; }
+}
+@keyframes hero-mark-in { from { opacity: 0; transform: translateY(0.5rem); } }
 @keyframes hero-rise { from { opacity: 0; transform: translateY(0.6em); } }
 .corporate-hero__description { max-width: 36rem; margin-top: 1.75rem; color: #e2ded6; font-size: clamp(1rem, 1.1vw, 1.1875rem); line-height: 1.75; }
-.corporate-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2.25rem; }
+.corporate-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-block: 2.25rem clamp(2.5rem, 6vh, 4rem); }
 .corporate-hero .corporate-hero__cta { min-height: 3.125rem; padding-inline: 1.375rem; border-color: var(--color-signal); border-radius: 3px; background: var(--color-signal); color: #fff; font-weight: 500; }
 .corporate-hero .corporate-hero__cta:hover { background: var(--color-signal-press); border-color: var(--color-signal-press); color: #fff; }
 .corporate-hero__cta svg { color: #fff; }
@@ -41,7 +61,8 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
 .corporate-hero__secondary:hover { color: #fff; text-decoration: underline; text-underline-offset: 0.35em; }
 @media (prefers-reduced-motion: reduce) {
   .corporate-hero__frame, .corporate-hero__media, .corporate-hero__content { transform: none !important; opacity: 1 !important; border-radius: 0 !important; }
-  .corporate-hero h1 span, .corporate-hero__description, .corporate-hero__actions { animation: none; }
+  .corporate-hero__media img, .corporate-hero__line > span, .corporate-hero__description, .corporate-hero__actions, .corporate-hero__brands li { animation: none; }
+  .corporate-hero__brands a { transition: none; }
 }
 
 /* One consistent photo, logo, introduction and link hierarchy for every brand. */
@@ -176,14 +197,19 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
   body:has(.home-premium) { --header-h: 4.4375rem; }
   body:has(.home-premium) .site-logo img { height: 2rem; }
   .corporate-hero { min-height: min(calc(100svh - var(--header-h)), 46rem); }
-  .corporate-hero__inner { padding-block: 4rem; }
-  .corporate-hero h1 { font-size: clamp(2.5rem, 6.4vw, 4rem); }
-  .corporate-hero h1 span { white-space: normal; }
+  .corporate-hero__inner { padding-block: 4rem 2rem; }
+  .corporate-hero__line:first-child { font-size: 11vw; }
+  .corporate-hero__line:last-child { font-size: 5.6vw; }
   .corporate-hero__description { max-width: 34rem; }
 }
 @media (max-width: 39.99rem) {
-  .corporate-hero__inner { padding-block: 3rem; }
-  .corporate-hero h1 { font-size: clamp(2.125rem, 9.4vw, 3rem); line-height: 1.08; letter-spacing: -0.025em; }
+  .corporate-hero__inner { justify-content: flex-end; padding-block: 3rem 1.5rem; }
+  .corporate-hero__line:first-child { font-size: 12.5vw; }
+  .corporate-hero__line:last-child { font-size: 7.4vw; }
+  .corporate-hero__line:last-child > span { white-space: normal; }
+  .corporate-hero__actions { margin-bottom: 1.75rem; }
+  .corporate-hero__brands { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.25rem 0.75rem; margin-top: 0; padding-top: 1rem; }
+  .corporate-hero__brands .brand-mark { --mark-base: 0.8125rem; max-width: 100%; }
   .corporate-hero__description { font-size: 0.9375rem; margin-top: 1.5rem; }
   .corporate-hero__actions { gap: 0.5rem 1.5rem; margin-top: 1.5rem; }
   .corporate-hero .corporate-hero__cta { min-height: 3rem; font-size: 0.875rem; }
