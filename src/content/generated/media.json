@@ -524,9 +524,9 @@
       ]
     },
     "brand-soueast-s09": {
-      "width": 1138,
-      "height": 612,
-      "color": "#d8c8a8",
+      "width": 3008,
+      "height": 1700,
+      "color": "#8898b8",
       "srcset": [
         [
           480,
@@ -541,8 +541,16 @@
           "/media/brand-soueast-s09-1080.webp"
         ],
         [
-          1138,
-          "/media/brand-soueast-s09-1138.webp"
+          1440,
+          "/media/brand-soueast-s09-1440.webp"
+        ],
+        [
+          1920,
+          "/media/brand-soueast-s09-1920.webp"
+        ],
+        [
+          2560,
+          "/media/brand-soueast-s09-2560.webp"
         ]
       ]
     },

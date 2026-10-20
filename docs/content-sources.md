@@ -77,7 +77,7 @@ facebook.com refuses anonymous requests.
 | HONGQI | facebook.com/HongqiMongolia1 | "Hongqi Mongolia - Sain motors" (the sheet's hyperlink points at the 212 page; its text is right) |
 | RIDDARA | facebook.com/p/Riddara-Mongolia-Sain-Motors-61572981115327 | "Riddara Mongolia - Sain Motors", 4.8K followers; address supplied by the user (the RIDDARA sheet carries BYD's hyperlink) |
 | AITO | facebook.com/p/AITO-Mongolia-Sain-Motors-61575759152945 | "AITO Mongolia - Sain Motors", 3.1K followers; address supplied by the user; the page's phone 7211 8855 matches AITO's sales line |
-| SOUEAST | none yet | "SOUEAST Mongolia - Sain Motors" exists (user's search result, 2.1K followers) but its address is not known yet |
+| SOUEAST | facebook.com/people/SOUEAST-Mongolia-Sain-Motors/61584232004745 | "SOUEAST Mongolia - Sain Motors", 2.1K followers; address supplied by the user. Its intro lists the showroom opposite the Holiday Inn, Chingeltei (the JETOUR C1 address), hours Mon–Fri 10:00–19:00, Sat 13:00–18:00, and phone 7299 8866; not yet added to the site |
 
 ## 3. Images
 
@@ -119,7 +119,7 @@ See [brand-material-inventory.json](brand-material-inventory.json).
 | rely.png, Bestune.png, Maxus.png | same 2752×1536 generator size as hongqi.png, no camera metadata, placard-style model plates |
 
 The eight supplied brands now use the local team images on the homepage and their brand pages.
-SOUEAST retains its manufacturer illustration (S09), since it is in neither supplied folder; CHERY's homepage card uses
+SOUEAST retains a manufacturer image, since it is in neither supplied folder: since 2026-10-20 the clean S09 key visual; CHERY's homepage card uses
 the blue TIGGO 7 PRO MAX image supplied by the user as Desktop `37620.png` on 2026-10-18.
 Its full vehicle is preserved in a 1.6-ratio crop. Details are in [homepage-card-assets.md](homepage-card-assets.md).
 

@@ -71,9 +71,9 @@ export const brands: Brand[] = [
   {
     slug: "soueast",
     cardPhoto: {
-      key: "brand-soueast-s09", status: "sourced", caption: "SOUEAST S09", focus: "34% 55%",
-      alt: { mn: "Хотын орчинд зогсож буй SOUEAST S09", en: "SOUEAST S09 parked in an urban setting" },
-      note: "SOUEAST global S09 exterior image; illustrates the brand, not local stock. https://www.soueast-motor.com/s09/",
+      key: "brand-soueast-s09", status: "sourced", caption: "SOUEAST S09", focus: "50% 60%",
+      alt: { mn: "Тунгалаг усан гадаргуу дээр зогсож буй ногоон SOUEAST S09", en: "Green SOUEAST S09 standing on still, reflective water" },
+      note: "SOUEAST global S09 key visual (kv.jpg) with its glowing S09 sky lettering painted out, replacing the container-yard shot at the user's request on 2026-10-20; illustrates the brand, not local stock. https://www.soueast-motor.com/s09/",
     },
     cardCopy: {
       status: "draft", source: "Vehicle category from https://www.soueast-motor.com/s09/; web-team translation",
@@ -98,7 +98,8 @@ export const brands: Brand[] = [
         en: "SOUEAST is part of the Sain Motors portfolio. For its models, availability and buying options, call Sain Motors’ general line.",
       },
     },
-    links: [],
+    // "SOUEAST Mongolia - Sain Motors", address supplied by the user (2026-10-20).
+    links: [facebook("https://www.facebook.com/people/SOUEAST-Mongolia-Sain-Motors/61584232004745/", PAGES_CHECKED)],
   },
   {
     slug: "chery",

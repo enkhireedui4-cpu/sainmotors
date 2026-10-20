@@ -46,7 +46,7 @@ Sources were checked and downloaded on 2026-10-18. Masters are under `assets/pho
 
 | Master | Model / source page | Exact image |
 |---|---|---|
-| `soueast-s09.webp` | [SOUEAST S09](https://www.soueast-motor.com/s09/) | https://www.soueast-motor.com/img-page/car/s09/cib_03.jpg |
+| `soueast-s09-kv.jpg` | [SOUEAST S09](https://www.soueast-motor.com/s09/) | https://www.soueast-motor.com/img-page/car/s09/kv.jpg (key visual, downloaded 2026-10-20; the glowing "S09" lettering in its sky was painted out with a fitted sky gradient, nothing else changed; replaced `cib_03.jpg`, a container-yard shot with a passer-by, at the user's request) |
 | `chery-tiggo9.webp` | [CHERY TIGGO 9](https://www.cheryinternational.com/pc/models/tiggo/tiggo9/index.shtml) | https://www.cheryinternational.com/data/tms/website/html/images/tiggo9/kv.jpg |
 | `riddara-rd6.webp` | [RIDDARA global](https://www.riddara.com/) | https://www.riddara.com/-/media/project/riddara/images/poster/home_s3_01-poster.jpg |
 | `bestune-t99.webp` | [BESTUNE Saudi Arabia T99](https://bestune-sa.com/t99/) | https://bestune-sa.com/wp-content/uploads/2022/05/t99-2.jpg |
