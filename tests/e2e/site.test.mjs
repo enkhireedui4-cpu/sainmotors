@@ -334,7 +334,8 @@ describe("pages", () => {
       assert.equal((await page.locator("#service-financing .service__facts dd").first().innerText()).trim(), "JETOUR, CHERY");
       assert.equal((await page.locator("#service-repair .service__facts dd").first().innerText()).trim(), "JETOUR, BYD");
       await page.goto(`${BASE}/${locale}/contact/`);
-      assert.equal(await page.locator(".location-list .location").count(), 7);
+      // Eight cards, six showroom sites: SOUEAST shares the JETOUR building.
+      assert.equal(await page.locator(".location-list .location").count(), 8);
     }
     await context.close();
   });

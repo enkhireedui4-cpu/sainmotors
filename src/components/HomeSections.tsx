@@ -180,9 +180,11 @@ export function Story({ locale }: { locale: Locale }) {
 /** Counts derive from the existing brand, location and service records. */
 export function CompanyFacts({ locale }: { locale: Locale }) {
   const locations = getLocations();
+  // Brand showrooms in the same building (by the same landmark) count once.
+  const showrooms = locations.filter((location) => location.kind === "showroom");
   const facts = [
     { key: "brands", value: getBrands().length, label: ui.company.factBrands[locale] },
-    { key: "showrooms", value: locations.filter((location) => location.kind === "showroom").length, label: ui.company.factShowrooms[locale] },
+    { key: "showrooms", value: new Set(showrooms.map((location) => location.landmark?.en ?? location.address.en)).size, label: ui.company.factShowrooms[locale] },
     { key: "cities", value: new Set(locations.map((location) => location.city.en)).size, label: ui.company.factCities[locale] },
     { key: "services", value: services.length, label: ui.company.factServices[locale] },
   ];

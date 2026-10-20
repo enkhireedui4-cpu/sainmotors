@@ -86,20 +86,23 @@ export const brands: Brand[] = [
     summary: {
       status: "draft",
       value: {
-        mn: "SOUEAST брэндийн загвар, худалдан авалтын нөхцөлийн талаар Сайн Моторс-ын ерөнхий утсаар лавлана уу.",
-        en: "For SOUEAST models and buying options, call Sain Motors’ general line.",
+        mn: "SOUEAST брэндийн загвар, худалдан авалтын нөхцөлийг Holiday Inn зочид буудлын урдах SOUEAST шоурумаас эсвэл борлуулалтын утсаар лавлана уу.",
+        en: "Ask about SOUEAST models and buying options at the SOUEAST showroom in front of the Holiday Inn, or call its sales line.",
       },
     },
     teaser: {
       status: "draft",
-      source: "Condensed by the web team from company brand banner only",
+      source: "Condensed by the web team from the company brand banner and the SOUEAST Facebook page intro (2026-10-20)",
       value: {
-        mn: "SOUEAST нь Сайн Моторс-ын брэндийн багцад багтдаг. Загвар, бэлэн байдал, худалдан авалтын нөхцөлийг Сайн Моторс-ын ерөнхий утсаар лавлана уу.",
-        en: "SOUEAST is part of the Sain Motors portfolio. For its models, availability and buying options, call Sain Motors’ general line.",
+        mn: "SOUEAST нь Сайн Моторс-ын брэндийн багцад багтдаг. Шоурум нь Чингэлтэй дүүрэгт, Holiday Inn зочид буудлын урд байрладаг. Загвар, бэлэн байдал, худалдан авалтын нөхцөлийг шоурумаас эсвэл борлуулалтын утсаар лавлана уу.",
+        en: "SOUEAST is part of the Sain Motors portfolio. Its showroom is in Chingeltei, in front of the Holiday Inn. Ask there or call its sales line about models, availability and buying options.",
       },
     },
     // "SOUEAST Mongolia - Sain Motors", address supplied by the user (2026-10-20).
     links: [facebook("https://www.facebook.com/people/SOUEAST-Mongolia-Sain-Motors/61584232004745/", PAGES_CHECKED)],
+    // Showroom and line from the same page's intro.
+    location: "soueast",
+    phone: phone("72998866"),
   },
   {
     slug: "chery",

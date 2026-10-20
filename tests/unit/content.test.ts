@@ -78,6 +78,17 @@ describe("brands", () => {
     }
   });
 
+  it("give SOUEAST the showroom, hours and line from its Facebook page", () => {
+    const soueast = brands.find((b) => b.slug === "soueast")!;
+    expect(soueast.location).toBe("soueast");
+    expect(soueast.phone?.display).toBe("7299-8866");
+    const showroom = getLocations().find((l) => l.id === "soueast")!;
+    expect(showroom.phone?.href).toBe("tel:+97672998866");
+    expect(showroom.hours?.map((h) => h.time.en)).toEqual(["10:00 – 19:00", "13:00 – 18:00", "Closed"]);
+    // Same building as the JETOUR showroom, so the showroom count does not grow.
+    expect(showroom.landmark?.en).toBe(getLocations().find((l) => l.id === "jetour-c1")!.landmark?.en);
+  });
+
   it("say when official sales began only with a year from the sheets, matching the milestones", () => {
     const fromMilestones = new Map(company.milestones.items.flatMap((m) => m.brands.map((slug) => [slug, m.year])));
     for (const brand of brands) {
