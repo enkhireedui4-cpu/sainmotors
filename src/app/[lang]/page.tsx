@@ -38,7 +38,7 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section home-experience" aria-labelledby="company-heading">
+      <section id="showroom" className="section home-experience" aria-labelledby="company-heading">
         <ShowroomExperience locale={locale} />
       </section>
 

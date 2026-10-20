@@ -74,6 +74,17 @@ async function open(path, options = DESKTOP) {
     await context.close();
   });
 
+  test("the hero's showroom link drops to the showroom walk, whose own action leads to contact", async () => {
+    const { page, context, errors } = await open("/mn/");
+    await page.click(".corporate-hero__secondary");
+    await page.waitForURL("**/mn/#showroom");
+    const gap = await page.evaluate(() => document.querySelector("#showroom").getBoundingClientRect().top - document.querySelector(".site-header").getBoundingClientRect().bottom);
+    assert.ok(gap >= 0 && gap < 60, `the showroom starts just below the sticky header (${gap}px)`);
+    assert.match(await page.locator(".depth__action").getAttribute("href"), /\/mn\/contact\/$/);
+    assert.deepEqual(errors, []);
+    await context.close();
+  });
+
   test("MN and EN desktop titles occupy two lines and the CTA clears the sticky header", async () => {
     const { page, context } = await open("/mn/");
     for (const width of [1440, 1920]) {

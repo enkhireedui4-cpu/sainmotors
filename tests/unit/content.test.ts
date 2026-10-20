@@ -151,7 +151,7 @@ describe("hero", () => {
     expect(filled(hero.cta.label)).toBe(true);
     expect(hero.cta.href).toBe("brands");
     expect(filled(hero.secondaryCta.label)).toBe(true);
-    expect(hero.secondaryCta.href).toBe("contact");
+    expect(hero.secondaryCta.href).toBe("#showroom");
   });
 
   it("leads with a corporate statement in both languages, without a single-brand hero", () => {

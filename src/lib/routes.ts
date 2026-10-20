@@ -24,7 +24,7 @@ export function brandHref(locale: Locale, slug: string): string {
 
 /** Resolves a content link: a page key ("brands") or an absolute URL. */
 export function contentHref(locale: Locale, href: string): string {
-  if (/^https?:\/\//.test(href)) return href;
+  if (/^https?:\/\//.test(href) || href.startsWith("#")) return href;
   if (href in pagePaths) return pageHref(locale, href as PageKey);
   return localePath(locale, href);
 }
