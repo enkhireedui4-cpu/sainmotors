@@ -11,7 +11,12 @@ export function LanguageSwitcher({ locale, label }: { locale: Locale; label: str
   const pathname = usePathname() ?? localePath(locale);
   return (
     <div className="lang-switch" role="group" aria-label={label}>
-      {locales.map((l) =>
+      {locales.map((l, i) => [
+        i > 0 && (
+          <span key={`sep-${l}`} className="lang-switch__sep" aria-hidden="true">
+            /
+          </span>
+        ),
         l === locale ? (
           <span key={l} className="lang-switch__item" aria-current="true" lang={l}>
             <span aria-hidden="true">{localeNames[l].short}</span>
@@ -23,7 +28,7 @@ export function LanguageSwitcher({ locale, label }: { locale: Locale; label: str
             <span className="sr-only">{localeNames[l].full}</span>
           </a>
         ),
-      )}
+      ])}
     </div>
   );
 }

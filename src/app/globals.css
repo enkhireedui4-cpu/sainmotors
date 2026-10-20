@@ -445,8 +445,9 @@ html:has(dialog[open]) {
   transform: scaleX(1);
 }
 
+/* MN / EN stays in the header on every screen: on phones it sits just before the menu button. */
 .lang-switch {
-  display: none;
+  display: inline-flex;
   align-items: center;
   gap: 0.125rem;
   padding-left: 1rem;
@@ -454,9 +455,33 @@ html:has(dialog[open]) {
   border-left: 1px solid var(--line);
 }
 
-@media (min-width: 64rem) {
-  .lang-switch {
-    display: inline-flex;
+@media (max-width: 63.99rem) {
+  .site-header__inner {
+    gap: 0.75rem;
+  }
+
+  .site-header__inner > .lang-switch {
+    gap: 0;
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+  }
+}
+
+/* The menu button shows its icon only; its name stays for assistive technology. */
+.menu-button {
+  justify-content: center;
+  min-width: 2.75rem;
+}
+
+@media (max-width: 63.99rem) {
+  .menu-button__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 }
 
@@ -464,13 +489,20 @@ html:has(dialog[open]) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.75rem;
+  min-width: 2rem;
   min-height: 2.75rem;
+  padding-inline: 0.25rem;
   border-radius: var(--radius);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--text-3);
+}
+
+.lang-switch__sep {
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  opacity: 0.7;
 }
 
 .lang-switch__item[aria-current="true"] {

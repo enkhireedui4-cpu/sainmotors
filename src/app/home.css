@@ -15,7 +15,6 @@ body:has(.home-premium) .site-header__inner { gap: clamp(1.5rem, 3vw, 3.5rem); }
 body:has(.home-premium) .site-logo img { height: 2.5rem; }
 body:has(.home-premium) .site-nav { gap: 0.75rem; }
 body:has(.home-premium) .site-nav__link { color: var(--text); font-weight: 400; }
-body:has(.home-premium) .lang-switch__item[aria-current="true"] { box-shadow: inset 0 -2px var(--color-signal); border-radius: 0; }
 body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-h) + 1.5rem) 1.5rem; }
 .home-premium [id] { scroll-margin-top: 1.25rem; }
 
