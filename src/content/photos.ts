@@ -69,14 +69,14 @@ export const sitePhotos = {
       focus: "50% 45%",
     },
     {
-      key: "showroom-test-drive",
+      key: "showroom-up-close",
       label: { mn: "Дэргэдээс нь", en: "Up close" },
       alt: {
-        mn: "Жолоочийн суудалд сууж автомашинтай танилцаж буй үйлчлүүлэгч",
-        en: "A customer getting to know a car from the driver’s seat",
+        mn: "Зөвлөх улбар шар RELY R8 пикапыг үйлчлүүлэгчдэд танилцуулж буй нь",
+        en: "A consultant introducing the orange RELY R8 pickup to visitors",
       },
       status: "sourced",
-      focus: "40% 50%",
+      focus: "55% 40%",
     },
   ],
   /** Home, services teaser: opens from a framed view to full width as it scrolls in. */

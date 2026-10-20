@@ -139,7 +139,7 @@ sources untouched. Alt text describes only what is visible; no location is claim
 | `showroom-interior` | 6 / 5I5A0461.JPG | `ce3eb499dd75` | Showroom walk, 03 | sourced |
 | `showroom-floor` | 6 / Screenshot 2026-10-16 115251.png | `f55a313a63e2` | Showroom walk, 04 | sourced |
 | `showroom-advice` | DSC03842.JPG | `8d01dc8289d0` | Showroom walk, 05 | sourced |
-| `showroom-test-drive` | DSC05068.JPG | `c323750eb0ea` | Showroom walk, 06 | sourced |
+| `showroom-up-close` | DSC05325.jpg (Lightroom) | `90f6b43d53dc` | Showroom walk, 06 (replaced DSC05068 on 2026-10-20) | sourced |
 | `service-workshop` | 6 / Screenshot 2026-10-16 115155.png (SERVICE sign) | `94d7a532bbee` | Home services | sourced |
 | `service-team` | 6 / Screenshot 2026-10-16 115038.png | `b0c673b4ab73` | Services page header | sourced |
 | `service-battery`, `service-battery-lift` | 6 / Screenshot 115514.png, 115430.png | `430dd391f943`, `1148a520fe9a` | Services team strip | sourced |

@@ -70,7 +70,7 @@ const PHOTOS = {
   "showroom-interior": { file: "site/showroom-interior.webp" },
   "showroom-floor": { file: "site/showroom-floor.webp" },
   "showroom-advice": { file: "site/showroom-advice.webp" },
-  "showroom-test-drive": { file: "site/showroom-test-drive.webp" },
+  "showroom-up-close": { file: "site/showroom-up-close.webp" },
   "service-workshop": { file: "site/service-workshop.webp" },
   "service-team": { file: "site/service-team.webp" },
   "service-battery": { file: "site/service-battery.webp" },

@@ -1003,34 +1003,34 @@
         ]
       ]
     },
-    "showroom-test-drive": {
+    "showroom-up-close": {
       "width": 4096,
-      "height": 2308,
+      "height": 2713,
       "color": "#080808",
       "srcset": [
         [
           480,
-          "/media/showroom-test-drive-480.webp"
+          "/media/showroom-up-close-480.webp"
         ],
         [
           768,
-          "/media/showroom-test-drive-768.webp"
+          "/media/showroom-up-close-768.webp"
         ],
         [
           1080,
-          "/media/showroom-test-drive-1080.webp"
+          "/media/showroom-up-close-1080.webp"
         ],
         [
           1440,
-          "/media/showroom-test-drive-1440.webp"
+          "/media/showroom-up-close-1440.webp"
         ],
         [
           1920,
-          "/media/showroom-test-drive-1920.webp"
+          "/media/showroom-up-close-1920.webp"
         ],
         [
           2560,
-          "/media/showroom-test-drive-2560.webp"
+          "/media/showroom-up-close-2560.webp"
         ]
       ]
     },
