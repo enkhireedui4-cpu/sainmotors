@@ -16,5 +16,5 @@ export const hero: Hero = {
   },
   cta: { label: { mn: "Брэндүүдтэй танилцах", en: "Explore our brands" }, href: "brands" },
   // Down to the homepage's showroom walk, whose own action then leads to the contact page.
-  secondaryCta: { label: { mn: "Байршил", en: "Locations" }, href: "#showroom" },
+  secondaryCta: { label: { mn: "Шоурум", en: "Showrooms" }, href: "#showroom" },
 };

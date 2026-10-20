@@ -3,7 +3,7 @@
 /** Homepage showroom walk: a heading for assistive technology and the one visible action. */
 export const homeExperience: Block<{ heading: string; cta: string }> = {
   status: "draft",
-  source: "Showroom records; the hero's \"Байршил\" link scrolls here and this action leads on to the contact page",
+  source: "Showroom records; the hero's \"Шоурум\" link scrolls here and this action leads on to the contact page",
   value: {
     mn: { heading: "Автомашинаа дэргэдээс нь мэдэр.", cta: "Шоурум, байршил" },
     en: { heading: "Experience your next car in person.", cta: "Find a showroom" },
