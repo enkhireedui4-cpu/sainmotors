@@ -34,6 +34,8 @@ export interface Photo {
   caption?: string;
   /** Camera view, shown after the caption where a gallery repeats a model. */
   view?: Localized;
+  /** Short visible label on a photo card, e.g. "Showroom". */
+  label?: Localized;
 }
 
 export interface Link {
@@ -138,4 +140,27 @@ export interface Service {
   locations?: LocationId[];
   status: ContentStatus;
   source: string;
+}
+
+/**
+ * A MEGA TEST DRIVE edition. Days are calendar dates in Asia/Ulaanbaatar
+ * (UTC+8, no daylight saving); an event is over once its last day has ended
+ * there (src/lib/events.ts). A registration link is shown only while an event
+ * is still ahead and the content team has supplied a verified URL.
+ */
+export interface DriveEvent {
+  id: string;
+  edition: number;
+  /** Edition subtitle, e.g. "Off-road edition". */
+  title?: Localized;
+  /** First and last day, "YYYY-MM-DD". */
+  days: [string, string];
+  /** Opening hours as published, e.g. "11:00–19:00". */
+  hours?: string;
+  venue: Localized;
+  status: ContentStatus;
+  source: string;
+  registrationUrl?: string;
+  /** Self-hosted film: a short muted loop and the full cut, both under /public/video. */
+  film?: { poster: Photo; teaser: string; full: string; duration: string };
 }

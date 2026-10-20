@@ -6,6 +6,7 @@ import {
   getLocation,
   getLocations,
   homeExperience,
+  homeServices,
   pages,
   sainLogos,
   services,
@@ -16,7 +17,10 @@ import type { Block, Service } from "@/content/types";
 import type { Locale } from "@/lib/i18n";
 import { pageHref } from "@/lib/routes";
 import { Icon } from "./Icon";
+import { Parallax } from "./Parallax";
 import { Picture } from "./Picture";
+import { Reveal } from "./Reveal";
+import { ShowroomDepth } from "./ShowroomDepth";
 
 export const draftAttr = (block: Pick<Block, "status">) => (block.status === "draft" ? "draft" : undefined);
 
@@ -84,23 +88,56 @@ export function Intro({ locale }: { locale: Locale }) {
   );
 }
 
-/** Homepage showroom invitation: short, practical copy beside a real showroom. */
+/** Homepage showroom: a walk through the showroom in depth, with one compact way to find a showroom. */
 export function ShowroomExperience({ locale }: { locale: Locale }) {
   const copy = homeExperience.value[locale];
+  const tour = sitePhotos.showroomTour;
+  const cards = tour.map((photo, index) => (
+    <figure key={photo.key} className="depth__figure">
+      <Picture photo={photo} locale={locale} sizes="(min-width: 48rem) 70vw, 100vw" />
+      <figcaption>
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        {photo.label?.[locale]}
+      </figcaption>
+    </figure>
+  ));
   return (
-    <div className="container showroom-experience">
-      <figure className="showroom-experience__media">
-        <Picture photo={sitePhotos.story} locale={locale} sizes="(min-width: 64rem) 48vw, 100vw" />
-        <figcaption>{locale === "mn" ? "Сайн Моторс шоурум" : "Sain Motors showroom"}</figcaption>
-      </figure>
-      <div className="showroom-experience__copy" data-status={draftAttr(homeExperience)}>
-        <h2 id="company-heading" className="display-2">{copy.heading}</h2>
-        <p>{copy.body}</p>
-        <ul>{copy.points.map((point) => <li key={point}><Icon name="chevronRight" size={16} />{point}</li>)}</ul>
-        <Link className="button button--primary" href={pageHref(locale, "contact")}>
-          {locale === "mn" ? "Шоурум, байршил" : "Find a showroom"}<Icon name="chevronRight" size={18} />
-        </Link>
-      </div>
+    <>
+      <h2 id="company-heading" className="sr-only" data-status={draftAttr(homeExperience)}>{copy.heading}</h2>
+      <ShowroomDepth
+        cards={cards}
+        label={locale === "mn" ? "Сайн Моторс-ын шоурумаар аялах зургууд" : "A photo walk through Sain Motors showrooms"}
+        action={
+          <Link className="depth__action" href={pageHref(locale, "contact")} data-status={draftAttr(homeExperience)}>
+            <Icon name="directions" size={18} />
+            {copy.cta}
+          </Link>
+        }
+      />
+    </>
+  );
+}
+
+/** Homepage services: the workshop photograph as a parallax window beside the service names. */
+export function HomeServices({ locale }: { locale: Locale }) {
+  const copy = homeServices.value[locale];
+  return (
+    <div className="container home-services__grid">
+      <Parallax className="home-services__media">
+        <Picture photo={sitePhotos.servicesTeaser} locale={locale} sizes="(min-width: 64rem) 56vw, 100vw" />
+      </Parallax>
+      <Reveal className="home-services__copy">
+        <div data-status={draftAttr(homeServices)}>
+          <h2 id="home-services-heading" className="display-2">{copy.heading}</h2>
+          <p>{copy.body}</p>
+          <ul className="home-services__list">
+            {services.map((service) => <li key={service.id}><Icon name="chevronRight" size={16} />{service.title[locale]}</li>)}
+          </ul>
+          <Link className="button button--primary" href={pageHref(locale, "services")}>
+            {copy.cta}<Icon name="chevronRight" size={18} />
+          </Link>
+        </div>
+      </Reveal>
     </div>
   );
 }

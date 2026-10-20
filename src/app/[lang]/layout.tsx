@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { MotionRoot } from "@/components/MotionRoot";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ui } from "@/content";
-import { inter, serif } from "@/lib/fonts";
+import { inter, zona } from "@/lib/fonts";
 import { isLocale, locales } from "@/lib/i18n";
 import { assertReleasable } from "@/lib/release";
 import { IS_PRODUCTION_ORIGIN, IS_RELEASE, SITE_URL } from "@/lib/site";
@@ -47,7 +48,7 @@ export default async function LangLayout({
   if (IS_RELEASE) assertReleasable();
 
   return (
-    <html lang={lang} className={`${serif.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={`${zona.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>{!IS_RELEASE && <script dangerouslySetInnerHTML={{ __html: REVIEW_SCRIPT }} />}</head>
       <body>
         <a className="skip-link" href="#main">
@@ -55,7 +56,7 @@ export default async function LangLayout({
         </a>
         <SiteHeader locale={lang} />
         <main id="main" tabIndex={-1}>
-          {children}
+          <MotionRoot>{children}</MotionRoot>
         </main>
         <SiteFooter locale={lang} />
       </body>

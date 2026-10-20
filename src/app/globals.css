@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./home.css";
+@import "./motion.css";
 
 /* ------------------------------------------------------------------
    Sain Motors — dark editorial system (docs/design-system.md)
@@ -23,7 +24,7 @@
   --color-signal: #e20a17;
   --color-signal-press: #c20914;
 
-  --font-display: var(--font-serif), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-zona), var(--font-inter), Arial, sans-serif;
   --font-sans: var(--font-inter), Arial, sans-serif;
 }
 
@@ -856,12 +857,15 @@ a.lang-switch__item:hover {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 1.125rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   color: #1f2125;
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 .brand-mark--small.brand-wordmark {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
 }
 
 .brand-mark--large.brand-wordmark {
@@ -871,7 +875,6 @@ a.lang-switch__item:hover {
 /* Stone plate: the neutral surface every logo sits on. */
 .brand-strip a,
 .timeline__brands a,
-.directory__mark,
 .brand-hero__plate {
   background: var(--color-plate);
   border-radius: var(--radius);
@@ -1765,127 +1768,6 @@ a.lang-switch__item:hover {
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-}
-
-/* Brand directory */
-.directory {
-  border-top: 1px solid var(--line-2);
-}
-
-.directory__row {
-  position: relative;
-  display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr) auto;
-  grid-template-areas:
-    "mark main arrow"
-    "mark facts arrow";
-  column-gap: 1.25rem;
-  row-gap: 0.5rem;
-  align-items: center;
-  padding-block: 1.25rem;
-  border-bottom: 1px solid var(--line);
-  transition: background-color 160ms var(--ease);
-}
-
-.directory__mark {
-  grid-area: mark;
-  display: grid;
-  place-items: center;
-  height: 4.5rem;
-  padding: 0.75rem;
-}
-
-.directory__mark .brand-mark {
-  max-width: 100%;
-  --mark-base: 1rem;
-}
-
-.directory__main {
-  grid-area: main;
-}
-
-.directory__row > svg {
-  grid-area: arrow;
-  color: var(--text-3);
-  transition:
-    transform 200ms var(--ease),
-    color 160ms var(--ease);
-}
-
-.directory__row:hover > svg {
-  color: var(--text);
-  transform: translateX(3px);
-}
-
-.directory__name {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.15;
-}
-
-.directory__name a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.directory__summary {
-  margin-top: 0.375rem;
-  font-size: 0.9375rem;
-  color: var(--text-2);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.directory__facts {
-  grid-area: facts;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.125rem 1rem;
-  font-size: 0.8125rem;
-  color: var(--text-3);
-}
-
-.directory__facts:empty {
-  display: none;
-}
-
-@media (min-width: 60rem) {
-  .directory__row {
-    grid-template-columns: 13rem minmax(0, 1fr) 12rem auto;
-    grid-template-areas: "mark main facts arrow";
-    column-gap: 2.5rem;
-    padding-block: 1.5rem;
-  }
-
-  .directory__mark {
-    height: 6rem;
-  }
-
-  .directory__mark .brand-mark {
-    --mark-base: 1.25rem;
-  }
-
-  .directory__facts {
-    display: grid;
-    font-size: 0.875rem;
-  }
-}
-
-.directory__row:hover {
-  background: rgb(242 239 232 / 0.03);
-}
-
-.directory__row:has(a:focus-visible) {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
-
-.directory__name a:focus-visible {
-  outline: none;
 }
 
 /* Brand page */

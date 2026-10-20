@@ -19,28 +19,30 @@ body:has(.home-premium) .lang-switch__item[aria-current="true"] { box-shadow: in
 body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-h) + 1.5rem) 1.5rem; }
 .home-premium [id] { scroll-margin-top: 1.25rem; }
 
-/* Two deliberate lines on desktop; natural wrapping on smaller screens. */
-.corporate-hero { position: relative; isolation: isolate; display: grid; align-items: center; min-height: clamp(32rem, 35vw, 40rem); overflow: hidden; background: #11100f; }
-.corporate-hero__art { position: absolute; inset: 0; z-index: -2; opacity: 0.82; pointer-events: none; }
-.corporate-hero__art img { width: 100%; height: 100%; object-fit: cover; }
-.corporate-hero__art .ribbon { display: block; }
-.corporate-hero__art .ribbon__fallback { position: absolute; inset: 0; transition: opacity 500ms var(--ease); }
-.corporate-hero__art .ribbon[data-renderer="webgl"] .ribbon__fallback { opacity: 0; }
-@media (prefers-reduced-motion: reduce) {
-  .corporate-hero__art .ribbon__fallback, .corporate-hero__art .ribbon__canvas { transition: none; }
-}
-.corporate-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(17 16 15 / 0.87), rgb(17 16 15 / 0.5) 53%, rgb(17 16 15 / 0.12)), linear-gradient(0deg, #11100f, transparent 35%); }
-.corporate-hero__inner { padding-block: clamp(4rem, 5.5vw, 6.5rem); }
-.corporate-hero h1 { font-size: clamp(3.25rem, 5.1vw, 6rem); font-weight: 450; line-height: 1.1; letter-spacing: -0.028em; }
-.corporate-hero h1 span { display: block; white-space: nowrap; }
-.corporate-hero__description { max-width: 38rem; margin-top: 1.75rem; color: #d6d1c8; font-size: clamp(1rem, 1.08vw, 1.125rem); line-height: 1.8; }
-.corporate-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
-.corporate-hero .corporate-hero__cta { min-height: 3.125rem; padding-inline: 1.25rem; border-color: #9c817f; border-radius: 3px; background: rgb(17 16 15 / 0.3); font-weight: 500; }
-.corporate-hero .corporate-hero__cta:hover { background: #ab0712; border-color: #ab0712; color: #fff; }
-.corporate-hero__cta svg { color: #ff7b83; }
-.corporate-hero__cta:hover svg { color: #fff; }
-.corporate-hero__secondary { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; color: #d6d1c8; font-size: 0.875rem; }
+/* The company's own building, full bleed; it lays back in depth as the page scrolls (ScrollHero).
+   Two deliberate lines on desktop; natural wrapping on smaller screens. */
+.corporate-hero { position: relative; isolation: isolate; display: grid; align-items: start; min-height: clamp(34rem, calc(100svh - var(--header-h)), 58rem); overflow: clip; background: #0e0d0c; perspective: 1400px; perspective-origin: 50% 0%; }
+.corporate-hero__frame { position: absolute; inset: 0; z-index: -1; overflow: hidden; transform-origin: 50% 100%; will-change: transform; }
+.corporate-hero__media { position: absolute; inset: 0; transform-origin: 62% 55%; }
+.corporate-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.corporate-hero__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgb(14 13 12 / 0.9), rgb(14 13 12 / 0.66) 36%, rgb(14 13 12 / 0.1) 68%), linear-gradient(0deg, rgb(14 13 12 / 0.75), transparent 28%); }
+.corporate-hero__content { position: relative; }
+.corporate-hero__inner { padding-block: clamp(4rem, 10vh, 8rem) 4rem; }
+.corporate-hero h1 { font-size: clamp(3rem, 5.2vw, 5.25rem); font-weight: 700; line-height: 1.04; letter-spacing: -0.03em; }
+.corporate-hero h1 span { display: block; white-space: nowrap; animation: hero-rise 0.6s var(--ease) both; animation-delay: calc(80ms + var(--line, 0) * 90ms); }
+.corporate-hero__description, .corporate-hero__actions { animation: hero-rise 0.6s var(--ease) 260ms both; }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(0.6em); } }
+.corporate-hero__description { max-width: 36rem; margin-top: 1.75rem; color: #e2ded6; font-size: clamp(1rem, 1.1vw, 1.1875rem); line-height: 1.75; }
+.corporate-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2.25rem; }
+.corporate-hero .corporate-hero__cta { min-height: 3.125rem; padding-inline: 1.375rem; border-color: var(--color-signal); border-radius: 3px; background: var(--color-signal); color: #fff; font-weight: 500; }
+.corporate-hero .corporate-hero__cta:hover { background: var(--color-signal-press); border-color: var(--color-signal-press); color: #fff; }
+.corporate-hero__cta svg { color: #fff; }
+.corporate-hero__secondary { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; color: #e2ded6; font-size: 0.875rem; }
 .corporate-hero__secondary:hover { color: #fff; text-decoration: underline; text-underline-offset: 0.35em; }
+@media (prefers-reduced-motion: reduce) {
+  .corporate-hero__frame, .corporate-hero__media, .corporate-hero__content { transform: none !important; opacity: 1 !important; border-radius: 0 !important; }
+  .corporate-hero h1 span, .corporate-hero__description, .corporate-hero__actions { animation: none; }
+}
 
 /* One consistent photo, logo, introduction and link hierarchy for every brand. */
 .home-premium .home-portfolio { padding-block: clamp(3.5rem, 5vw, 5rem) clamp(4.5rem, 6vw, 6.5rem); }
@@ -166,43 +168,30 @@ body:has(.home-premium) :focus-visible { scroll-margin-block: calc(var(--header-
   .feature-tabs__panel[aria-hidden="false"] .feature-tabs__copy { animation: none; }
 }
 
-/* A real showroom, followed by the existing service and contact sections. */
-.home-premium .home-experience { padding-block: 0 clamp(4.5rem, 6vw, 6.5rem); }
-.showroom-experience { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(2.5rem, 5vw, 5rem); }
-.showroom-experience__media { position: relative; min-width: 0; height: 100%; min-height: 29rem; overflow: hidden; border-radius: 4px; }
-.showroom-experience__media img { width: 100%; height: 100%; object-fit: cover; }
-.showroom-experience__media figcaption { position: absolute; left: 1.25rem; bottom: 1rem; background: rgb(0 0 0 / 0.75); color: #fff; padding: 0.3rem 0.6rem; font-size: 0.75rem; border-radius: 2px; }
-.showroom-experience__copy h2 { max-width: 12em; font-weight: 450; }
-.showroom-experience__copy > p { color: var(--text-2); margin-top: 1.5rem; font-size: 0.9375rem; line-height: 1.85; }
-.showroom-experience__copy ul { display: grid; gap: 0.875rem; margin-block: 1.75rem; }
-.showroom-experience__copy li { display: flex; align-items: start; gap: 0.75rem; font-size: 0.875rem; }
-.showroom-experience__copy li svg { flex-shrink: 0; margin-top: 0.2rem; color: #f37a80; }
-.showroom-experience .button { border-radius: 3px; }
+/* The showroom walk follows the brands directly; its action lives inside the walk (ShowroomDepth, motion.css). */
+.home-premium .home-experience { padding-block: 0; }
 .home-premium .section--charcoal { border-block: 1px solid var(--line); }
 
 @media (max-width: 63.99rem) {
   body:has(.home-premium) { --header-h: 4.4375rem; }
   body:has(.home-premium) .site-logo img { height: 2rem; }
-  .corporate-hero { min-height: 29rem; }
+  .corporate-hero { min-height: min(calc(100svh - var(--header-h)), 46rem); }
   .corporate-hero__inner { padding-block: 4rem; }
-  .corporate-hero h1 { font-size: clamp(2.5rem, 5.6vw, 3.75rem); }
+  .corporate-hero h1 { font-size: clamp(2.5rem, 6.4vw, 4rem); }
   .corporate-hero h1 span { white-space: normal; }
   .corporate-hero__description { max-width: 34rem; }
-  .corporate-hero__art { opacity: 0.5; }
-  .showroom-experience { grid-template-columns: 1fr; gap: 2.5rem; }
-  .showroom-experience__media { min-height: 0; height: auto; aspect-ratio: 1.6; }
-  .showroom-experience__copy { max-width: 40rem; }
 }
 @media (max-width: 39.99rem) {
-  .corporate-hero { min-height: 0; }
-  .corporate-hero__inner { padding-block: 3.5rem; }
-  .corporate-hero h1 { font-size: clamp(2rem, 8.6vw, 3rem); line-height: 1.15; letter-spacing: -0.025em; }
+  .corporate-hero__inner { padding-block: 3rem; }
+  .corporate-hero h1 { font-size: clamp(2.125rem, 9.4vw, 3rem); line-height: 1.08; letter-spacing: -0.025em; }
   .corporate-hero__description { font-size: 0.9375rem; margin-top: 1.5rem; }
   .corporate-hero__actions { gap: 0.5rem 1.5rem; margin-top: 1.5rem; }
   .corporate-hero .corporate-hero__cta { min-height: 3rem; font-size: 0.875rem; }
-  .corporate-hero__art { inset: 0 -55% 0 -20%; opacity: 0.4; }
-  .corporate-hero::after { background: linear-gradient(90deg, rgb(17 16 15 / 0.85), rgb(17 16 15 / 0.5)), linear-gradient(0deg, #11100f, transparent 35%); }
+  /* Portrait: the photograph takes the top of the hero so the SAIN MOTORS sign stays clear of the copy below it. */
+  .corporate-hero { align-items: end; }
+  .corporate-hero__frame { bottom: auto; height: 62%; }
+  .corporate-hero__media img { object-position: 71% 50% !important; }
+  .corporate-hero__frame::after { background: linear-gradient(0deg, #0e0d0c 2%, rgb(14 13 12 / 0.5) 40%, transparent 70%); }
   .home-portfolio .section-head { display: grid; gap: 1rem; }
   .home-portfolio .section-head__side { justify-items: start; }
-  .showroom-experience__media { aspect-ratio: 1.3; }
 }

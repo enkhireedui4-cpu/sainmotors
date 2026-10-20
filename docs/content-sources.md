@@ -58,6 +58,26 @@ logo and distributor statement. HONGQI is the "eleventh brand" in the brief.
 10. **Shared sales lines**: 7299 8855 is given for both BESTUNE (Sansar) and MAXUS (Darkhan), and 7222 8855
    for both 212 and RELY (Dolgoon Nuur). Both match their sheets; confirm they are intended.
 
+### Brand channels (2026-10-20)
+
+Each brand links only to its Mongolian channel run by Sain Motors: its Facebook page, plus jetour.mn for
+JETOUR. International manufacturer sites are no longer linked (user's instruction, 2026-10-20). Pages
+were identified by name through Facebook's public page plugin (`/plugins/page.php?href=…`), since
+facebook.com refuses anonymous requests.
+
+| Brand | Channel | Page name / evidence |
+|---|---|---|
+| JETOUR | jetour.mn; facebook.com/profile.php?id=100093386917379 | "Jetour Mongolia - Sain Motors", 19K followers (a namesake page, id 100094097087099, has 110 and is not used) |
+| CHERY | facebook.com/CheryMongolia | "Chery Mongolia - Sain Motors"; chery.mn still hidden (no DNS) |
+| BYD | facebook.com/profile.php?id=61579315933755 | "BYD Mongolia - Sain Motors Authorized Distributor": the hyperlink behind the BYD sheet's web-link cell. facebook.com/bydmongolia belongs to another distributor |
+| MAXUS | facebook.com/profile.php?id=61572688311986 | "SAIC Maxus Mongolia - Sain Motors": the MAXUS sheet's "Facebook" hyperlink |
+| 212 | facebook.com/profile.php?id=61574822528259 | "BAW 212 Mongolia - Sain Motors" |
+| RELY | facebook.com/chery.rely.mongolia.sainmotors | "Chery Rely Mongolia - Sain Motors" |
+| BESTUNE | facebook.com/BestuneSainmotors | "Bestune Mongolia - Sain Motors", 18K followers, the dedicated sheet's hyperlink; replaces FAWBestuneMongolia ("FAW Bestune Mongolia - Sain Motors") |
+| HONGQI | facebook.com/HongqiMongolia1 | "Hongqi Mongolia - Sain motors" (the sheet's hyperlink points at the 212 page; its text is right) |
+| RIDDARA | none yet | "Riddara Mongolia - Sain Motors" is named in ikon.mn articles; address not found. The RIDDARA and AITO sheets carry BYD's hyperlink |
+| AITO, SOUEAST | none yet | No Sain Motors page found |
+
 ## 3. Images
 
 | Source file (Drive ID) | Brand / subject | Used for | Derivative key | Crop / focus | Status |
@@ -102,6 +122,56 @@ SOUEAST retains its manufacturer illustration (S09), since it is in neither supp
 the blue TIGGO 7 PRO MAX image supplied by the user as Desktop `37620.png` on 2026-10-18.
 Its full vehicle is preserved in a 1.6-ratio crop. Details are in [homepage-card-assets.md](homepage-card-assets.md).
 
+### Sain Motors web photo set (Desktop `sainmotorsWebPhotos`, supplied 2026-10-20)
+
+The company's own folder "WEB Photos": folders 1 (home company hero), 2 (home services hero) and
+6 (services), plus loose files, logos (8) and the brand guideline (9). Canon EOS R5 II and Sony ILCE-7RM2
+photographs, drone frames saved as screenshots, and Facebook exports. All are real photographs (camera EXIF
+or recognisable video frames); none shows generator traces. Masters: `assets/photos/site/*.webp` (q90, ≤4096 px);
+sources untouched. Alt text describes only what is visible; no location is claimed where the frame does not show it.
+
+| Derivative key | Source (folder / file) | SHA-256 | Used for | Status |
+|---|---|---|---|---|
+| `sain-hq-aerial` | 1 / Screenshot 2026-10-16 114805.png (3366×1480, drone) | `a75ead75ca90` | Home hero | sourced |
+| `sain-hq-sign` | 1 / Screenshot 2026-10-16 114716.png | `99f9dd920f4d` | Home showroom walk, 01 | sourced |
+| `byd-4s-aerial` | 1 / Screenshot 2026-10-16 111828.png | `20c0509591e8` | Built, not placed | sourced |
+| `showroom-event-212` | 6 / DSC05320.jpg (Lightroom) | `1734bfb127a3` | Showroom walk, 02 | sourced |
+| `showroom-interior` | 6 / 5I5A0461.JPG | `ce3eb499dd75` | Showroom walk, 03 | sourced |
+| `showroom-floor` | 6 / Screenshot 2026-10-16 115251.png | `f55a313a63e2` | Showroom walk, 04 | sourced |
+| `showroom-advice` | DSC03842.JPG | `8d01dc8289d0` | Showroom walk, 05 | sourced |
+| `showroom-test-drive` | DSC05068.JPG | `c323750eb0ea` | Showroom walk, 06 | sourced |
+| `service-workshop` | 6 / Screenshot 2026-10-16 115155.png (SERVICE sign) | `94d7a532bbee` | Home services | sourced |
+| `service-team` | 6 / Screenshot 2026-10-16 115038.png | `b0c673b4ab73` | Services page header | sourced |
+| `service-battery`, `service-battery-lift` | 6 / Screenshot 115514.png, 115430.png | `430dd391f943`, `1148a520fe9a` | Services team strip | sourced |
+| `service-lift-hv`, `service-training-hv`, `service-under-lift` | 6 / 571564337…, 572171793…, 574567167… (Facebook) | `4c3239dac05b`, `7bb92e9eb948`, `8424a36b9184` | Services team strip | sourced |
+| `service-training-group` | 6 / 571424480… (BYD training certificates) | `d4a03c9ead22` | Services team strip | sourced |
+
+Not used: the two participation-certificate scans (708155250…, 708155742…) show individuals' names; the
+`SAIN | BYD` group banner (708919196…) is a designed graphic. Folder 2 repeats most of folder 1.
+
+### MEGA TEST DRIVE film and events (2026-10-20)
+
+- **Film:** Desktop `SnapSave_App_1366867448896240_1080p.mp4` (supplied by the user; Facebook video
+  1366867448896240; 86.6 s, 1920×1080, 25 fps). The burned-in title reads "MEGA Event TEST DRIVE 7 —
+  OFF-ROAD EDITION", so it is the seventh edition, not the eighth. Derivatives in `public/video/`:
+  `mtd7-teaser.mp4` (muted 15 s loop of 0:54–0:59.5, 0:22–0:25, 0:32–0:35, 1:02.5–1:06; 1280 px, 2.1 MB)
+  and `mtd7-full.mp4` (the whole film, 1280 px, AAC, 17 MB). Posters: frames at 0:54 (`mtd7-river-crossing`)
+  and 0:24 (`mtd7-212-mud`, built, not placed).
+- **Editions** (`src/content/events.ts`, all `sourced`), from the registration sites in
+  github.com/Enhireedui/mega-test-drive (README at the commit given) and ikon.mn (2026-06-23):
+
+| Edition | Days | Venue | Source |
+|---|---|---|---|
+| 8 | 2026-10-09 – 10-10, 10:00–19:00 | Darkhan | README @b7c5045; first announced for 10-01 – 10-02 (@b7a09a0) |
+| 7, off-road | 2026-08-22, 11:00–19:00 | Морингийн даваа (Наадамчдын зам); coaches from the BYD 4S showroom | README @31cbce4 |
+| 6 | 2026-08-08 – 08-09 | Within the Шилийн Богд Moto Festival; Sain Motors general sponsor | README @c476715 |
+| 5 | 2026-08-01 | not stated | README @5868efc (not listed on the site) |
+| 3 | 2026-06-27 | BYD 4S showroom yard, Tsambagarav | ikon.mn/n/3ogh (not listed on the site) |
+
+These are the dates the registration sites published, i.e. as planned. Edition 7 is confirmed held by
+its film; please confirm 6 and 8 took place as listed. "8 editions" is read from the numbering.
+No edition has a registration link: all are over (`src/lib/events.ts`, Asia/Ulaanbaatar).
+
 ## 4. Logos
 
 | Brand | File used | Source |
@@ -125,6 +195,8 @@ their background panels excluded. Original geometry and colours are preserved.
   TIGGO 7 PRO MAX road photograph (`37628.png`). Both originals are preserved; the prior TIGGO 8 source is archived.
 - A valid TLS certificate for sainmotors.mn (it serves an expired `*.webhost.mn` certificate; checked 2026-10-18).
 - Whether marketing2@esain.mn is the intended public address, or a general one such as info@.
-- Service-centre photographs (workshop, reception). No service image exists; none is implied.
+- Service-centre photographs: supplied 2026-10-20 (above). Confirm which site the workshop frames show
+  before captions name a place.
+- MEGA TEST DRIVE: confirm editions 6 and 8 as held; photographs or a film of other editions, if wanted on the site.
 - Opening hours and map pins for the Dolgoon Nuur, Sansar, BYD 4S and Darkhan showrooms.
 - English review of web-team translations of the distributor statements (`draft`).

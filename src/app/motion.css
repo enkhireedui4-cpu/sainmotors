@@ -1,0 +1,145 @@
+/* ------------------------------------------------------------------
+   Scroll-driven depth (Motion): the showroom depth gallery, the MEGA TEST
+   DRIVE expanding frame, the pinned horizontal strip and parallax frames. The motion
+   itself is inline style written by the components; this file sets the
+   stage. Every effect has a still layout under prefers-reduced-motion, which
+   overrides the inline transforms.
+------------------------------------------------------------------- */
+
+/* Showroom depth gallery (ShowroomDepth) */
+.depth { --spread: 26vw; --spread-y: 20vh; position: relative; height: calc(100svh + (var(--count) - 1) * 60svh); }
+.depth__viewport { --rail: clamp(1.25rem, 4vh, 2.5rem); position: sticky; top: var(--header-h); height: calc(100svh - var(--header-h)); overflow: clip; perspective: 1000px; perspective-origin: 50% 45%; }
+/* The stage moves opposite the camera's lane; inside the perspective that reads as a sideways glide with parallax. */
+.depth__stage { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; transform-style: preserve-3d; translate: calc(var(--camera-x, 0) * -1 * var(--spread)) calc(var(--camera-y, 0) * -1 * var(--spread-y)); }
+.depth__lane { position: absolute; inset: 0; transform-style: preserve-3d; translate: calc(var(--lx) * var(--spread)) calc(var(--ly) * var(--spread-y)); pointer-events: none; }
+.depth__card { --w: min(56vw, 62rem, 120svh); position: absolute; top: 50%; left: 50%; width: var(--w); margin: calc(var(--w) / -3) 0 0 calc(var(--w) / -2); will-change: transform, opacity; }
+.depth__figure { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 4px; background: var(--color-charcoal); box-shadow: 0 2.5rem 5rem -2rem rgb(0 0 0 / 0.7); }
+.depth__figure img { width: 100%; height: 100%; object-fit: cover; }
+.depth__figure figcaption { position: absolute; left: 1rem; bottom: 1rem; display: flex; align-items: baseline; gap: 0.625rem; padding: 0.375rem 0.75rem; border-radius: 2px; background: rgb(14 13 12 / 0.8); color: #fff; font-size: 0.8125rem; }
+.depth__figure figcaption span { color: #ff7b83; font-family: var(--font-display); font-weight: 700; }
+.depth__progress { position: absolute; left: 50%; bottom: calc(var(--rail) + 1.375rem - 1px); width: min(16rem, 40vw); height: 2px; overflow: hidden; translate: -50% 0; background: var(--line-2); }
+.depth__progress span { display: block; height: 100%; background: var(--color-signal); transform-origin: 0 50%; }
+/* The section's one action: compact, aligned to the page edge, level with the progress rail. */
+.depth__action { position: absolute; z-index: 1; left: max(var(--gutter), (100% - var(--max)) / 2); bottom: var(--rail); display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding-inline: 0.875rem 1.125rem; border: 1px solid rgb(255 255 255 / 0.3); border-radius: 3px; background: rgb(14 13 12 / 0.6); color: var(--color-cream); font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: border-color 200ms var(--ease), background-color 200ms var(--ease); }
+.depth__action svg { color: #ff7b83; transition: color 200ms var(--ease); }
+.depth__action:hover { border-color: var(--color-signal); background: var(--color-signal); color: #fff; }
+.depth__action:hover svg { color: #fff; }
+
+/* Expanding media frame (MediaViewfinder): the MEGA TEST DRIVE film on the homepage */
+.viewfinder { --inset-y: 16%; --inset-x: 22%; position: relative; height: 220svh; }
+.viewfinder__viewport { position: sticky; top: var(--header-h); display: grid; align-items: end; height: calc(100svh - var(--header-h)); overflow: clip; }
+.viewfinder__frame { --closed: calc(1 - var(--open, 0)); position: absolute; inset: 0; overflow: hidden; clip-path: inset(calc(var(--closed) * var(--inset-y)) calc(var(--closed) * var(--inset-x)) round calc(var(--closed) * 1rem)); will-change: clip-path; }
+.viewfinder__media { position: absolute; inset: 0; }
+.viewfinder__media img, .viewfinder__media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* The poster image holds the frame until the loop's first frame plays over it. */
+.viewfinder__media .teaser-poster, .viewfinder__media video { position: absolute; inset: 0; }
+.teaser-video { opacity: 0; transition: opacity 400ms var(--ease); }
+.teaser-video[data-ready] { opacity: 1; }
+.viewfinder__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(14 13 12 / 0.92), rgb(14 13 12 / 0.55) 38%, transparent 68%), linear-gradient(90deg, rgb(14 13 12 / 0.55), transparent 60%); }
+.viewfinder__copy { position: relative; padding-bottom: clamp(2.5rem, 7vh, 5.5rem); }
+.viewfinder__inner h2 { max-width: 12em; }
+.viewfinder__inner > p { max-width: 36rem; margin-top: 1.25rem; color: #e2ded6; }
+.viewfinder .button { border-radius: 3px; }
+
+/* MEGA TEST DRIVE: the film's copy, then the latest editions */
+.test-drive__event { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin-bottom: 1rem; color: #fff; font-size: 0.8125rem; }
+.test-drive__event span:first-child { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.01em; }
+.test-drive__event span:first-child::after { content: ""; display: inline-block; width: 1.5rem; height: 2px; margin-left: 1rem; vertical-align: middle; background: var(--color-signal); }
+.test-drive__event span:last-child { color: #d6d1c8; }
+.test-drive__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-top: 2rem; }
+.test-drive__watch { gap: 0.625rem; cursor: pointer; }
+.test-drive__duration { padding-left: 0.625rem; border-left: 1px solid rgb(255 255 255 / 0.4); font-variant-numeric: tabular-nums; opacity: 0.85; }
+.test-drive__request { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; color: #e2ded6; font-size: 0.9375rem; }
+.test-drive__request:hover { color: #fff; text-decoration: underline; text-underline-offset: 0.35em; }
+.teaser-toggle { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding-inline: 0.875rem; margin-left: auto; border: 1px solid rgb(255 255 255 / 0.3); border-radius: 3px; background: rgb(14 13 12 / 0.45); color: #e2ded6; font-size: 0.8125rem; cursor: pointer; }
+.teaser-toggle:hover { border-color: #fff; color: #fff; }
+.drive-events { padding-top: clamp(3rem, 6vw, 5rem); }
+.drive-events__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--line-2); }
+.drive-events__head h3 { font-family: var(--font-display); font-size: clamp(1.375rem, 2vw, 1.75rem); font-weight: 600; }
+.drive-events__head p { color: var(--text-2); font-size: 0.9375rem; }
+.drive-events__head strong { color: var(--text); font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
+.drive-event { display: grid; grid-template-columns: 5.5rem 1fr auto; align-items: center; gap: 1.5rem; padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+.drive-event__edition { color: var(--color-signal); font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+.drive-event__name { font-family: var(--font-display); font-size: clamp(1.125rem, 1.6vw, 1.375rem); font-weight: 600; }
+.drive-event__name span { color: var(--text-2); }
+.drive-event__meta { margin-top: 0.25rem; color: var(--text-2); font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+.drive-event__state { padding: 0.3rem 0.65rem; border: 1px solid var(--line-2); border-radius: 3px; color: var(--text-2); font-size: 0.8125rem; }
+
+/* Full film in a native modal dialog (VideoDialog) */
+/* Preflight zeroes margins, which would undo the UA's centring of a modal dialog. */
+.video-dialog { width: min(100vw - 2rem, 80rem, (100svh - 2rem) * 16 / 9); max-width: none; max-height: none; margin: auto; padding: 0; overflow: visible; border: 0; background: transparent; color: #fff; }
+.video-dialog::backdrop { background: rgb(8 7 6 / 0.88); }
+.video-dialog__body { position: relative; aspect-ratio: 16 / 9; background: #000; }
+.video-dialog__video { display: block; width: 100%; height: 100%; }
+.video-dialog__close { position: absolute; z-index: 1; top: 0.75rem; right: 0.75rem; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid rgb(255 255 255 / 0.35); border-radius: 50%; background: rgb(14 13 12 / 0.6); color: #fff; cursor: pointer; }
+.video-dialog__close:hover { background: var(--color-signal); border-color: var(--color-signal); }
+.video-dialog[open] { animation: dialog-in 260ms var(--ease); }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(1rem) scale(0.98); } }
+
+/* Homepage services: a parallax window beside the service names */
+.home-services__grid { display: grid; grid-template-columns: 7fr 5fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); }
+.home-services__media { aspect-ratio: 4 / 3; border-radius: 4px; }
+.home-services__copy h2 { max-width: 11em; }
+.home-services__copy p { margin-top: 1.25rem; color: var(--text-2); }
+.home-services__list { display: grid; gap: 0.75rem; margin-block: 1.5rem 2rem; }
+.home-services__list li { display: flex; align-items: start; gap: 0.75rem; font-size: 0.9375rem; }
+.home-services__list svg { flex-shrink: 0; margin-top: 0.25rem; color: #f37a80; }
+.home-services .button { border-radius: 3px; }
+
+/* Pinned horizontal strip (HorizontalGallery) */
+.hscroll { position: relative; }
+.hscroll__viewport { position: sticky; top: var(--header-h); display: flex; align-items: center; height: calc(100svh - var(--header-h)); overflow: clip; }
+.hscroll__track { display: flex; gap: clamp(1rem, 2vw, 2rem); width: max-content; margin: 0; padding: 0 max(var(--gutter), (100vw - var(--max)) / 2); list-style: none; will-change: transform; }
+.hscroll__item { flex: none; width: clamp(20rem, 48vw, 54rem); }
+.hscroll__figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 4px; }
+.hscroll__figure figcaption { margin-top: 0.75rem; color: var(--text-2); font-size: 0.875rem; }
+
+/* Parallax frame (Parallax) */
+.parallax { position: relative; overflow: hidden; }
+.parallax__media { position: absolute; inset: -8% 0; }
+.parallax__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Services page */
+.services-header { aspect-ratio: 21 / 9; border-radius: 4px; }
+.services-team { padding-top: var(--section); background: var(--color-ink-alt); }
+.services-team__head { margin-bottom: clamp(1rem, 3vw, 2rem); }
+.services-team__head p { max-width: 36rem; color: var(--text-2); }
+
+@media (max-width: 47.99rem) {
+  .depth { --spread: 20vw; --spread-y: 10vh; height: calc(100svh + (var(--count) - 1) * 50svh); }
+  .depth__viewport { perspective: 800px; }
+  .depth__card { --w: 82vw; }
+  .depth__progress { left: auto; right: var(--gutter); width: 28vw; translate: none; }
+  .viewfinder { --inset-y: 12%; --inset-x: 6%; height: 180svh; }
+  .services-header { width: 100%; aspect-ratio: 4 / 3; border-radius: 0; }
+  .test-drive__actions { gap: 0.75rem 1.5rem; margin-top: 1.5rem; }
+  .teaser-toggle { margin-left: 0; }
+  .drive-event { grid-template-columns: 3.5rem 1fr; gap: 0.25rem 1rem; }
+  .drive-event__state, .drive-event .button { grid-column: 2; justify-self: start; margin-top: 0.5rem; }
+  .home-services__grid { grid-template-columns: 1fr; }
+}
+
+/* Phones and reduced motion: a native, swipeable strip. */
+@media (max-width: 47.99rem), (prefers-reduced-motion: reduce) {
+  .hscroll { height: auto !important; padding-bottom: var(--section); }
+  .hscroll__viewport { position: static; display: block; height: auto; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+  .hscroll__track { transform: none !important; }
+  .hscroll__item { width: min(82vw, 30rem); scroll-snap-align: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .depth { height: auto; }
+  .depth__viewport { position: static; height: auto; overflow: visible; perspective: none; }
+  .depth__stage { position: static; translate: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 1rem; width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; transform: none !important; }
+  .depth__lane { position: static; translate: none; }
+  .depth__card { position: static; width: auto; margin: 0; transform: none !important; opacity: 1 !important; }
+  .depth__progress { display: none; }
+  .depth__action { position: static; margin: 1.5rem 0 0 max(var(--gutter), (100% - var(--max)) / 2); }
+  .depth__action, .depth__action svg { transition: none; }
+  .viewfinder { height: auto; }
+  .viewfinder__viewport { position: relative; top: 0; height: min(100svh, 52rem); }
+  .viewfinder__frame { clip-path: none !important; }
+  .viewfinder__media, .viewfinder__copy, .parallax__media { transform: none !important; }
+  .video-dialog[open] { animation: none; }
+  .teaser-video { transition: none; }
+}

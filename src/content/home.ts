@@ -1,20 +1,12 @@
 ﻿import type { Block } from "./types";
 
-/** Short homepage copy, based on the existing brand sheets and showroom records. */
-export const homeExperience: Block<{ heading: string; body: string; points: string[] }> = {
+/** Homepage showroom walk: a heading for assistive technology and the one visible action. */
+export const homeExperience: Block<{ heading: string; cta: string }> = {
   status: "draft",
-  source: "Brand team distributor sheets; existing showroom and service records",
+  source: "Showroom records; the action matches the hero's secondary link",
   value: {
-    mn: {
-      heading: "Автомашинаа дэргэдээс нь мэдэр.",
-      body: "Улаанбаатар, Дархан дахь шоурумуудад автомашинуудаа ойроос үзэж, сонголтоо харьцуулаарай. Манай баг танд тохирох загвар, борлуулалтын нөхцөл, тухайн брэндийн үйлчилгээний талаар зөвлөнө.",
-      points: ["Албан ёсны эрхтэй брэндүүд", "Улаанбаатар, Дархан дахь шоурумууд", "Брэнд тус бүрийн борлуулалтын дараах үйлчилгээ"],
-    },
-    en: {
-      heading: "Experience your next car in person.",
-      body: "Visit our showrooms in Ulaanbaatar and Darkhan to see the cars and compare your options. Our team can guide you through models, purchase options and the services available for your brand.",
-      points: ["Officially represented brands", "Showrooms in Ulaanbaatar and Darkhan", "After-sales support tailored to each brand"],
-    },
+    mn: { heading: "Автомашинаа дэргэдээс нь мэдэр.", cta: "Шоурум, байршил" },
+    en: { heading: "Experience your next car in person.", cta: "Find a showroom" },
   },
 };
 
@@ -74,6 +66,24 @@ export const homeDiscover: Block<{
           cta: "Contact us",
         },
       ],
+    },
+  },
+};
+
+/** Homepage services teaser over the workshop photograph; the service titles come from `services`. */
+export const homeServices: Block<{ heading: string; body: string; cta: string }> = {
+  status: "draft",
+  source: "Existing service records (company.ts services); supplied service-centre photographs, 2026-10-20",
+  value: {
+    mn: {
+      heading: "Худалдан авсны дараа ч хамт.",
+      body: "Үйлдвэрийн баталгаа, засвар, оношилгоо, оригинал сэлбэг. Брэнд бүрийн үйлчилгээг тухайн шоурум, үйлчилгээний төв хариуцна.",
+      cta: "Үйлчилгээтэй танилцах",
+    },
+    en: {
+      heading: "With you long after the sale.",
+      body: "Factory warranty, repairs, diagnostics and genuine parts, provided through each brand’s showroom and service centre.",
+      cta: "Explore our services",
     },
   },
 };

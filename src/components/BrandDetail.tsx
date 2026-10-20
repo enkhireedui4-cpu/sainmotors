@@ -18,6 +18,18 @@ function linkLabel(link: BrandLink, locale: Locale): string {
   return locale === "mn" ? `${host} ${ui.brand.visit.mn}` : `${ui.brand.visit.en} ${host}`;
 }
 
+/** The brand's own channels: the first (its Mongolian site or Facebook page) is the page's primary action. */
+function BrandLinks({ links, locale }: { links: BrandLink[]; locale: Locale }) {
+  return links.map((link, i) => (
+    <a key={link.url} className={`button ${i === 0 ? "button--primary" : "button--outline"} brand-link`} href={link.url} rel="noopener" data-kind={link.kind}>
+      {link.kind === "facebook" && <Icon name="facebook" size={17} />}
+      {linkLabel(link, locale)}
+      {link.kind === "website" && <Icon name="arrowUpRight" size={17} />}
+      <span className="sr-only"> {ui.external[locale]}</span>
+    </a>
+  ));
+}
+
 /** Brand-team imagery, a concise introduction, then the complete source-based information. */
 export function BrandDetail({ brand, locale }: { brand: Brand; locale: Locale }) {
   const others = getBrands().filter((b) => b.slug !== brand.slug);
@@ -48,6 +60,7 @@ export function BrandDetail({ brand, locale }: { brand: Brand; locale: Locale })
               </p>
               <p className="brand-hero__lead" data-status={draftAttr(brand.cardCopy ?? brand.teaser)}>{lead}</p>
               <div className="brand-hero__actions">
+                <BrandLinks links={links} locale={locale} />
                 <a className="button button--outline" href={phone.href}><Icon name="phone" size={17} />{phone.display}</a>
                 {location && <a className="text-link" href={`#${location.id}`}>{ui.brand.showroom[locale]}<Icon name="chevronRight" size={17} /></a>}
               </div>
@@ -88,25 +101,9 @@ export function BrandDetail({ brand, locale }: { brand: Brand; locale: Locale })
                 </div>
               )}
             </dl>
-            {(links.length > 0 || !location) && (
+            {!location && (
               <div className="brand-facts__aside">
-                {!location && <p className="brand-facts__note">{ui.brand.noShowroom[locale]}</p>}
-                {links.length > 0 && (
-                  <div className="brand-facts__links">
-                    {links.map((link, i) => (
-                      <a
-                        key={link.url}
-                        className={i === 0 ? "button button--primary" : "button button--outline"}
-                        href={link.url}
-                        rel="noopener"
-                      >
-                        {linkLabel(link, locale)}
-                        <Icon name="arrowUpRight" size={18} />
-                        <span className="sr-only"> {ui.external[locale]}</span>
-                      </a>
-                    ))}
-                  </div>
-                )}
+                <p className="brand-facts__note">{ui.brand.noShowroom[locale]}</p>
               </div>
             )}
           </div>

@@ -50,7 +50,24 @@ describe("brands", () => {
         expect(link.checked, brand.slug).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       }
     }
-    expect(liveLinks(brands.find((b) => b.slug === "chery")!)).toEqual([]);
+    // chery.mn has no DNS yet: only the brand's Facebook page is shown.
+    expect(liveLinks(brands.find((b) => b.slug === "chery")!).map((l) => l.kind)).toEqual(["facebook"]);
+  });
+
+  it("send every brand with a Mongolian Facebook page there first, and JETOUR to jetour.mn", () => {
+    const first = (slug: string) => liveLinks(brands.find((b) => b.slug === slug)!)[0];
+    expect(first("jetour").url).toBe("https://jetour.mn/");
+    expect(liveLinks(brands.find((b) => b.slug === "jetour")!).map((l) => l.kind)).toEqual(["website", "facebook"]);
+    // International manufacturer sites are not linked: only Mongolian channels.
+    for (const brand of brands) {
+      for (const link of liveLinks(brand)) {
+        if (link.kind === "website") expect(link.url, brand.slug).toMatch(/^https:\/\/[a-z0-9-]+\.mn\//);
+      }
+    }
+    for (const slug of ["chery", "byd", "212", "bestune", "rely", "maxus", "hongqi"]) {
+      expect(first(slug).kind, slug).toBe("facebook");
+      expect(first(slug).url, slug).toMatch(/^https:\/\/www\.facebook\.com\//);
+    }
   });
 
   it("place each brand at an existing showroom with a dialable sales line", () => {
@@ -239,7 +256,7 @@ describe("copy", () => {
   });
 
   it("section photography is built and described in both languages", () => {
-    for (const photo of Object.values(sitePhotos)) {
+    for (const photo of Object.values(sitePhotos).flat()) {
       expect(getPhoto(photo.key).srcset.length, photo.key).toBeGreaterThan(0);
       expect(filled(photo.alt), photo.key).toBe(true);
     }

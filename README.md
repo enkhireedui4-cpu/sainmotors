@@ -9,7 +9,8 @@
 - Next.js 16.4 (App Router) static export → `out/` (HTML/CSS/JS). Node сервер шаардахгүй.
 - React 19, TypeScript, Tailwind v4 (зөвхөн reset + token; загварууд `src/app/globals.css`).
 - Дизайн: харанхуй editorial систем — `docs/design-system.md`. Агуулга засах заавар — `docs/editing-guide.md`.
-- Фонт: Source Serif 4 (гарчиг) + Inter (бичвэр), өөрсдөө host хийсэн subset. Ө ө Ү ү ₮ шалгасан — `docs/fonts.md`.
+- Фонт: Zona Pro (гарчиг, брэндийн гарын авлагаас) + Inter (бичвэр), өөрсдөө host хийсэн subset. Ө ө Ү ү шалгасан — `docs/fonts.md`.
+- Хөдөлгөөн: Motion (`motion/react`) — scroll-оор удирдсан 3D гүн, бичлэг; reduced-motion үед хөдөлгөөнгүй — `docs/design-system.md`.
 - Зураг: `assets/`-аас sharp-аар responsive WebP үүсгэнэ (`scripts/build-images.mjs`).
 - Өгөгдлийн сан, CMS, auth, analytics, cookie байхгүй.
 

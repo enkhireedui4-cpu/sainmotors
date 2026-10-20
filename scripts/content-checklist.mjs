@@ -9,6 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { brands } from "../src/content/brands.ts";
 import { company, contact, locations, services, socials } from "../src/content/company.ts";
+import { driveEvents, testDrive } from "../src/content/events.ts";
 import { hero } from "../src/content/hero.ts";
 import { pages } from "../src/content/pages.ts";
 import { sitePhotos } from "../src/content/photos.ts";
@@ -59,6 +60,13 @@ for (const [key, value] of Object.entries(sitePhotos)) {
   for (const photo of [value].flat()) {
     add("Зураг", key, photo.alt.mn, photo.alt.en, `${photo.key}${photo.note ? ` (${photo.note})` : ""}`, photo.status);
   }
+}
+
+// MEGA TEST DRIVE: the homepage film section and the editions it lists
+add("Тест драйв", "Нүүрийн бичвэр", text(testDrive.value.mn), text(testDrive.value.en), "", testDrive.status, testDrive.source);
+for (const e of driveEvents) {
+  const when = `${e.days[0]}…${e.days[1]}${e.hours ? `, ${e.hours}` : ""}`;
+  add("Тест драйв", `MEGA TEST DRIVE ${e.edition}`, `${when}, ${e.venue.mn}`, `${when}, ${e.venue.en}`, e.film ? `${e.film.poster.key}; ${e.film.teaser}; ${e.film.full}` : "", e.status, e.source);
 }
 
 // Services

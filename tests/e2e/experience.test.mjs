@@ -52,7 +52,7 @@ test("editorial tabs switch sourced imagery and local destinations in MN and EN"
     await page.keyboard.press("Tab");
     assert.ok(await section.getByRole("tabpanel").locator("a").evaluate(element => element === document.activeElement), "hidden panel links cannot receive focus");
     assert.equal(await page.locator(".bc__slide[data-index] .portfolio-card").count(), 11);
-    assert.equal(await page.locator(".showroom-experience").count(), 1);
+    assert.equal(await page.locator(".depth__action[href$='/contact/']").count(), 1);
     assert.equal(await page.locator(".company-facts__item").count(), 4);
   }
   assert.deepEqual(errors, []);

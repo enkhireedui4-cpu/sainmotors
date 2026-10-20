@@ -152,8 +152,8 @@ export const pages = {
     lead: {
       status: "draft",
       value: {
-        mn: "Брэнд бүрийн товч танилцуулга, шоурум, борлуулалтын утас. Загвар, тоноглолын дэлгэрэнгүйг брэндийн албан ёсны сайтаас үзнэ үү.",
-        en: "A short introduction to each brand, with its showroom and sales line. Full model details are on each brand’s official website.",
+        mn: "Брэнд бүрийн товч танилцуулга, шоурум, борлуулалтын утас. Шинэ мэдээллийг брэнд бүрийн Facebook хуудаснаас аваарай.",
+        en: "A short introduction to each brand, with its showroom and sales line. Follow each brand’s Facebook page for the latest news.",
       },
     } satisfies Block,
   },
@@ -180,6 +180,20 @@ export const pages = {
         en: "Services differ by brand and location. For specific questions, call the brand’s sales line.",
       },
     } satisfies Block,
+    team: {
+      status: "draft",
+      source: "Supplied service-centre and BYD training photographs (2026-10-20), incl. BYD technical training certificates",
+      value: {
+        mn: {
+          heading: "Мэргэшсэн техникийн баг",
+          body: "Манай техникчид BYD-ийн техникийн мэргэшлийн сургалтад хамрагдсан бөгөөд цахилгаан автомашины өндөр хүчдэлийн систем дээр хамгаалалтын хэрэгсэлтэйгээр ажилладаг.",
+        },
+        en: {
+          heading: "A trained technical team",
+          body: "Our technicians have completed BYD’s specialised technical training and work on electric-vehicle high-voltage systems with full protective equipment.",
+        },
+      },
+    } satisfies Section,
   },
 
   contact: {

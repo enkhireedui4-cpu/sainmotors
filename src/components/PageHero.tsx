@@ -31,7 +31,7 @@ interface PageHeroProps {
   children?: ReactNode;
 }
 
-/** Title block for supporting pages: a large serif title with the lead set beside it on wide screens. */
+/** Title block for supporting pages: a large display title with the lead set beside it on wide screens. */
 export function PageHero({ title, lead, leadDraft, breadcrumb, children }: PageHeroProps) {
   return (
     <div className="container page-hero">

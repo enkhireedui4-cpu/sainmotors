@@ -61,6 +61,28 @@ const PHOTOS = {
   "brand-rely": { file: "brands/rely-showcase.webp" },
   "brand-maxus": { file: "brands/maxus-showcase.webp" },
   "brand-hongqi": { file: "brands/hongqi-showcase.webp" },
+  // Sain Motors' own web photo set (Desktop sainmotorsWebPhotos, 2026-10-20): drone frames,
+  // Canon/Sony photographs and Facebook exports. Masters are WebP q90 at ≤4096 px.
+  "sain-hq-aerial": { file: "site/sain-hq-aerial.webp" },
+  "sain-hq-sign": { file: "site/sain-hq-sign.webp" },
+  "byd-4s-aerial": { file: "site/byd-4s-aerial.webp" },
+  "showroom-event-212": { file: "site/showroom-event-212.webp" },
+  "showroom-interior": { file: "site/showroom-interior.webp" },
+  "showroom-floor": { file: "site/showroom-floor.webp" },
+  "showroom-advice": { file: "site/showroom-advice.webp" },
+  "showroom-test-drive": { file: "site/showroom-test-drive.webp" },
+  "service-workshop": { file: "site/service-workshop.webp" },
+  "service-team": { file: "site/service-team.webp" },
+  "service-battery": { file: "site/service-battery.webp" },
+  "service-battery-lift": { file: "site/service-battery-lift.webp" },
+  "service-lift-hv": { file: "site/service-lift-hv.webp" },
+  "service-training-hv": { file: "site/service-training-hv.webp" },
+  "service-training-group": { file: "site/service-training-group.webp" },
+  "service-under-lift": { file: "site/service-under-lift.webp" },
+  // MEGA TEST DRIVE 7 (off-road edition) film, Desktop SnapSave_App_1366867448896240_1080p.mp4:
+  // frames at 0:54 and 0:24, used as the poster of the teaser loop and the full film.
+  "mtd7-river-crossing": { file: "site/mtd7-river-crossing.webp" },
+  "mtd7-212-mud": { file: "site/mtd7-212-mud.webp" },
 };
 
 /**

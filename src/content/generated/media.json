@@ -785,6 +785,556 @@
           "/media/brand-hongqi-2560.webp"
         ]
       ]
+    },
+    "sain-hq-aerial": {
+      "width": 3366,
+      "height": 1480,
+      "color": "#988888",
+      "srcset": [
+        [
+          480,
+          "/media/sain-hq-aerial-480.webp"
+        ],
+        [
+          768,
+          "/media/sain-hq-aerial-768.webp"
+        ],
+        [
+          1080,
+          "/media/sain-hq-aerial-1080.webp"
+        ],
+        [
+          1440,
+          "/media/sain-hq-aerial-1440.webp"
+        ],
+        [
+          1920,
+          "/media/sain-hq-aerial-1920.webp"
+        ],
+        [
+          2560,
+          "/media/sain-hq-aerial-2560.webp"
+        ]
+      ]
+    },
+    "sain-hq-sign": {
+      "width": 3824,
+      "height": 2156,
+      "color": "#282828",
+      "srcset": [
+        [
+          480,
+          "/media/sain-hq-sign-480.webp"
+        ],
+        [
+          768,
+          "/media/sain-hq-sign-768.webp"
+        ],
+        [
+          1080,
+          "/media/sain-hq-sign-1080.webp"
+        ],
+        [
+          1440,
+          "/media/sain-hq-sign-1440.webp"
+        ],
+        [
+          1920,
+          "/media/sain-hq-sign-1920.webp"
+        ],
+        [
+          2560,
+          "/media/sain-hq-sign-2560.webp"
+        ]
+      ]
+    },
+    "byd-4s-aerial": {
+      "width": 3822,
+      "height": 2058,
+      "color": "#282828",
+      "srcset": [
+        [
+          480,
+          "/media/byd-4s-aerial-480.webp"
+        ],
+        [
+          768,
+          "/media/byd-4s-aerial-768.webp"
+        ],
+        [
+          1080,
+          "/media/byd-4s-aerial-1080.webp"
+        ],
+        [
+          1440,
+          "/media/byd-4s-aerial-1440.webp"
+        ],
+        [
+          1920,
+          "/media/byd-4s-aerial-1920.webp"
+        ],
+        [
+          2560,
+          "/media/byd-4s-aerial-2560.webp"
+        ]
+      ]
+    },
+    "showroom-event-212": {
+      "width": 3954,
+      "height": 2922,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-event-212-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-event-212-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-event-212-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-event-212-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-event-212-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-event-212-2560.webp"
+        ]
+      ]
+    },
+    "showroom-interior": {
+      "width": 4096,
+      "height": 2732,
+      "color": "#f8f8f8",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-interior-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-interior-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-interior-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-interior-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-interior-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-interior-2560.webp"
+        ]
+      ]
+    },
+    "showroom-floor": {
+      "width": 3827,
+      "height": 2155,
+      "color": "#f8f8f8",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-floor-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-floor-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-floor-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-floor-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-floor-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-floor-2560.webp"
+        ]
+      ]
+    },
+    "showroom-advice": {
+      "width": 4096,
+      "height": 2308,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-advice-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-advice-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-advice-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-advice-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-advice-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-advice-2560.webp"
+        ]
+      ]
+    },
+    "showroom-test-drive": {
+      "width": 4096,
+      "height": 2308,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/showroom-test-drive-480.webp"
+        ],
+        [
+          768,
+          "/media/showroom-test-drive-768.webp"
+        ],
+        [
+          1080,
+          "/media/showroom-test-drive-1080.webp"
+        ],
+        [
+          1440,
+          "/media/showroom-test-drive-1440.webp"
+        ],
+        [
+          1920,
+          "/media/showroom-test-drive-1920.webp"
+        ],
+        [
+          2560,
+          "/media/showroom-test-drive-2560.webp"
+        ]
+      ]
+    },
+    "service-workshop": {
+      "width": 3806,
+      "height": 2109,
+      "color": "#787878",
+      "srcset": [
+        [
+          480,
+          "/media/service-workshop-480.webp"
+        ],
+        [
+          768,
+          "/media/service-workshop-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-workshop-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-workshop-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-workshop-1920.webp"
+        ],
+        [
+          2560,
+          "/media/service-workshop-2560.webp"
+        ]
+      ]
+    },
+    "service-team": {
+      "width": 3804,
+      "height": 2138,
+      "color": "#f8f8f8",
+      "srcset": [
+        [
+          480,
+          "/media/service-team-480.webp"
+        ],
+        [
+          768,
+          "/media/service-team-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-team-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-team-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-team-1920.webp"
+        ],
+        [
+          2560,
+          "/media/service-team-2560.webp"
+        ]
+      ]
+    },
+    "service-battery": {
+      "width": 3829,
+      "height": 1975,
+      "color": "#a8b8b8",
+      "srcset": [
+        [
+          480,
+          "/media/service-battery-480.webp"
+        ],
+        [
+          768,
+          "/media/service-battery-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-battery-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-battery-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-battery-1920.webp"
+        ],
+        [
+          2560,
+          "/media/service-battery-2560.webp"
+        ]
+      ]
+    },
+    "service-battery-lift": {
+      "width": 3820,
+      "height": 1972,
+      "color": "#b8b8b8",
+      "srcset": [
+        [
+          480,
+          "/media/service-battery-lift-480.webp"
+        ],
+        [
+          768,
+          "/media/service-battery-lift-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-battery-lift-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-battery-lift-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-battery-lift-1920.webp"
+        ],
+        [
+          2560,
+          "/media/service-battery-lift-2560.webp"
+        ]
+      ]
+    },
+    "service-lift-hv": {
+      "width": 2048,
+      "height": 1152,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/service-lift-hv-480.webp"
+        ],
+        [
+          768,
+          "/media/service-lift-hv-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-lift-hv-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-lift-hv-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-lift-hv-1920.webp"
+        ],
+        [
+          2048,
+          "/media/service-lift-hv-2048.webp"
+        ]
+      ]
+    },
+    "service-training-hv": {
+      "width": 2048,
+      "height": 1152,
+      "color": "#e8e8e8",
+      "srcset": [
+        [
+          480,
+          "/media/service-training-hv-480.webp"
+        ],
+        [
+          768,
+          "/media/service-training-hv-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-training-hv-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-training-hv-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-training-hv-1920.webp"
+        ],
+        [
+          2048,
+          "/media/service-training-hv-2048.webp"
+        ]
+      ]
+    },
+    "service-training-group": {
+      "width": 2048,
+      "height": 1536,
+      "color": "#584838",
+      "srcset": [
+        [
+          480,
+          "/media/service-training-group-480.webp"
+        ],
+        [
+          768,
+          "/media/service-training-group-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-training-group-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-training-group-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-training-group-1920.webp"
+        ],
+        [
+          2048,
+          "/media/service-training-group-2048.webp"
+        ]
+      ]
+    },
+    "service-under-lift": {
+      "width": 2048,
+      "height": 1152,
+      "color": "#d8d8d8",
+      "srcset": [
+        [
+          480,
+          "/media/service-under-lift-480.webp"
+        ],
+        [
+          768,
+          "/media/service-under-lift-768.webp"
+        ],
+        [
+          1080,
+          "/media/service-under-lift-1080.webp"
+        ],
+        [
+          1440,
+          "/media/service-under-lift-1440.webp"
+        ],
+        [
+          1920,
+          "/media/service-under-lift-1920.webp"
+        ],
+        [
+          2048,
+          "/media/service-under-lift-2048.webp"
+        ]
+      ]
+    },
+    "mtd7-river-crossing": {
+      "width": 1920,
+      "height": 1080,
+      "color": "#585858",
+      "srcset": [
+        [
+          480,
+          "/media/mtd7-river-crossing-480.webp"
+        ],
+        [
+          768,
+          "/media/mtd7-river-crossing-768.webp"
+        ],
+        [
+          1080,
+          "/media/mtd7-river-crossing-1080.webp"
+        ],
+        [
+          1440,
+          "/media/mtd7-river-crossing-1440.webp"
+        ],
+        [
+          1920,
+          "/media/mtd7-river-crossing-1920.webp"
+        ]
+      ]
+    },
+    "mtd7-212-mud": {
+      "width": 1920,
+      "height": 1080,
+      "color": "#080808",
+      "srcset": [
+        [
+          480,
+          "/media/mtd7-212-mud-480.webp"
+        ],
+        [
+          768,
+          "/media/mtd7-212-mud-768.webp"
+        ],
+        [
+          1080,
+          "/media/mtd7-212-mud-1080.webp"
+        ],
+        [
+          1440,
+          "/media/mtd7-212-mud-1440.webp"
+        ],
+        [
+          1920,
+          "/media/mtd7-212-mud-1920.webp"
+        ]
+      ]
     }
   },
   "logos": {

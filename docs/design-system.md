@@ -24,10 +24,11 @@ No gold or metallic accent, no glass, no decorative gradients. The only gradient
 
 ## Type
 
-- **Display:** Source Serif 4, display optical size, 400–600 (`src/fonts/source-serif-display.woff2`, 68 KB).
-  Page titles, section titles, hero, timeline years, brand headlines, mobile menu.
+- **Display (2026-10-20):** Zona Pro SemiBold/Bold, the typeface named in the Sain Motors brand guideline
+  (`src/fonts/zona-pro-*.woff2`, 17 KB each). Page titles, section titles, hero, timeline years, brand headlines,
+  mobile menu. It has no ₮; Inter supplies that glyph. Source Serif 4 is archived in `assets/_superseded/`.
 - **Text/UI:** Inter, 400–600. Body 16 px (17 px from 1024 px), lead 17–21 px.
-- Mongolian Ө ө Ү ү №, ₮ verified in both files and in Chrome's rendered output (docs/fonts.md).
+- Mongolian Ө ө Ү ү verified in Zona Pro and Inter, and in Chrome's rendered output (docs/fonts.md).
 - No all-caps labels, no letter-spaced eyebrows.
 
 ## Layout
@@ -38,7 +39,25 @@ No gold or metallic accent, no glass, no decorative gradients. The only gradient
   directory rows, brand hero (plate 5 / copy 7) with a facts band.
 - Photographs: square corners. Interactive surfaces (buttons, plates, panels): 6 px radius.
 
-## Motion
+## Motion (2026-10-20)
 
-Hero cross-fade and progress, hover colour shifts, menu fade. No scroll-triggered reveals, no loaders.
-`prefers-reduced-motion` stops rotation and transitions.
+Scroll-driven depth with Motion (`motion/react`), on native scrolling: no scroll-jacking, no loaders, no
+second animation engine. What is "3D" here is CSS perspective applied to real photographs and film; there is
+no vehicle model.
+
+- **Hero:** the photograph lays back (scale + rotateX in a 1400px perspective) as it leaves; the headline
+  rises faster. Headline lines rise in on load with CSS only.
+- **Showroom walk:** six photographs stand one behind another; the scroll moves the camera through them.
+- **MEGA TEST DRIVE:** the homepage's one expanding moment: a framed muted loop opens to full bleed; the
+  full film loads only in its dialog.
+- **Parallax windows** (services) and a pinned sideways strip (services page; a swipe strip on phones).
+- **Reveals:** section heads lift in once, and only content still below the fold after hydration is hidden.
+
+`prefers-reduced-motion`: every scene becomes a still layout (grids, open frames, poster instead of loop);
+nothing is bound to the scroll.
+
+Timing follows the Motion AI Kit best practices: entrances ≤0.6 s (hero lines 0.6 s, 90 ms stagger),
+reveals as a critically damped spring (`bounce: 0, visualDuration: 0.5`, no overshoot for a corporate
+brand), dialog 260 ms. Scroll scenes map progress with `useTransform(value, input, output)`; one root
+`MotionConfig reducedMotion="user"`. MotionScore (local `npx motionscore <url> --no-upload`, 2026-10-20): home S (90/100),
+services S (95/100), every animation S-tier, no layout thrashing.

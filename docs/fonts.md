@@ -1,5 +1,22 @@
 # Фонтын сонголт ба Монгол кирилл шалгалт
 
+## 2026-10-20: Zona Pro (брэндийн гарын авлага)
+
+Brand guideline (`sainmotorsWebPhotos/WEB Photos/9. Brand guidline`): "Фонт – Zona". Гарчгийн фонтыг Zona Pro
+SemiBold (600), Bold (700) болгосон; бичвэр Inter хэвээр.
+
+| Файл | Эх | Хэмжээ |
+|---|---|---|
+| `src/fonts/zona-pro-semibold.woff2` | ZonaPro-SemiBold.ttf | 17.0 KB |
+| `src/fonts/zona-pro-bold.woff2` | ZonaPro-Bold.ttf | 16.8 KB |
+
+Subset (subset-font/harfbuzz): ASCII, Latin-1, U+0400–045F, Ү ү, Ө ө, цэг тэмдэг, №, сум. cmap шалгалт:
+А–я, Ё ё, Ө ө, Ү ү байгаа; **₮ ба № Zona-д байхгүй**, тэдгээрийг fallback Inter зурна. Chrome-д `zona 600/700`
+loaded, MN/EN hero гарчиг Zona-аар зурагдсан (screenshot).
+
+**Лиценз:** файлд "Copyright (c) 2014 by Kostas Bartsokas. All rights reserved." Компани фонтыг брэндийн
+гарын авлагад өгсөн ч **webfont (вэбд embed хийх) эрх** байгаа эсэхийг production-оос өмнө баталгаажуулна.
+
 ## 2026-10-17: corporate нүүрийн эцсийн browser шалгалт
 
 Source Serif 4-ийн 450 жинг MN/EN hero-д ашиглав. Chrome CDP `CSS.getPlatformFontsForNode`-оор

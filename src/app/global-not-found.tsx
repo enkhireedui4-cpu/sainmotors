@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { sainLogos, ui } from "@/content";
-import { inter, serif } from "@/lib/fonts";
+import { inter, zona } from "@/lib/fonts";
 import { localePath, locales } from "@/lib/i18n";
 import { pageHref } from "@/lib/routes";
 import "./globals.css";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
   const logo = sainLogos["sain-on-dark"];
   return (
-    <html lang="mn" className={`${serif.variable} ${inter.variable}`}>
+    <html lang="mn" className={`${zona.variable} ${inter.variable}`}>
       <body>
         <header className="site-header">
           <div className="container site-header__inner">
